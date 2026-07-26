@@ -1,0 +1,255 @@
+@import "tailwindcss";
+
+/* ————— Phronesis AI design tokens ————— */
+@theme {
+  --color-ocean: #0b3d5f; /* deep ocean blue — headings, primary, footer */
+  --color-teal: #1f8a8a; /* secondary actions, accents, links */
+  --color-sage: #7fb069; /* wellness / growth indicators */
+  --color-amber: #e8a87c; /* CTAs, highlights, energy */
+  --color-terra: #c38d6b; /* land-based wellness, cultural elements */
+  --color-cream: #faf7f2; /* warm white backgrounds */
+  --color-ink: #1a2530; /* charcoal body text */
+
+  --font-display: var(--font-fraunces), "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-dm), "DM Sans", "Segoe UI", Tahoma, sans-serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Lenis smooth-scroll cooperation */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-amber) 45%, transparent);
+  color: var(--color-ink);
+}
+
+/* Luxurious, intentional focus ring for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-teal) 18%, transparent);
+}
+
+/* Custom cursor — hide the native pointer only on fine pointers once JS opts in */
+@media (pointer: fine) {
+  html[data-cursor],
+  html[data-cursor] * {
+    cursor: none !important;
+  }
+}
+
+/* Scroll lock used by the pre-loader and the mobile overlay */
+body.preload-lock {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-ocean) 45%, var(--color-cream));
+  border-radius: 8px;
+  border: 2px solid var(--color-cream);
+}
+
+/* ————— Signature utilities ————— */
+
+.wrap {
+  width: min(1180px, 92vw);
+  margin-inline: auto;
+}
+
+/* Frosted glass — navbar, floating chips */
+.glass {
+  background: color-mix(in srgb, #ffffff 58%, var(--color-cream));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid color-mix(in srgb, #ffffff 65%, transparent);
+  box-shadow: 0 12px 40px -18px color-mix(in srgb, var(--color-ocean) 35%, transparent);
+}
+
+/* Film-grain overlay so gradients never feel plastic */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+}
+
+/* Outlined ghost letters (acronym rail) */
+.letter-ghost {
+  color: transparent;
+  -webkit-text-stroke: 1.5px color-mix(in srgb, var(--stroke, var(--color-ocean)) 42%, transparent);
+  user-select: none;
+}
+
+@supports not (-webkit-text-stroke: 1px black) {
+  .letter-ghost {
+    color: color-mix(in srgb, var(--stroke, var(--color-ocean)) 18%, transparent);
+  }
+}
+
+/* Line-mask reveal helper — pair with GSAP y-translation */
+.mask-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+
+/* ————— Keyframed ambient motion ————— */
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-11px);
+  }
+}
+.floaty {
+  animation: floaty 6.5s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-amber) 65%, transparent);
+  }
+  75% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+.ai-dot {
+  animation: pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+.caret::after {
+  content: "▍";
+  margin-left: 2px;
+  color: var(--color-teal);
+  animation: caret 0.9s step-end infinite;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.06);
+  }
+}
+.breathe {
+  animation: breathe 9s ease-in-out infinite;
+}
+
+/* Tactile validation — gentle shake on error */
+@keyframes shake {
+  10%, 90% { transform: translateX(-2px); }
+  20%, 80% { transform: translateX(3px); }
+  30%, 50%, 70% { transform: translateX(-5px); }
+  40%, 60% { transform: translateX(5px); }
+}
+.shake {
+  animation: shake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Drawn checkmark on success */
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+.draw-check {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: draw 0.6s ease-out 0.15s forwards;
+}
+.draw-ring {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: draw 0.7s ease-out forwards;
+}
+
+/* Hardware-acceleration discipline — only where GSAP animates */
+.hero-chip,
+[data-hero-word],
+.pl-letter {
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .floaty,
+  .ai-dot,
+  .breathe,
+  .caret::after,
+  .shake,
+  .draw-check,
+  .draw-ring {
+    animation: none !important;
+  }
+  .draw-check,
+  .draw-ring {
+    stroke-dashoffset: 0;
+  }
+}

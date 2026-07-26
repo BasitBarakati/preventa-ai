@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 168" width="340" height="168">
+  <g transform="translate(138 4)">
+    <path d="M32 10.2V50c0 2.7-1.7 4-4.5 5" stroke="#0B3D5F" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+    <path d="M30.6 13.9C21.8 12.1 13.5 18.7 13.3 27.9c-.1 4.8 2.2 7.8 2.6 11.4.5 5.6 5.4 9.8 11.2 9.6 1.7-.1 3-.5 3.5-.7" stroke="#0B3D5F" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <path d="M27.4 20.5c-5.8 1.4-8.6 5.8-7.4 10.4" stroke="#0B3D5F" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M29.1 28.9c-4 1-5.6 4-4.4 7.4" stroke="#0B3D5F" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M19.9 40.5c1.8 3.2 5 4.6 8.2 4" stroke="#0B3D5F" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M27.3 24.4v3.4" stroke="#0B3D5F" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="27.3" cy="21.9" r="2.4" fill="#0B3D5F"/>
+    <circle cx="16.7" cy="29.3" r="3.1" fill="#1F8A8A"/>
+    <path d="M32 24.6c5-1 8.6-3.6 10.6-8.4" stroke="#0B3D5F" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M32 31.6c7.5-1.5 13.4-5 16.9-9" stroke="#0B3D5F" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M32 38.6c6.5-1 11.4-2.5 14.7-5" stroke="#0B3D5F" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M32 44.6c3.4.5 6.4.1 8.9-1.1" stroke="#0B3D5F" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M42.9 15.6l.8-2.6" stroke="#0B3D5F" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="44.1" cy="10.8" r="2.7" fill="#0B3D5F"/>
+    <path d="M40.6 43.7l.9 1.7" stroke="#0B3D5F" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="42.1" cy="47.4" r="2.6" fill="#0B3D5F"/>
+    <circle cx="50.9" cy="20.6" r="3" fill="#F0973C"/>
+    <circle cx="48.3" cy="32" r="2.7" fill="#1F8A8A"/>
+    <circle cx="51.6" cy="28.9" r="2.1" fill="#8FAE7A"/>
+    <path d="M0 0C2.6-3.5 7.4-3.5 10 0C7.4 3.5 2.6 3.5 0 0Z" fill="#8FAE7A" transform="translate(34.6 12.4) rotate(-28) scale(.92)"/>
+    <path d="M0 0C2.6-3.5 7.4-3.5 10 0C7.4 3.5 2.6 3.5 0 0Z" fill="#7FB069" transform="translate(44.8 15.6) rotate(22) scale(.86)"/>
+    <path d="M0 0C2.6-3.5 7.4-3.5 10 0C7.4 3.5 2.6 3.5 0 0Z" fill="#1F8A8A" transform="translate(41.2 25.2) rotate(-14) scale(.95)"/>
+    <path d="M0 0C2.6-3.5 7.4-3.5 10 0C7.4 3.5 2.6 3.5 0 0Z" fill="#3FA7B0" transform="translate(39.2 39.4) rotate(-6) scale(.9)"/>
+  </g>
+  <text x="170" y="128" text-anchor="middle" font-family="Fraunces, Georgia, 'Times New Roman', serif" font-size="46" font-weight="600" letter-spacing="0.5" fill="#0B3D5F">Phronesis AI</text>
+</svg>
