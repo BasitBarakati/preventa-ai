@@ -3,7 +3,7 @@
 import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import { LogoIcon } from "./Logo";
 
-type Detail = { plan?: string; assessmentType?: string };
+type Detail = { assessmentType?: string };
 
 const TYPES = [
   ["individual", "Individual"],
@@ -61,7 +61,6 @@ function FloatField({
 /** Global "Start Free Assessment" dialog — writes to the inquiries table. */
 export default function AssessmentModal() {
   const [open, setOpen] = useState(false);
-  const [detail, setDetail] = useState<Detail>({});
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -77,11 +76,9 @@ export default function AssessmentModal() {
   useEffect(() => {
     const onOpen = (e: Event) => {
       const d = (e as CustomEvent<Detail>).detail ?? {};
-      setDetail(d);
       setForm((f) => ({
         ...f,
         assessmentType: d.assessmentType ?? f.assessmentType,
-        message: d.plan ? `Interested in the ${d.plan} tier.` : f.message,
       }));
       setState("idle");
       setOpen(true);
@@ -170,7 +167,7 @@ export default function AssessmentModal() {
               />
             </svg>
             <h3 className="mt-5 font-display text-[24px] font-semibold text-ocean">
-              Request received{detail.plan ? ` — ${detail.plan} tier` : ""}.
+              Request received.
             </h3>
             <p className="mx-auto mt-3 max-w-sm text-[13.5px] leading-relaxed text-ink/65">
               A practitioner (a human, promise) will reach out within two business days to scope
@@ -254,9 +251,11 @@ export default function AssessmentModal() {
             <button
               type="submit"
               disabled={state === "busy"}
-              className="mt-6 w-full rounded-full bg-amber py-3.5 text-[14px] font-semibold text-ocean shadow-[0_16px_36px_-14px_rgba(232,168,124,0.9)] transition-all hover:-translate-y-0.5 hover:bg-[#e29a68] disabled:translate-y-0 disabled:opacity-60"
+              className="sheen mt-6 w-full rounded-full bg-amber py-3.5 text-[14px] font-semibold text-ocean shadow-[0_16px_36px_-14px_rgba(232,168,124,0.9)] transition-all hover:-translate-y-0.5 hover:bg-[#e29a68] disabled:translate-y-0 disabled:opacity-60"
             >
-              {state === "busy" ? "Recording your request…" : "Request my free assessment"}
+              <span className="relative z-10">
+                {state === "busy" ? "Recording your request…" : "Request my free assessment"}
+              </span>
             </button>
             <p className="mt-3.5 text-center font-mono text-[10px] uppercase tracking-[0.16em] text-ink/40">
               privacy by design · minimum data · never sold

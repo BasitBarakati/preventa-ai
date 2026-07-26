@@ -313,6 +313,87 @@ export function useMagnetic<T extends HTMLElement>(strength = 0.32) {
   return ref;
 }
 
+/** 3D tilt card — cursor-coupled rotation with a travelling glare.
+ *  Luxury-site signature interaction, shared across card grids. */
+export function TiltCard({
+  children,
+  className = "",
+  glow = "",
+}: {
+  children: ReactNode;
+  className?: string;
+  glow?: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const onMove = (e: React.MouseEvent) => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const r = el.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    el.style.transform = `perspective(900px) rotateY(${px * 9}deg) rotateX(${-py * 9}deg) translateY(-6px)`;
+    el.style.setProperty("--gx", `${(px + 0.5) * 100}%`);
+    el.style.setProperty("--gy", `${(py + 0.5) * 100}%`);
+  };
+  const onLeave = () => {
+    const el = ref.current;
+    if (el) el.style.transform = "perspective(900px) rotateY(0deg) rotateX(0deg) translateY(0)";
+  };
+
+  return (
+    <div
+      ref={ref}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+      className={`relative overflow-hidden transition-[box-shadow] duration-300 will-change-transform ${glow} ${className}`}
+      style={{ transformStyle: "preserve-3d", transition: "transform .25s ease-out, box-shadow .3s ease" }}
+    >
+      {/* travelling glare */}
+      <div
+        className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{
+          background:
+            "radial-gradient(22rem 22rem at var(--gx,50%) var(--gy,50%), rgba(31,138,138,0.10), transparent 60%)",
+        }}
+        aria-hidden="true"
+      />
+      {children}
+    </div>
+  );
+}
+
+/** Ambient drifting gradient blobs — a quiet, editorial-grade backdrop
+ *  layer for sections that want depth without competing with content. */
+export function Aurora({ className = "" }: { className?: string }) {
+  return (
+    <div
+      className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}
+      aria-hidden="true"
+    >
+      <span
+        className="aurora-blob absolute -left-[10%] top-[-15%] h-[55%] w-[55%] rounded-full blur-3xl"
+        style={{ background: "radial-gradient(circle, rgba(31,138,138,0.16), transparent 70%)" }}
+      />
+      <span
+        className="aurora-blob absolute right-[-12%] top-[18%] h-[50%] w-[45%] rounded-full blur-3xl"
+        style={{
+          background: "radial-gradient(circle, rgba(232,168,124,0.15), transparent 70%)",
+          animationDelay: "-8s",
+        }}
+      />
+      <span
+        className="aurora-blob absolute bottom-[-18%] left-[22%] h-[48%] w-[48%] rounded-full blur-3xl"
+        style={{
+          background: "radial-gradient(circle, rgba(127,176,105,0.12), transparent 70%)",
+          animationDelay: "-16s",
+        }}
+      />
+    </div>
+  );
+}
+
 /** Section header — mono eyebrow, line-masked Fraunces title, body copy. */
 export function SectionHeading({
   eyebrow,

@@ -46,6 +46,13 @@ export const metadata: Metadata = {
     "OCAP principles compliance",
     "community wellness AI",
     "health intelligence platform",
+    "public health software Canada",
+    "health equity analytics",
+    "AI co-pilot for public health",
+    "wellness assessment platform",
+    "health promotion evaluation software",
+    "PHIPA compliant health platform",
+    "Indigenous data sovereignty health",
     "Phronesis AI",
   ],
   authors: [{ name: "Phronesis AI" }],
@@ -90,12 +97,6 @@ const softwareLd = {
   description:
     "AI health promotion platform for population health assessment, health promotion and disease prevention, resilience and emergency preparedness, operations and policy review, networked collaboration, evidence and AI, systems for health protection, and intelligence and analytics.",
   url: SITE_URL,
-  offers: [
-    { "@type": "Offer", name: "Community (sponsored)", price: "0", priceCurrency: "CAD" },
-    { "@type": "Offer", name: "Basic", price: "49", priceCurrency: "CAD" },
-    { "@type": "Offer", name: "Professional", price: "129", priceCurrency: "CAD" },
-    { "@type": "Offer", name: "Organization", price: "349", priceCurrency: "CAD" },
-  ],
   featureList: [
     "Population assessment and surveillance",
     "Health promotion and disease prevention planning",

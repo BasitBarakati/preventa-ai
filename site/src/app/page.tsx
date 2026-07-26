@@ -22,7 +22,6 @@ import Wellness from "@/components/Wellness";
 import CapacityEval from "@/components/CapacityEval";
 import Copilot from "@/components/Copilot";
 import Faq from "@/components/Faq";
-import Pricing from "@/components/Pricing";
 import Footer from "@/components/Footer";
 import AssessmentModal from "@/components/AssessmentModal";
 
@@ -44,7 +43,6 @@ export default function Home() {
         <CapacityEval />
         <Copilot />
         <Faq />
-        <Pricing />
       </main>
       <Footer />
       <AssessmentModal />

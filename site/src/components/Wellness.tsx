@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { Reveal, SectionHeading } from "./motion";
+import { Reveal, SectionHeading, TiltCard } from "./motion";
 import {
   AppleIcon,
   CheckIcon,
@@ -173,14 +173,15 @@ export default function Wellness() {
             <Reveal
               key={d.title}
               delay={(i % 3) * 0.08}
-              className="mb-5 break-inside-avoid"
+              className="group mb-5 break-inside-avoid"
             >
-              <article
-                className={`group relative overflow-hidden rounded-3xl border p-7 transition-all duration-500 hover:-translate-y-1.5 ${
+              <TiltCard
+                className={`rounded-3xl border p-7 ${
                   d.featured
                     ? "border-terra/40 bg-terra text-cream shadow-[0_30px_60px_-28px_rgba(195,141,107,0.6)]"
-                    : "border-ocean/10 bg-white/75 hover:shadow-[0_30px_60px_-30px_rgba(11,61,95,0.35)]"
+                    : "border-ocean/10 bg-white/75"
                 }`}
+                glow={d.featured ? "" : "hover:shadow-[0_30px_60px_-30px_rgba(11,61,95,0.35)]"}
               >
                 <span
                   className={`absolute right-6 top-6 font-mono text-[10px] tracking-[0.2em] ${
@@ -222,7 +223,7 @@ export default function Wellness() {
                 >
                   {d.meta}
                 </p>
-              </article>
+              </TiltCard>
             </Reveal>
           ))}
         </div>

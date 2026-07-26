@@ -10,7 +10,7 @@ const LINKS = [
   { label: "Wellness", href: "#wellness", note: "nine domains" },
   { label: "Capacity", href: "#capacity", note: "skills that stay" },
   { label: "Evaluate", href: "#evaluate", note: "four phases" },
-  { label: "Pricing", href: "#pricing", note: "five tiers" },
+  { label: "Co-Pilot", href: "#copilot", note: "ai sandbox" },
 ];
 
 export default function Nav() {
@@ -67,9 +67,9 @@ export default function Nav() {
             <button
               ref={magneticRef}
               onClick={() => openAssessment()}
-              className="hidden rounded-full bg-amber px-5 py-2.5 text-[13.5px] font-semibold text-ocean shadow-[0_10px_30px_-12px_rgba(232,168,124,0.9)] transition-colors duration-300 hover:bg-[#e29a68] will-change-transform sm:inline-flex"
+              className="sheen hidden rounded-full bg-amber px-5 py-2.5 text-[13.5px] font-semibold text-ocean shadow-[0_10px_30px_-12px_rgba(232,168,124,0.9)] transition-colors duration-300 hover:bg-[#e29a68] will-change-transform sm:inline-flex"
             >
-              Start Free
+              <span className="relative z-10">Start Free</span>
             </button>
             <button
               className="grid h-10 w-10 place-items-center rounded-full border border-ocean/15 lg:hidden"

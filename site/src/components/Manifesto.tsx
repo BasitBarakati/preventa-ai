@@ -1,12 +1,13 @@
 "use client";
 
-import { Parallax, SplitWords } from "./motion";
+import { Aurora, Parallax, SplitWords } from "./motion";
 
 /** Editorial manifesto band — oversized Fraunces statement, word-by-word
  *  reveal, a parallaxing ghost glyph, and three margin annotations. */
 export default function Manifesto() {
   return (
     <section className="relative overflow-hidden py-32 sm:py-40" aria-label="Our philosophy">
+      <Aurora />
       {/* parallax ghost glyph */}
       <Parallax speed={0.16} className="pointer-events-none absolute inset-0">
         <span

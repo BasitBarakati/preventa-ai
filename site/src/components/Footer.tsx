@@ -22,7 +22,6 @@ const PLATFORM = [
   ["Capacity Building", "#capacity"],
   ["Evaluation Lifecycle", "#evaluate"],
   ["AI Co-Pilot", "#copilot"],
-  ["Pricing", "#pricing"],
 ];
 
 const PRINCIPLES = [
@@ -120,9 +119,9 @@ function Subscribe() {
         <button
           type="submit"
           disabled={state === "busy"}
-          className="shrink-0 rounded-full bg-amber px-5 py-2.5 text-[13px] font-semibold text-ocean transition-colors hover:bg-[#e29a68] disabled:opacity-60"
+          className="sheen shrink-0 rounded-full bg-amber px-5 py-2.5 text-[13px] font-semibold text-ocean transition-colors hover:bg-[#e29a68] disabled:opacity-60"
         >
-          {state === "busy" ? "…" : "Join"}
+          <span className="relative z-10">{state === "busy" ? "…" : "Join"}</span>
         </button>
       </form>
       {state === "done" && (

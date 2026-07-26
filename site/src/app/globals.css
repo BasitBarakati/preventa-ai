@@ -133,6 +133,36 @@ body.preload-lock {
   padding-bottom: 0.08em;
 }
 
+/* Signature CTA sheen — a light sweep on hover, luxury-site signature */
+.sheen {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    color-mix(in srgb, white 38%, transparent) 48%,
+    transparent 66%
+  );
+  transform: translateX(-130%);
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.sheen:hover::after {
+  transform: translateX(130%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .sheen::after {
+    display: none;
+  }
+}
+
 /* ————— Keyframed ambient motion ————— */
 
 @keyframes marquee {
@@ -189,6 +219,19 @@ body.preload-lock {
   animation: caret 0.9s step-end infinite;
 }
 
+@keyframes aurora-drift {
+  0%,
+  100% {
+    transform: translate(-4%, -3%) scale(1);
+  }
+  50% {
+    transform: translate(4%, 3%) scale(1.08);
+  }
+}
+.aurora-blob {
+  animation: aurora-drift 24s ease-in-out infinite;
+}
+
 @keyframes breathe {
   0%,
   100% {
@@ -242,6 +285,7 @@ body.preload-lock {
   .floaty,
   .ai-dot,
   .breathe,
+  .aurora-blob,
   .caret::after,
   .shake,
   .draw-check,

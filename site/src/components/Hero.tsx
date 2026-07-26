@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import NeuralGlobe from "./NeuralGlobe";
-import { CountUp, Parallax, Scramble } from "./motion";
+import { CountUp, Parallax, Scramble, useMagnetic } from "./motion";
 import { openAssessment } from "./modalEvents";
 import { ArrowIcon, EyeIcon, LockIcon, PulseIcon, ShieldIcon } from "./icons";
 
@@ -22,6 +22,7 @@ const CHIPS = [
 
 export default function Hero() {
   const root = useRef<HTMLElement>(null);
+  const ctaRef = useMagnetic<HTMLButtonElement>(0.24);
 
   /* Staggered entrance — GSAP only *animates*, markup stays readable. */
   useEffect(() => {
@@ -151,11 +152,14 @@ export default function Hero() {
 
           <div className="hero-el mt-9 flex flex-wrap items-center gap-4">
             <button
+              ref={ctaRef}
               onClick={() => openAssessment()}
-              className="group inline-flex items-center gap-2.5 rounded-full bg-ocean px-7 py-3.5 text-[14.5px] font-semibold text-cream shadow-[0_18px_40px_-16px_rgba(11,61,95,0.65)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0d4a73]"
+              className="sheen group inline-flex items-center gap-2.5 rounded-full bg-ocean px-7 py-3.5 text-[14.5px] font-semibold text-cream shadow-[0_18px_40px_-16px_rgba(11,61,95,0.65)] transition-all duration-300 will-change-transform hover:-translate-y-0.5 hover:bg-[#0d4a73]"
             >
-              Start Free Assessment
-              <ArrowIcon size={17} className="transition-transform duration-300 group-hover:translate-x-1" />
+              <span className="relative z-10 inline-flex items-center gap-2.5">
+                Start Free Assessment
+                <ArrowIcon size={17} className="transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
             </button>
             <a
               href="#pillars"

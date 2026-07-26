@@ -222,25 +222,34 @@ export default function NeuralGlobe({ className }: { className?: string }) {
       running = false;
       cancelAnimationFrame(raf);
     };
+    /* cinematic scroll depth — pulls the globe away and lets it drift as
+       the hero scrolls past. Reads layout each frame (rAF-driven, never a
+       scroll listener) since Lenis intercepts native scroll events. */
+    let scrollDepth = 0;
     const tick = (t: number) => {
       if (!running) return;
+      const rect = host.getBoundingClientRect();
+      const targetDepth = Math.min(1, Math.max(0, -rect.top / window.innerHeight));
+      scrollDepth += (targetDepth - scrollDepth) * 0.08;
+
       eased.x += (target.x - eased.x) * 0.045;
       eased.y += (target.y - eased.y) * 0.045;
-      group.rotation.y += 0.0016;
+      group.rotation.y += 0.0016 + scrollDepth * 0.0032;
       group.rotation.x = 0.12 + eased.y * 0.4;
       group.position.x = eased.x * 0.5;
-      group.position.y = -eased.y * 0.35;
-      /* breathing scale + bloom pulse */
+      group.position.y = -eased.y * 0.35 - scrollDepth * 0.55;
+      /* breathing scale + bloom pulse, receding into depth on scroll */
       const breathe = 1 + Math.sin(t * 0.0007) * 0.016;
-      group.scale.setScalar(breathe);
-      hotMat.opacity = 0.7 + Math.sin(t * 0.0013) * 0.25;
-      bloom1.material.opacity = 0.48 + Math.sin(t * 0.0009) * 0.12;
+      group.scale.setScalar(breathe * (1 - scrollDepth * 0.22));
+      hotMat.opacity = (0.7 + Math.sin(t * 0.0013) * 0.25) * (1 - scrollDepth * 0.6);
+      bloom1.material.opacity = (0.48 + Math.sin(t * 0.0009) * 0.12) * (1 - scrollDepth * 0.5);
       dust.rotation.y -= 0.0007;
       core.rotation.y -= 0.002;
-      nodeMat.opacity = 0.8 + Math.sin(t * 0.0011) * 0.15;
-      /* camera parallax for depth */
+      nodeMat.opacity = (0.8 + Math.sin(t * 0.0011) * 0.15) * (1 - scrollDepth * 0.65);
+      /* camera parallax for depth + slow dolly-out as the section recedes */
       camera.position.x += (eased.x * 0.55 - camera.position.x) * 0.05;
       camera.position.y += (-eased.y * 0.4 - camera.position.y) * 0.05;
+      camera.position.z = 6.6 + scrollDepth * 2.2;
       camera.lookAt(0, 0, 0);
       renderer.render(scene, camera);
       raf = requestAnimationFrame(tick);

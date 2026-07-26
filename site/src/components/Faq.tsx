@@ -20,7 +20,7 @@ const FAQS = [
   },
   {
     q: "Is Phronesis AI compliant with PHIPA, HIPAA and GDPR?",
-    a: "Yes. The platform is privacy by design: inputs are de-identified, access is role-based and audited, and data residency options cover PHIPA (Ontario), HIPAA (United States) and GDPR (European Union) requirements. Compliance documentation is available on Enterprise plans.",
+    a: "Yes. The platform is privacy by design: inputs are de-identified, access is role-based and audited, and data residency options cover PHIPA (Ontario), HIPAA (United States) and GDPR (European Union) requirements. Compliance documentation is available on request for institutional and government deployments.",
   },
   {
     q: "How does Phronesis AI respect OCAP® principles?",
@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "How much does Phronesis AI cost?",
-    a: "Paid plans start at $49 per seat per month (Basic) and $129 (Professional); the Organization tier is $349 per seat per month with annual billing discounts. A fully sponsored Community tier is free for community-led groups, funded by partner organizations.",
+    a: "Pricing is scoped to your team's size, assessment lenses and wellness modules — including a fully sponsored tier for community-led groups. Request a free assessment and a practitioner will bring you a tailored quote within two business days.",
   },
 ];
 

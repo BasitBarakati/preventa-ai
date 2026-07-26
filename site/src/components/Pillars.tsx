@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
-import { Reveal, SectionHeading } from "./motion";
+import type { ReactNode } from "react";
+import { Reveal, SectionHeading, TiltCard } from "./motion";
 import { BookIcon, ChartIcon, CompassIcon, NetworkIcon } from "./icons";
 
 type Pillar = {
@@ -48,56 +48,6 @@ const PILLARS: Pillar[] = [
   },
 ];
 
-/** 3D tilt card — cursor-coupled rotation with a travelling glare. */
-function TiltCard({
-  children,
-  className = "",
-  ring = "",
-}: {
-  children: ReactNode;
-  className?: string;
-  ring?: string;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const onMove = (e: React.MouseEvent) => {
-    const el = ref.current;
-    if (!el) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const r = el.getBoundingClientRect();
-    const px = (e.clientX - r.left) / r.width - 0.5;
-    const py = (e.clientY - r.top) / r.height - 0.5;
-    el.style.transform = `perspective(900px) rotateY(${px * 9}deg) rotateX(${-py * 9}deg) translateY(-6px)`;
-    el.style.setProperty("--gx", `${(px + 0.5) * 100}%`);
-    el.style.setProperty("--gy", `${(py + 0.5) * 100}%`);
-  };
-  const onLeave = () => {
-    const el = ref.current;
-    if (el) el.style.transform = "perspective(900px) rotateY(0deg) rotateX(0deg) translateY(0)";
-  };
-
-  return (
-    <div
-      ref={ref}
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
-      className={`relative overflow-hidden rounded-3xl border border-ocean/10 bg-white/70 p-7 transition-[box-shadow] duration-300 will-change-transform ${ring} ${className}`}
-      style={{ transformStyle: "preserve-3d", transition: "transform .25s ease-out, box-shadow .3s ease" }}
-    >
-      {/* travelling glare */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{
-          background:
-            "radial-gradient(22rem 22rem at var(--gx,50%) var(--gy,50%), rgba(31,138,138,0.10), transparent 60%)",
-        }}
-        aria-hidden="true"
-      />
-      {children}
-    </div>
-  );
-}
-
 export default function Pillars() {
   return (
     <section id="pillars" className="relative py-28">
@@ -125,7 +75,10 @@ export default function Pillars() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {PILLARS.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.09} className="group h-full">
-              <TiltCard className="flex h-full flex-col" ring={p.ring}>
+              <TiltCard
+                className="flex h-full flex-col rounded-3xl border border-ocean/10 bg-white/70 p-7"
+                glow={p.ring}
+              >
                 <span
                   className="absolute right-6 top-6 font-mono text-[11px] tracking-[0.2em] text-ink/35"
                   aria-hidden="true"
