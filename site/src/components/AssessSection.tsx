@@ -109,7 +109,7 @@ export default function AssessSection() {
                       <l.icon size={22} />
                     </span>
                     <div>
-                      <p className="font-mono text-[10.5px] uppercase tracking-[0.24em] text-ink/40">
+                      <p className="font-mono text-[10.5px] uppercase tracking-[0.24em] text-ink/70">
                         lens 0{i + 1}
                       </p>
                       <h3 className="font-display text-[22px] font-semibold text-ocean">

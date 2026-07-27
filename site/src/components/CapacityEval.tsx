@@ -98,7 +98,7 @@ export default function CapacityEval() {
                 <p className="font-mono text-[30px] font-semibold text-ocean">
                   <CountUp to={c.to} suffix={c.suffix} />
                 </p>
-                <p className="mt-2 text-[11.5px] font-medium uppercase tracking-[0.14em] text-ink/55">
+                <p className="mt-2 text-[11.5px] font-medium uppercase tracking-[0.14em] text-ink/70">
                   {c.label}
                 </p>
               </div>
@@ -121,7 +121,7 @@ export default function CapacityEval() {
             copy="Evaluation is not a chapter written at the end. Phronesis wires it across the full lifecycle — formative, process, outcome, summative — so evidence accumulates instead of evaporating."
           />
           <Reveal delay={0.2} className="pb-1">
-            <p className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/45">
+            <p className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/70">
               <ClipboardIcon size={16} className="text-amber" />
               templates included
             </p>
@@ -147,7 +147,7 @@ export default function CapacityEval() {
                   </span>
                   <div className="lg:mt-5">
                     <h3 className="font-display text-[20px] font-semibold text-ocean">{ph.name}</h3>
-                    <p className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-ink/45">
+                    <p className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-ink/70">
                       {ph.when}
                     </p>
                   </div>
@@ -157,7 +157,7 @@ export default function CapacityEval() {
                   {ph.chips.map((c) => (
                     <li
                       key={c}
-                      className="rounded-full border border-ocean/12 bg-white/70 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-ink/55"
+                      className="rounded-full border border-ocean/12 bg-white/70 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-ink/70"
                     >
                       {c}
                     </li>

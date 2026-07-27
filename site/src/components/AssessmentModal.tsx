@@ -174,7 +174,7 @@ export default function AssessmentModal() {
               your free assessment.
             </p>
             {refId !== null && (
-              <p className="mt-4 inline-block rounded-full bg-ocean/5 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink/55">
+              <p className="mt-4 inline-block rounded-full bg-ocean/5 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink/70">
                 reference · PHR-{String(refId).padStart(4, "0")}
               </p>
             )}
@@ -213,7 +213,7 @@ export default function AssessmentModal() {
               <FloatField id="am-email" label="Work email" required type="email" value={form.email} onChange={set("email")} autoComplete="email" placeholder=" " />
               <FloatField id="am-org" label="Organization" value={form.org} onChange={set("org")} autoComplete="organization" placeholder=" " />
               <div>
-                <label htmlFor="am-type" className="mb-1.5 block text-[10px] font-semibold uppercase tracking-[0.14em] text-ink/55">
+                <label htmlFor="am-type" className="mb-1.5 block text-[10px] font-semibold uppercase tracking-[0.14em] text-ink/70">
                   Assessment lens
                 </label>
                 <select id="am-type" value={form.assessmentType} onChange={set("assessmentType")} className={selectCls}>
@@ -228,7 +228,7 @@ export default function AssessmentModal() {
                 <FloatField id="am-pop" label="Population served (e.g. ~180,000 residents, 14 wards)" value={form.population} onChange={set("population")} placeholder=" " />
               </div>
               <div className="sm:col-span-2">
-                <label htmlFor="am-msg" className="mb-1.5 block text-[10px] font-semibold uppercase tracking-[0.14em] text-ink/55">
+                <label htmlFor="am-msg" className="mb-1.5 block text-[10px] font-semibold uppercase tracking-[0.14em] text-ink/70">
                   What should we look at first?
                 </label>
                 <textarea
@@ -257,7 +257,7 @@ export default function AssessmentModal() {
                 {state === "busy" ? "Recording your request…" : "Request my free assessment"}
               </span>
             </button>
-            <p className="mt-3.5 text-center font-mono text-[10px] uppercase tracking-[0.16em] text-ink/40">
+            <p className="mt-3.5 text-center font-mono text-[10px] uppercase tracking-[0.16em] text-ink/70">
               privacy by design · minimum data · never sold
             </p>
           </form>

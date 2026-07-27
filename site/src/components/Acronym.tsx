@@ -144,10 +144,10 @@ export default function Acronym() {
           }
         />
         <Reveal className="hidden items-baseline gap-3 pb-2 md:flex" delay={0.2}>
-          <span className="font-mono text-sm text-ink/50">
+          <span className="font-mono text-sm text-ink/70">
             {String(Math.min(idx + 1, LETTERS.length + 1)).padStart(2, "0")}
           </span>
-          <span className="font-mono text-xs text-ink/35">/ {String(LETTERS.length + 1).padStart(2, "0")}</span>
+          <span className="font-mono text-xs text-ink/70">/ {String(LETTERS.length + 1).padStart(2, "0")}</span>
         </Reveal>
       </div>
 
@@ -180,7 +180,7 @@ export default function Acronym() {
               capacity to judge well in complex, real situations. Public health is not just
               data. It is the wisdom to act on it.
             </p>
-            <p className="mt-8 font-mono text-[10.5px] uppercase tracking-[0.24em] text-ink/40">
+            <p className="mt-8 font-mono text-[10.5px] uppercase tracking-[0.24em] text-ink/70">
               keep scrolling →
             </p>
           </div>
@@ -209,7 +209,7 @@ export default function Acronym() {
                   >
                     {l.letter}
                   </span>
-                  <span className="font-mono text-[11px] uppercase tracking-[0.26em] text-ink/45">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.26em] text-ink/70">
                     {String(i + 1).padStart(2, "0")} · pillar
                   </span>
                 </div>

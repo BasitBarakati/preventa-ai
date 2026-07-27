@@ -91,7 +91,7 @@ export default function Preloader() {
           ))}
         </div>
 
-        <p className="pl-tag mt-3 font-mono text-[10px] uppercase tracking-[0.34em] text-ink/45">
+        <p className="pl-tag mt-3 font-mono text-[10px] uppercase tracking-[0.34em] text-ink/70">
           practical wisdom · loading
         </p>
 

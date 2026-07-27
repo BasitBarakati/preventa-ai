@@ -47,7 +47,7 @@ const DOMAINS: Domain[] = [
           ["literacy", 81, "#1F8A8A"],
         ].map(([label, w, c]) => (
           <div key={label as string} className="flex items-center gap-3">
-            <span className="w-24 font-mono text-[10px] uppercase tracking-[0.12em] text-ink/50">
+            <span className="w-24 font-mono text-[10px] uppercase tracking-[0.12em] text-ink/70">
               {label as string}
             </span>
             <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-ocean/10">
@@ -56,7 +56,7 @@ const DOMAINS: Domain[] = [
                 style={{ width: `${w}%`, backgroundColor: c as string }}
               />
             </span>
-            <span className="font-mono text-[10px] text-ink/55">{w}%</span>
+            <span className="font-mono text-[10px] text-ink/70">{w}%</span>
           </div>
         ))}
       </div>
@@ -95,7 +95,7 @@ const DOMAINS: Domain[] = [
       <ul className="mt-5 space-y-1.5">
         {["universal promotion", "targeted groups", "early intervention", "clinical partnership"].map(
           (tier, i) => (
-            <li key={tier} className="flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink/55">
+            <li key={tier} className="flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink/70">
               <span className="grid h-4 w-4 place-items-center rounded-full bg-teal/15 text-teal">
                 <CheckIcon size={9} />
               </span>
@@ -185,7 +185,7 @@ export default function Wellness() {
               >
                 <span
                   className={`absolute right-6 top-6 font-mono text-[10px] tracking-[0.2em] ${
-                    d.featured ? "text-cream/50" : "text-ink/30"
+                    d.featured ? "text-cream/50" : "text-ink/70"
                   }`}
                   aria-hidden="true"
                 >
@@ -218,7 +218,7 @@ export default function Wellness() {
                   className={`mt-5 inline-flex rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] ${
                     d.featured
                       ? "bg-cream/15 text-cream/85"
-                      : "bg-ocean/5 text-ink/55"
+                      : "bg-ocean/5 text-ink/70"
                   }`}
                 >
                   {d.meta}

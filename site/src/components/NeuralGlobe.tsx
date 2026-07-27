@@ -223,13 +223,20 @@ export default function NeuralGlobe({ className }: { className?: string }) {
       cancelAnimationFrame(raf);
     };
     /* cinematic scroll depth — pulls the globe away and lets it drift as
-       the hero scrolls past. Reads layout each frame (rAF-driven, never a
-       scroll listener) since Lenis intercepts native scroll events. */
+       the hero scrolls past. rAF-driven (never a scroll listener, since
+       Lenis intercepts native scroll events) but the layout read itself
+       is throttled to ~10Hz — calling getBoundingClientRect() every frame
+       forces a synchronous layout flush, which is disastrous while GSAP is
+       simultaneously writing the hero's entrance-animation styles. The
+       scroll-depth value is already exponentially smoothed below, so a
+       throttled read is visually identical to a per-frame one. */
     let scrollDepth = 0;
+    let lastRectTop = 0;
+    let rectFrame = 0;
     const tick = (t: number) => {
       if (!running) return;
-      const rect = host.getBoundingClientRect();
-      const targetDepth = Math.min(1, Math.max(0, -rect.top / window.innerHeight));
+      if (rectFrame++ % 6 === 0) lastRectTop = host.getBoundingClientRect().top;
+      const targetDepth = Math.min(1, Math.max(0, -lastRectTop / window.innerHeight));
       scrollDepth += (targetDepth - scrollDepth) * 0.08;
 
       eased.x += (target.x - eased.x) * 0.045;

@@ -148,7 +148,7 @@ export default function Nav() {
                 {l.flame && <FireIcon size={24} />}
                 {l.label}
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink/40">
+              <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink/70">
                 {l.note}
               </span>
             </a>

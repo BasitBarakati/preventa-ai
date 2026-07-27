@@ -179,7 +179,7 @@ export default function Hero() {
                 <dd className="font-mono text-[26px] font-semibold leading-none text-ocean">
                   <CountUp to={s.to} suffix={s.suffix} />
                 </dd>
-                <dd className="mt-1.5 text-[11.5px] font-medium uppercase tracking-[0.14em] text-ink/55">
+                <dd className="mt-1.5 text-[11.5px] font-medium uppercase tracking-[0.14em] text-ink/70">
                   {s.label}
                 </dd>
               </div>
@@ -228,7 +228,7 @@ export default function Hero() {
                   <EyeIcon size={12} className="text-teal" />
                   {c.title}
                 </span>
-                <span className="font-mono text-[10.5px] text-ink/55">{c.sub}</span>
+                <span className="font-mono text-[10.5px] text-ink/70">{c.sub}</span>
               </span>
             </div>
           ))}
@@ -237,7 +237,7 @@ export default function Hero() {
 
       {/* scroll cue */}
       <div className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/45">
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/70">
           scroll to decode
         </span>
         <span className="relative block h-10 w-px overflow-hidden bg-ocean/15" aria-hidden="true">

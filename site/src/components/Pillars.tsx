@@ -80,7 +80,7 @@ export default function Pillars() {
                 glow={p.ring}
               >
                 <span
-                  className="absolute right-6 top-6 font-mono text-[11px] tracking-[0.2em] text-ink/35"
+                  className="absolute right-6 top-6 font-mono text-[11px] tracking-[0.2em] text-ink/70"
                   aria-hidden="true"
                 >
                   0{i + 1}
@@ -97,7 +97,7 @@ export default function Pillars() {
                 <p className="mt-3 flex-1 text-[13.5px] leading-relaxed text-ink/65">{p.copy}</p>
                 <ul className="mt-6 space-y-2 border-t border-ocean/10 pt-4">
                   {p.points.map((pt) => (
-                    <li key={pt} className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.1em] text-ink/55">
+                    <li key={pt} className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.1em] text-ink/70">
                       <span className="h-1 w-3 rounded-full" style={{ backgroundColor: p.accent }} aria-hidden="true" />
                       {pt}
                     </li>

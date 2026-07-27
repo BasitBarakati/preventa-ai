@@ -301,7 +301,7 @@ export default function SevenFiresPage() {
                 Western knowledges and ways of knowing, and to use both these eyes together,
                 for the benefit of all.&rdquo;
               </p>
-              <footer className="mt-4 font-mono text-[11px] uppercase tracking-[0.16em] text-ink/50">
+              <footer className="mt-4 font-mono text-[11px] uppercase tracking-[0.16em] text-ink/70">
                 — Elders Albert &amp; Murdena Marshall, Mi&apos;kmaw Nation, Unama&apos;ki
               </footer>
             </blockquote>
@@ -343,7 +343,7 @@ export default function SevenFiresPage() {
                   className="flex h-full flex-col rounded-3xl border border-ocean/10 bg-white/70 p-7"
                   glow={t.glow}
                 >
-                  <span className="absolute right-6 top-6 font-mono text-[11px] tracking-[0.2em] text-ink/35" aria-hidden="true">
+                  <span className="absolute right-6 top-6 font-mono text-[11px] tracking-[0.2em] text-ink/70" aria-hidden="true">
                     0{t.letter}
                   </span>
                   <span
@@ -355,7 +355,7 @@ export default function SevenFiresPage() {
                   <h3 className="mt-6 font-display text-[20px] font-semibold text-ocean">
                     {t.name}
                   </h3>
-                  <p className="mt-0.5 font-mono text-[10.5px] uppercase tracking-[0.14em] text-ink/40">
+                  <p className="mt-0.5 font-mono text-[10.5px] uppercase tracking-[0.14em] text-ink/70">
                     {t.ojibwe}
                   </p>
                   <p className="mt-3 flex-1 text-[13px] leading-relaxed text-ink/65">{t.copy}</p>
