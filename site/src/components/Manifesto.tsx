@@ -32,7 +32,7 @@ export default function Manifesto() {
 
         {/* statement */}
         <div>
-          <h2 className="font-display text-[clamp(2.2rem,5.4vw,4.4rem)] leading-[1.08] font-semibold tracking-[-0.02em] text-ocean">
+          <h2 className="font-display text-[clamp(2.6rem,6.4vw,5.6rem)] leading-[1.03] font-semibold tracking-[-0.03em] text-ocean">
             <SplitWords text="Data tells you" />
             <br />
             <SplitWords text="what is happening." delay={0.2} />

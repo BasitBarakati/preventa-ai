@@ -73,7 +73,7 @@ export default function CapacityEval() {
   }, []);
 
   return (
-    <section id="capacity" className="relative overflow-hidden py-28">
+    <section id="capacity" className="relative overflow-hidden py-32">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(50rem_36rem_at_50%_0%,rgba(11,61,95,0.07),transparent_62%)]"
         aria-hidden="true"

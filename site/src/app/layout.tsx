@@ -173,7 +173,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {children}
         <Footer />
         <AssessmentModal />
-        {/* film grain — keeps the gradients honest */}
+        {/* cinematic vignette + film grain — keeps the gradients honest */}
+        <div className="vignette" aria-hidden="true" />
         <div className="grain" aria-hidden="true" />
       </body>
     </html>

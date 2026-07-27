@@ -50,7 +50,7 @@ const PILLARS: Pillar[] = [
 
 export default function Pillars() {
   return (
-    <section id="pillars" className="relative py-28">
+    <section id="pillars" className="relative py-32">
       <div className="wrap">
         <div className="flex flex-wrap items-end justify-between gap-8">
           <SectionHeading

@@ -46,7 +46,7 @@ const LENSES: Lens[] = [
 /** Four assessment lenses — sticky narrative column beside stacking cards. */
 export default function AssessSection() {
   return (
-    <section id="assess" className="relative overflow-hidden py-28">
+    <section id="assess" className="relative overflow-hidden py-32">
       {/* soft backdrop */}
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(50rem_38rem_at_8%_20%,rgba(127,176,105,0.12),transparent_60%),radial-gradient(46rem_34rem_at_95%_75%,rgba(232,168,124,0.12),transparent_62%)]"

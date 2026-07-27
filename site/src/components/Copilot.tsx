@@ -128,7 +128,7 @@ export default function Copilot() {
   const latestAi = [...messages].reverse().find((m) => m.role === "ai" && m.citations);
 
   return (
-    <section id="copilot" className="relative overflow-hidden bg-ocean py-28">
+    <section id="copilot" className="relative overflow-hidden bg-ocean py-32">
       {/* ambient depth */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute inset-0 bg-[radial-gradient(56rem_40rem_at_15%_0%,rgba(31,138,138,0.28),transparent_60%)]" />

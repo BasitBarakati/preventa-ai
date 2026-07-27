@@ -54,7 +54,7 @@ export default function Faq() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="relative overflow-hidden py-28">
+    <section id="faq" className="relative overflow-hidden py-32">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(48rem_36rem_at_92%_15%,rgba(127,176,105,0.10),transparent_60%)]"
         aria-hidden="true"

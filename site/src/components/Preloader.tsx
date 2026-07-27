@@ -48,7 +48,7 @@ export default function Preloader() {
           });
         },
       });
-      tl.from(".pl-mark", { scale: 0.7, opacity: 0, duration: 0.9, ease: "back.out(1.7)" }, 0.1);
+      tl.from(".pl-mark", { scale: 0.82, opacity: 0, duration: 1.1, ease: "back.out(1.15)" }, 0.1);
       tl.from(
         ".pl-letter",
         { yPercent: 125, opacity: 0, duration: 0.7, ease: "power4.out", stagger: 0.055 },

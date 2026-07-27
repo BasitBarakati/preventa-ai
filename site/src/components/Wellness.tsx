@@ -140,7 +140,7 @@ const DOMAINS: Domain[] = [
  *  the terracotta treatment to honour its cultural grounding. */
 export default function Wellness() {
   return (
-    <section id="wellness" className="relative overflow-hidden py-28">
+    <section id="wellness" className="relative overflow-hidden py-32">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(52rem_40rem_at_90%_10%,rgba(195,141,107,0.13),transparent_60%),radial-gradient(44rem_36rem_at_5%_80%,rgba(31,138,138,0.10),transparent_60%)]"
         aria-hidden="true"

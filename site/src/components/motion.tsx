@@ -454,10 +454,10 @@ export function SectionHeading({
           <Scramble text={eyebrow} />
         </span>
       </Reveal>
-      <h2 className="mask-line mt-4">
+      <h2 className="mask-line mt-5">
         <span
           ref={titleRef}
-          className="block font-display text-[clamp(1.9rem,4.2vw,3.1rem)] leading-[1.06] font-semibold tracking-tight text-ocean"
+          className="block font-display text-[clamp(2.15rem,5vw,3.9rem)] leading-[1.02] font-semibold tracking-[-0.02em] text-ocean"
         >
           {title}
         </span>
