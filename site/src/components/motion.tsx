@@ -410,9 +410,9 @@ export function SectionHeading({
 }) {
   const toneClass = {
     teal: "text-teal",
-    amber: "text-amber",
+    amber: "text-amber-ink",
     sage: "text-sage",
-    terra: "text-terra",
+    terra: "text-terra-ink",
   }[tone];
   const barClass = {
     teal: "bg-teal",

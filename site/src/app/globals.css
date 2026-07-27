@@ -5,8 +5,10 @@
   --color-ocean: #0b3d5f; /* deep ocean blue — headings, primary, footer */
   --color-teal: #1f8a8a; /* secondary actions, accents, links */
   --color-sage: #7fb069; /* wellness / growth indicators */
-  --color-amber: #e8a87c; /* CTAs, highlights, energy */
-  --color-terra: #c38d6b; /* land-based wellness, cultural elements */
+  --color-amber: #e8a87c; /* CTAs, highlights, energy — background use only; dark text always sits on top, so it never needs to pass text contrast itself */
+  --color-amber-ink: #a65e2a; /* darkened variant for when amber is the *text* color on a light background (headings, eyebrows, emphasis) — #e8a87c itself is 2:1 against cream, nowhere near WCAG AA */
+  --color-terra: #c38d6b; /* land-based wellness, cultural elements — background/border use, and text on dark (bg-ocean) sections */
+  --color-terra-ink: #92603c; /* darkened variant for when terra is the *text* color on a light background — #c38d6b itself is 2.76:1 against cream, short of WCAG AA */
   --color-cream: #faf7f2; /* warm white backgrounds */
   --color-ink: #1a2530; /* charcoal body text */
 

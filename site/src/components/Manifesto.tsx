@@ -23,7 +23,7 @@ export default function Manifesto() {
         {/* margin rail */}
         <aside className="lg:sticky lg:top-32 lg:self-start">
           <p
-            className="font-mono text-[11px] uppercase tracking-[0.3em] text-terra"
+            className="font-mono text-[11px] uppercase tracking-[0.3em] text-terra-ink"
             style={{ writingMode: "vertical-rl" }}
           >
             the phronesis doctrine · est. on a simple belief

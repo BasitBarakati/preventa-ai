@@ -62,7 +62,7 @@ export default function Nav() {
                 key={l.href}
                 href={resolveHref(l.href)}
                 className={`group relative flex items-center gap-1.5 text-[13.5px] font-medium tracking-wide transition-colors ${
-                  l.flame ? "text-terra hover:text-amber" : "text-ink/75 hover:text-ocean"
+                  l.flame ? "text-terra-ink hover:text-amber-ink" : "text-ink/75 hover:text-ocean"
                 }`}
               >
                 {l.flame && <FireIcon size={13} />}
@@ -142,7 +142,7 @@ export default function Nav() {
             >
               <span
                 className={`flex items-center gap-2.5 font-display text-[clamp(1.8rem,8vw,2.6rem)] font-semibold transition-colors group-active:text-teal ${
-                  l.flame ? "text-terra" : "text-ocean"
+                  l.flame ? "text-terra-ink" : "text-ocean"
                 }`}
               >
                 {l.flame && <FireIcon size={24} />}

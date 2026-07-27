@@ -115,14 +115,14 @@ export default function CapacityEval() {
             tone="amber"
             title={
               <>
-                Rigor at <em className="font-medium text-amber">every phase.</em>
+                Rigor at <em className="font-medium text-amber-ink">every phase.</em>
               </>
             }
             copy="Evaluation is not a chapter written at the end. Phronesis wires it across the full lifecycle — formative, process, outcome, summative — so evidence accumulates instead of evaporating."
           />
           <Reveal delay={0.2} className="pb-1">
             <p className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/70">
-              <ClipboardIcon size={16} className="text-amber" />
+              <ClipboardIcon size={16} className="text-amber-ink" />
               templates included
             </p>
           </Reveal>

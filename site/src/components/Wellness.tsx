@@ -152,15 +152,15 @@ export default function Wellness() {
             tone="terra"
             title={
               <>
-                Nine domains of a <em className="font-medium text-terra">whole life.</em>
+                Nine domains of a <em className="font-medium text-terra-ink">whole life.</em>
               </>
             }
             copy="Wellness is not one program — it is nine interlocking domains. Each module ships with evidence briefs, program templates, indicator sets and equity stratification out of the box."
           />
           <Reveal delay={0.2} className="pb-1">
             <p className="flex items-center gap-3 rounded-full border border-terra/30 bg-terra/10 px-4 py-2">
-              <LeafIcon size={15} className="text-terra" />
-              <span className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-terra">
+              <LeafIcon size={15} className="text-terra-ink" />
+              <span className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-terra-ink">
                 land-based module in terracotta
               </span>
             </p>

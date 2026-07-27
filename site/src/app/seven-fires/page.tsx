@@ -148,20 +148,20 @@ export default function SevenFiresPage() {
         <div className="wrap relative z-10 grid items-center gap-10 lg:grid-cols-[1.04fr_0.96fr]">
           <div>
             <Reveal className="inline-flex items-center gap-3 rounded-full border border-terra/35 bg-terra/10 px-4 py-1.5">
-              <FireIcon size={14} className="text-terra" />
-              <span className="font-mono text-[11px] font-medium uppercase tracking-[0.24em] text-terra">
+              <FireIcon size={14} className="text-terra-ink" />
+              <span className="font-mono text-[11px] font-medium uppercase tracking-[0.24em] text-terra-ink">
                 indigenous-led · community-governed
               </span>
             </Reveal>
 
             <h1 className="mt-6 font-display text-[clamp(2.4rem,5.6vw,4.4rem)] leading-[1.05] font-semibold tracking-[-0.02em] text-ocean">
-              Path of the <em className="font-medium text-terra">Seven Fires.</em>
+              Path of the <em className="font-medium text-terra-ink">Seven Fires.</em>
             </h1>
 
             <p className="mt-7 max-w-xl text-[16.5px] leading-[1.75] text-ink/70">
               A dedicated home, inside Phronesis AI, for First Nations, Inuit and Métis-led
               health promotion — built on the Seven Grandfather Teachings, guided by{" "}
-              <em className="font-display text-terra">Etuaptmumk</em> (Two-Eyed Seeing), and
+              <em className="font-display text-terra-ink">Etuaptmumk</em> (Two-Eyed Seeing), and
               governed at every step by OCAP<sup>®</sup>: the community&apos;s data stays the
               community&apos;s own.
             </p>
@@ -181,7 +181,7 @@ export default function SevenFiresPage() {
               </AssessButton>
               <a
                 href="#teachings"
-                className="group inline-flex items-center gap-2.5 rounded-full border border-ocean/20 bg-white/50 px-7 py-3.5 text-[14.5px] font-semibold text-ocean backdrop-blur transition-all duration-300 hover:border-terra hover:text-terra"
+                className="group inline-flex items-center gap-2.5 rounded-full border border-ocean/20 bg-white/50 px-7 py-3.5 text-[14.5px] font-semibold text-ocean backdrop-blur transition-all duration-300 hover:border-terra hover:text-terra-ink"
               >
                 The Seven Teachings
               </a>
@@ -212,7 +212,7 @@ export default function SevenFiresPage() {
             title={
               <>
                 Named for a prophecy about{" "}
-                <em className="font-medium text-terra">choosing the right road.</em>
+                <em className="font-medium text-terra-ink">choosing the right road.</em>
               </>
             }
             copy="The Seven Fires Prophecy is Anishinaabe teaching: seven epochs leading to a choice between the road of technology taken without wisdom, and the road that keeps wisdom and spirit at the centre. Choosing well, the story says, lights an Eighth Fire of peace, lit together. We take that as instruction, not decoration."
@@ -330,7 +330,7 @@ export default function SevenFiresPage() {
             title={
               <>
                 Seven teachings.{" "}
-                <em className="font-medium text-terra">One platform, held to each.</em>
+                <em className="font-medium text-terra-ink">One platform, held to each.</em>
               </>
             }
             copy="Anishinaabe teaching holds that none of these stand alone — wisdom needs love, bravery needs humility. Every capability on this path is built to answer to all seven together, not just the one it's filed under."
@@ -441,9 +441,9 @@ export default function SevenFiresPage() {
       <section className="relative overflow-hidden py-28">
         <Aurora />
         <div className="wrap relative max-w-2xl text-center">
-          <FireIcon size={34} className="mx-auto text-terra" />
+          <FireIcon size={34} className="mx-auto text-terra-ink" />
           <h2 className="mt-6 font-display text-[clamp(1.9rem,4.4vw,3.2rem)] font-semibold leading-[1.1] text-ocean">
-            Walk this path <em className="font-medium text-terra">with us.</em>
+            Walk this path <em className="font-medium text-terra-ink">with us.</em>
           </h2>
           <p className="mt-5 text-[15.5px] leading-relaxed text-ink/70">
             Tell us about your community, your Nation, or your organization. A practitioner
