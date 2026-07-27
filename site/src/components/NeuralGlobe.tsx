@@ -61,7 +61,7 @@ export default function NeuralGlobe({ className }: { className?: string }) {
       };
 
       /* — node field (fibonacci sphere) — */
-      const N = 430;
+      const N = 260;
       const R = 1.92;
       const golden = Math.PI * (3 - Math.sqrt(5));
       const pts: THREE.Vector3[] = [];
@@ -134,7 +134,7 @@ export default function NeuralGlobe({ className }: { className?: string }) {
       group.add(new THREE.LineSegments(linkGeo, linkMat));
 
       /* — outer dust shell — */
-      const dustN = 260;
+      const dustN = 140;
       const dustPos: number[] = [];
       for (let i = 0; i < dustN; i++) {
         const v = new THREE.Vector3().randomDirection().multiplyScalar(2.5 + Math.random() * 0.9);
@@ -241,8 +241,15 @@ export default function NeuralGlobe({ className }: { className?: string }) {
       let scrollDepth = 0;
       let lastRectTop = 0;
       let rectFrame = 0;
+      let lastRender = 0;
+      const FRAME_INTERVAL = 1000 / 30; // cap to ~30fps — imperceptible for this ambient motion, halves per-frame cost
       const tick = (t: number) => {
         if (!running) return;
+        if (t - lastRender < FRAME_INTERVAL) {
+          raf = requestAnimationFrame(tick);
+          return;
+        }
+        lastRender = t;
         if (rectFrame++ % 6 === 0) lastRectTop = host.getBoundingClientRect().top;
         const targetDepth = Math.min(1, Math.max(0, -lastRectTop / window.innerHeight));
         scrollDepth += (targetDepth - scrollDepth) * 0.08;

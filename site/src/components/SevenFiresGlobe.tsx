@@ -112,7 +112,7 @@ export default function SevenFiresGlobe({ className }: { className?: string }) {
       group.add(hearth);
 
       /* — drifting sparks rising off the path — */
-      const SPARKS = 140;
+      const SPARKS = 80;
       const sparkGeo = new THREE.BufferGeometry();
       const sparkPos = new Float32Array(SPARKS * 3);
       const sparkSpeed = new Float32Array(SPARKS);
@@ -180,8 +180,15 @@ export default function SevenFiresGlobe({ className }: { className?: string }) {
         running = false;
         cancelAnimationFrame(raf);
       };
+      let lastRender = 0;
+      const FRAME_INTERVAL = 1000 / 30; // cap to ~30fps — imperceptible for this ambient motion, halves per-frame cost
       const tick = (t: number) => {
         if (!running) return;
+        if (t - lastRender < FRAME_INTERVAL) {
+          raf = requestAnimationFrame(tick);
+          return;
+        }
+        lastRender = t;
         eased.x += (target.x - eased.x) * 0.045;
         eased.y += (target.y - eased.y) * 0.045;
         group.rotation.y += 0.0018;
