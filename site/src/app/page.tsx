@@ -8,10 +8,6 @@
  * [ ] Wire analytics (Plausible/Fathom) — currently none, by privacy-by-design choice
  * [ ] Rate-limit /api/assessments at the edge for public launch
  */
-import SmoothScroll from "@/components/SmoothScroll";
-import Preloader from "@/components/Preloader";
-import Cursor from "@/components/Cursor";
-import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import Acronym from "@/components/Acronym";
@@ -22,30 +18,20 @@ import Wellness from "@/components/Wellness";
 import CapacityEval from "@/components/CapacityEval";
 import Copilot from "@/components/Copilot";
 import Faq from "@/components/Faq";
-import Footer from "@/components/Footer";
-import AssessmentModal from "@/components/AssessmentModal";
 
 export default function Home() {
   return (
-    <>
-      <Preloader />
-      <Cursor />
-      <SmoothScroll />
-      <Nav />
-      <main>
-        <Hero />
-        <Marquee />
-        <Acronym />
-        <Manifesto />
-        <Pillars />
-        <AssessSection />
-        <Wellness />
-        <CapacityEval />
-        <Copilot />
-        <Faq />
-      </main>
-      <Footer />
-      <AssessmentModal />
-    </>
+    <main>
+      <Hero />
+      <Marquee />
+      <Acronym />
+      <Manifesto />
+      <Pillars />
+      <AssessSection />
+      <Wellness />
+      <CapacityEval />
+      <Copilot />
+      <Faq />
+    </main>
   );
 }

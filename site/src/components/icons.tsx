@@ -202,6 +202,12 @@ export const CheckIcon = ({ size, ...p }: P) => (
   </svg>
 );
 
+export const FireIcon = ({ size, ...p }: P) => (
+  <svg {...base(size)} {...p}>
+    <path d="M12 2.5c1 3-2.5 4.5-2.5 7.5a2.5 2.5 0 0 0 5 0c0-1-.5-1.8-1-2.5 2 1 3.5 3.3 3.5 6a5 5 0 0 1-10 0c0-4.5 3-6 5-11Z" />
+  </svg>
+);
+
 export const ClipboardIcon = ({ size, ...p }: P) => (
   <svg {...base(size)} {...p}>
     <rect x="5.5" y="4.5" width="13" height="16" rx="2" />

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
+import { usePathname } from "next/navigation";
 import { CommunityIcon, EyeIcon, LeafIcon, LockIcon, ShieldIcon } from "./icons";
 import { LogoLockup } from "./Logo";
 
@@ -22,6 +23,7 @@ const PLATFORM = [
   ["Capacity Building", "#capacity"],
   ["Evaluation Lifecycle", "#evaluate"],
   ["AI Co-Pilot", "#copilot"],
+  ["Path of the Seven Fires", "/seven-fires"],
 ];
 
 const PRINCIPLES = [
@@ -147,6 +149,10 @@ function Subscribe() {
 }
 
 export default function Footer() {
+  const pathname = usePathname();
+  const resolveHref = (href: string) =>
+    href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
+
   return (
     <footer id="contact" className="relative overflow-hidden bg-ocean pt-20 pb-10 text-cream">
       <div
@@ -197,7 +203,7 @@ export default function Footer() {
               {PLATFORM.map(([label, href]) => (
                 <li key={label}>
                   <a
-                    href={href}
+                    href={resolveHref(href)}
                     className="text-[13.5px] text-cream/65 transition-colors hover:text-amber"
                   >
                     {label}

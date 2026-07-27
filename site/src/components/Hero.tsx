@@ -15,7 +15,7 @@ const STATS = [
 ];
 
 const CHIPS = [
-  { icon: PulseIcon, title: "Surveillance live", sub: "ward 7 · signal +2.1σ", pos: "top-[8%] -left-2 lg:left-0", delay: "0s" },
+  { icon: PulseIcon, title: "Health Promotion", sub: "upstream · community-led", pos: "top-[8%] -left-2 lg:left-0", delay: "0s" },
   { icon: ShieldIcon, title: "Equity by default", sub: "stratified by design", pos: "top-[38%] -right-2 lg:-right-6", delay: "1.2s" },
   { icon: LockIcon, title: "Privacy by design", sub: "PHIPA · de-identified", pos: "bottom-[10%] left-[6%]", delay: "2.4s" },
 ];
@@ -103,20 +103,20 @@ export default function Hero() {
           <h1 className="mt-6 font-display text-[clamp(2.7rem,6.4vw,5.1rem)] leading-[1.02] font-semibold tracking-[-0.025em] text-ocean">
             <span className="block">
               <span className="mask-line mr-[0.26em] inline-block">
-                <span data-hero-word className="inline-block will-change-transform">Empowering</span>
+                <span data-hero-word className="inline-block will-change-transform">Transforming</span>
               </span>
               <span className="mask-line inline-block">
-                <span data-hero-word className="inline-block will-change-transform">Health.</span>
+                <span data-hero-word className="inline-block will-change-transform">Health</span>
               </span>
             </span>
             <span className="block">
               <span className="mask-line mr-[0.26em] inline-block">
-                <span data-hero-word className="inline-block will-change-transform">Strengthening</span>
+                <span data-hero-word className="inline-block will-change-transform">and</span>
               </span>
               <span className="mask-line inline-block">
                 <span data-hero-word className="inline-block will-change-transform">
                   <em className="relative inline-block font-medium text-teal">
-                    Communities.
+                    Wellness.
                     <svg
                       className="absolute -bottom-2 left-0 w-full"
                       viewBox="0 0 320 14"

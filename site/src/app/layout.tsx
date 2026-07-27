@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
+import Preloader from "@/components/Preloader";
+import Cursor from "@/components/Cursor";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import AssessmentModal from "@/components/AssessmentModal";
 
 /* Phronesis AI type system:
    Fraunces (warm humanist display) · DM Sans (body) · JetBrains Mono (data) */
@@ -53,6 +59,8 @@ export const metadata: Metadata = {
     "health promotion evaluation software",
     "PHIPA compliant health platform",
     "Indigenous data sovereignty health",
+    "Indigenous-led health promotion Canada",
+    "Path of the Seven Fires",
     "Phronesis AI",
   ],
   authors: [{ name: "Phronesis AI" }],
@@ -63,7 +71,7 @@ export const metadata: Metadata = {
     siteName: "Phronesis AI",
     locale: "en_CA",
     url: SITE_URL,
-    title: "Phronesis AI — Empowering Health. Strengthening Communities.",
+    title: "Phronesis AI — Transforming Health and Wellness.",
     description:
       "The AI-powered brain trust bridging evidence-based judgments with public health action. Human-led, AI-assisted, equity by default.",
     // images intentionally omitted — app/opengraph-image.tsx is auto-detected
@@ -105,6 +113,7 @@ const softwareLd = {
     "Nine community wellness modules",
     "Human-led AI co-pilot with auditable evidence retrieval",
     "OCAP, PHIPA, HIPAA and GDPR aligned data governance",
+    "Path of the Seven Fires — Indigenous-led health promotion and community-controlled AI training for First Nations, Inuit and Métis communities",
   ],
   audience: {
     "@type": "Audience",
@@ -118,7 +127,7 @@ const orgLd = {
   name: "Phronesis AI",
   url: SITE_URL,
   logo: `${SITE_URL}/logo.svg`,
-  slogan: "Empowering Health. Strengthening Communities.",
+  slogan: "Transforming Health and Wellness.",
   description:
     "Health intelligence platform bridging evidence-based judgments with public health action, aligned with the WHO, the Ottawa Charter and OCAP principles.",
   foundingDate: "2026",
@@ -157,7 +166,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body>
+        <Preloader />
+        <Cursor />
+        <SmoothScroll />
+        <Nav />
         {children}
+        <Footer />
+        <AssessmentModal />
         {/* film grain — keeps the gradients honest */}
         <div className="grain" aria-hidden="true" />
       </body>

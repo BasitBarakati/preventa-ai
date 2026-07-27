@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Phronesis AI — Empowering Health. Strengthening Communities.";
+export const alt = "Phronesis AI — Transforming Health and Wellness.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -19,7 +19,7 @@ async function loadGoogleFont(family: string, weight: number, text: string) {
 }
 
 const TITLE = "Phronesis AI";
-const TAGLINE = "Empowering Health. Strengthening Communities.";
+const TAGLINE = "Transforming Health and Wellness.";
 
 export default async function OpengraphImage() {
   let fonts: { name: string; data: ArrayBuffer; weight: 600; style: "normal" }[] = [];

@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { LogoLockup } from "./Logo";
 import { useMagnetic } from "./motion";
 import { openAssessment } from "./modalEvents";
+import { FireIcon } from "./icons";
 
 const LINKS = [
   { label: "Assess", href: "#assess", note: "four lenses" },
@@ -11,6 +13,7 @@ const LINKS = [
   { label: "Capacity", href: "#capacity", note: "skills that stay" },
   { label: "Evaluate", href: "#evaluate", note: "four phases" },
   { label: "Co-Pilot", href: "#copilot", note: "ai sandbox" },
+  { label: "Seven Fires", href: "/seven-fires", note: "indigenous-led path", flame: true },
 ];
 
 export default function Nav() {
@@ -18,6 +21,9 @@ export default function Nav() {
   const [progress, setProgress] = useState(0);
   const [open, setOpen] = useState(false);
   const magneticRef = useMagnetic<HTMLButtonElement>(0.3);
+  const pathname = usePathname();
+  const resolveHref = (href: string) =>
+    href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
 
   useEffect(() => {
     const onScroll = () => {
@@ -44,7 +50,7 @@ export default function Nav() {
             scrolled ? "glass py-2" : "border border-transparent py-3"
           }`}
         >
-          <a href="#top" className="group flex items-center" aria-label="Phronesis AI home">
+          <a href={pathname === "/" ? "#top" : "/"} className="group flex items-center" aria-label="Phronesis AI home">
             <span className="transition-transform duration-500 group-hover:scale-105">
               <LogoLockup size={scrolled ? 32 : 36} />
             </span>
@@ -54,11 +60,18 @@ export default function Nav() {
             {LINKS.map((l) => (
               <a
                 key={l.href}
-                href={l.href}
-                className="group relative text-[13.5px] font-medium tracking-wide text-ink/75 transition-colors hover:text-ocean"
+                href={resolveHref(l.href)}
+                className={`group relative flex items-center gap-1.5 text-[13.5px] font-medium tracking-wide transition-colors ${
+                  l.flame ? "text-terra hover:text-amber" : "text-ink/75 hover:text-ocean"
+                }`}
               >
+                {l.flame && <FireIcon size={13} />}
                 {l.label}
-                <span className="absolute -bottom-1 left-1/2 h-[1.5px] w-0 -translate-x-1/2 bg-amber transition-all duration-300 ease-out group-hover:w-full" />
+                <span
+                  className={`absolute -bottom-1 left-1/2 h-[1.5px] w-0 -translate-x-1/2 transition-all duration-300 ease-out group-hover:w-full ${
+                    l.flame ? "bg-terra" : "bg-amber"
+                  }`}
+                />
               </a>
             ))}
           </nav>
@@ -119,7 +132,7 @@ export default function Nav() {
           {LINKS.map((l, i) => (
             <a
               key={l.href}
-              href={l.href}
+              href={resolveHref(l.href)}
               onClick={() => setOpen(false)}
               tabIndex={open ? 0 : -1}
               className={`group flex items-baseline justify-between border-b border-ocean/10 py-5 transition-all duration-500 ${
@@ -127,7 +140,12 @@ export default function Nav() {
               }`}
               style={{ transitionDelay: open ? `${120 + i * 70}ms` : "0ms" }}
             >
-              <span className="font-display text-[clamp(1.8rem,8vw,2.6rem)] font-semibold text-ocean transition-colors group-active:text-teal">
+              <span
+                className={`flex items-center gap-2.5 font-display text-[clamp(1.8rem,8vw,2.6rem)] font-semibold transition-colors group-active:text-teal ${
+                  l.flame ? "text-terra" : "text-ocean"
+                }`}
+              >
+                {l.flame && <FireIcon size={24} />}
                 {l.label}
               </span>
               <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink/40">
