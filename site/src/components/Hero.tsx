@@ -2,22 +2,17 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import NeuralGlobe from "./NeuralGlobe";
+import LogoGlobe from "./LogoGlobe";
+import OrbitRing from "./OrbitRing";
 import { CountUp, Parallax, Scramble, useMagnetic } from "./motion";
 import { openAssessment } from "./modalEvents";
-import { ArrowIcon, EyeIcon, LockIcon, PulseIcon, ShieldIcon } from "./icons";
+import { ArrowIcon } from "./icons";
 
 const STATS = [
   { to: 9, suffix: "", label: "wellness domains" },
   { to: 4, suffix: "", label: "assessment lenses" },
   { to: 6, suffix: "", label: "functions strengthened" },
   { to: 100, suffix: "%", label: "human-led decisions" },
-];
-
-const CHIPS = [
-  { icon: PulseIcon, title: "Health Promotion", sub: "upstream · community-led", pos: "top-[8%] -left-2 lg:left-0", delay: "0s" },
-  { icon: ShieldIcon, title: "Equity by default", sub: "stratified by design", pos: "top-[38%] -right-2 lg:-right-6", delay: "1.2s" },
-  { icon: LockIcon, title: "Privacy by design", sub: "PHIPA · de-identified", pos: "bottom-[10%] left-[6%]", delay: "2.4s" },
 ];
 
 export default function Hero() {
@@ -46,11 +41,6 @@ export default function Hero() {
           "[data-hero-word]",
           { yPercent: 118 },
           { yPercent: 0, duration: 1.05, ease: "power4.out", stagger: 0.07, delay: 0.2 },
-        );
-        gsap.fromTo(
-          ".hero-chip",
-          { y: 16, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1.1, ease: "power3.out", stagger: 0.16, delay: 0.9 },
         );
       }, root);
     };
@@ -187,8 +177,11 @@ export default function Hero() {
           </dl>
         </div>
 
-        {/* ————— Right: neural globe + floating evidence chips ————— */}
-        <div className="hero-el relative mx-auto h-[420px] w-full max-w-[620px] sm:h-[520px] lg:h-[680px] lg:max-w-none lg:-mr-8 xl:-mr-16">
+        {/* ————— Right: 3D brandmark + orbiting pillar ring ————— */}
+        <div
+          className="hero-el relative mx-auto h-[420px] w-full max-w-[620px] sm:h-[520px] lg:h-[680px] lg:max-w-none lg:-mr-8 xl:-mr-16"
+          data-cursor-text="Explore"
+        >
           {/* breathing halo */}
           <div
             className="breathe absolute left-1/2 top-1/2 h-[78%] w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(31,138,138,0.22),rgba(232,168,124,0.10)_55%,transparent_72%)]"
@@ -207,31 +200,14 @@ export default function Hero() {
               aria-hidden="true"
             />
           </Parallax>
-          <NeuralGlobe className="h-full w-full" />
+          <LogoGlobe className="h-full w-full" />
+          <OrbitRing />
           <p className="sr-only">
-            Interactive 3D visualization of a neural globe: hundreds of connected nodes
-            representing global population health networks, rotating gently and responding to
-            your cursor. It is decorative and carries no information.
+            Interactive 3D visualization of the Phronesis AI brandmark — the brain-and-tree
+            emblem rendered in three dimensions, rotating gently and responding to your cursor —
+            orbited by nine linked nodes, one for each pillar of the PHRONESIS framework. Each
+            orbiting node links to its full description in the pillars section below.
           </p>
-
-          {CHIPS.map((c) => (
-            <div
-              key={c.title}
-              className={`hero-chip glass absolute ${c.pos} flex items-center gap-3 rounded-2xl px-4 py-3`}
-              style={{ animationDelay: c.delay }}
-            >
-              <span className="floaty grid h-9 w-9 place-items-center rounded-xl bg-ocean text-amber" style={{ animationDelay: c.delay }}>
-                <c.icon size={17} />
-              </span>
-              <span>
-                <span className="flex items-center gap-1.5 text-[12.5px] font-semibold text-ocean">
-                  <EyeIcon size={12} className="text-teal" />
-                  {c.title}
-                </span>
-                <span className="font-mono text-[10.5px] text-ink/70">{c.sub}</span>
-              </span>
-            </div>
-          ))}
         </div>
       </div>
 

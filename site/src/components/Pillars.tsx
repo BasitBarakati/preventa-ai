@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { Reveal, SectionHeading, TiltCard } from "./motion";
+import { FlipReveal, Reveal, SectionHeading, TiltCard } from "./motion";
 import { BookIcon, ChartIcon, CompassIcon, NetworkIcon } from "./icons";
 
 type Pillar = {
@@ -74,9 +74,9 @@ export default function Pillars() {
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {PILLARS.map((p, i) => (
-            <Reveal key={p.title} delay={i * 0.09} className="group h-full">
+            <FlipReveal key={p.title} delay={i * 0.09} className="group h-full">
               <TiltCard
-                className="flex h-full flex-col rounded-3xl border border-ocean/10 bg-white/70 p-7"
+                className="sheen flex h-full flex-col rounded-3xl border border-ocean/10 bg-white/70 p-7"
                 glow={p.ring}
               >
                 <span
@@ -104,7 +104,7 @@ export default function Pillars() {
                   ))}
                 </ul>
               </TiltCard>
-            </Reveal>
+            </FlipReveal>
           ))}
         </div>
       </div>

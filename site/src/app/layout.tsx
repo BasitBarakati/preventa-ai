@@ -8,6 +8,7 @@ import Cursor from "@/components/Cursor";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import AssessmentModal from "@/components/AssessmentModal";
+import RouteTransition from "@/components/RouteTransition";
 
 /* Phronesis AI type system:
    Fraunces (warm humanist display) · DM Sans (body) · JetBrains Mono (data) */
@@ -167,6 +168,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <Preloader />
+        <RouteTransition />
         <Cursor />
         <SmoothScroll />
         <Nav />

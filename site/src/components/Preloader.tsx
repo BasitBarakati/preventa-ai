@@ -11,8 +11,9 @@ if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 const LETTERS = ["P", "H", "R", "O", "N", "E", "S", "I", "S"];
 
 /**
- * Cinematic splash — warm-white stage, the brain-tree mark settles in,
- * P·H·R·O·N·E·S·I·S rises letter by letter behind a drawing hairline,
+ * Cinematic splash — warm-white stage, the brain-tree mark draws itself on
+ * stroke by stroke then its nodes/leaves pop in, P·H·R·O·N·E·S·I·S rises
+ * letter by letter behind a drawing hairline,
  * then the curtain lifts and `phronesis:ready` fires so the hero choreography
  * begins in perfect sync. Skipped entirely under prefers-reduced-motion.
  */
@@ -48,7 +49,6 @@ export default function Preloader() {
           });
         },
       });
-      tl.from(".pl-mark", { scale: 0.82, opacity: 0, duration: 1.1, ease: "back.out(1.15)" }, 0.1);
       tl.from(
         ".pl-letter",
         { yPercent: 125, opacity: 0, duration: 0.7, ease: "power4.out", stagger: 0.055 },
@@ -75,7 +75,7 @@ export default function Preloader() {
     >
       <div className="flex flex-col items-center">
         <span className="pl-mark">
-          <LogoIcon size={64} />
+          <LogoIcon size={64} animated />
         </span>
 
         <div className="mt-6 flex items-baseline gap-[0.18em]" aria-hidden="true">

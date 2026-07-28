@@ -192,8 +192,16 @@ body.preload-lock {
   width: max-content;
   animation: marquee 30s linear infinite;
 }
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.marquee-track-reverse {
+  animation-name: marquee-reverse;
 }
 
 @keyframes floaty {
@@ -290,6 +298,55 @@ body.preload-lock {
   animation: draw 0.7s ease-out forwards;
 }
 
+/* Staggered slide-in for the Co-Pilot's evidence-trail citations */
+@keyframes citation-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.citation-in {
+  animation: citation-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Odometer-style digit roll for CountUp — each tick slides the new value
+   up into place instead of just replacing text flatly */
+@keyframes count-roll {
+  from {
+    transform: translateY(0.4em);
+    opacity: 0.3;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.count-roll {
+  animation: count-roll 0.16s ease-out;
+}
+
+/* Pop the brandmark's filled dots/leaves in after its strokes draw on */
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.pop-in {
+  opacity: 0;
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: pop-in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
 /* Hardware-acceleration discipline — only where GSAP animates */
 .hero-chip,
 [data-hero-word],
@@ -306,11 +363,18 @@ body.preload-lock {
   .caret::after,
   .shake,
   .draw-check,
-  .draw-ring {
+  .draw-ring,
+  .pop-in,
+  .count-roll,
+  .citation-in {
     animation: none !important;
   }
   .draw-check,
   .draw-ring {
     stroke-dashoffset: 0;
+  }
+  .pop-in {
+    opacity: 1;
+    transform: none;
   }
 }

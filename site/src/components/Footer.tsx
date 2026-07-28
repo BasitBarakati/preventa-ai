@@ -116,7 +116,7 @@ function Subscribe() {
             if (state !== "idle") setState("idle");
           }}
           placeholder="you@healthunit.ca"
-          className="w-full rounded-full border border-cream/20 bg-cream/[0.07] px-4 py-2.5 text-[13px] text-cream placeholder:text-cream/35 focus:border-amber focus:outline-none"
+          className="w-full rounded-full border border-cream/20 bg-cream/[0.07] px-4 py-2.5 text-[13px] text-cream placeholder:text-cream/35 transition-shadow duration-300 focus:border-amber focus:shadow-[0_0_0_4px_rgba(232,168,124,0.25)] focus:outline-none"
         />
         <button
           type="submit"
@@ -160,19 +160,25 @@ export default function Footer() {
         aria-hidden="true"
       />
       <div className="wrap relative">
-        {/* acronym ribbon */}
-        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 border-b border-cream/10 pb-8" aria-label="PHRONESIS acronym">
-          {LETTERS.map(([l, c], i) => (
-            <span key={`${l}-${i}`} className="flex items-center gap-2.5">
-              <span className="font-display text-[26px] leading-none font-bold" style={{ color: c }}>
-                {l}
-              </span>
-              {i < LETTERS.length - 1 && <span className="h-1 w-1 rounded-full bg-cream/25" aria-hidden="true" />}
-            </span>
-          ))}
-          <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.22em] text-cream/40">
-            · practical wisdom, operationalized
-          </span>
+        {/* acronym ribbon — a slow bookend marquee echoing the site's opening ticker */}
+        <div className="overflow-hidden border-b border-cream/10 pb-8" aria-label="PHRONESIS acronym">
+          <div className="marquee-track" style={{ animationDuration: "38s" }}>
+            {[0, 1].map((dup) => (
+              <div key={dup} className="flex shrink-0 items-center gap-x-3.5" aria-hidden={dup === 1}>
+                {LETTERS.map(([l, c], i) => (
+                  <span key={`${dup}-${l}-${i}`} className="flex items-center gap-3.5">
+                    <span className="font-display text-[26px] leading-none font-bold" style={{ color: c }}>
+                      {l}
+                    </span>
+                    <span className="h-1 w-1 rounded-full bg-cream/25" aria-hidden="true" />
+                  </span>
+                ))}
+                <span className="mr-3.5 font-mono text-[10px] uppercase tracking-[0.22em] text-cream/40">
+                  practical wisdom, operationalized ·
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="grid gap-12 py-12 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr_1fr]">

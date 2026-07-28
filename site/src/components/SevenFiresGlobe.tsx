@@ -258,7 +258,7 @@ export default function SevenFiresGlobe({ className }: { className?: string }) {
       };
     };
 
-    /* Defer the scene construction (see NeuralGlobe.tsx for the measured
+    /* Defer the scene construction (see LogoGlobe.tsx for the measured
        rationale — a single synchronous WebGL scene build on mount produced
        a multi-second main-thread task that tanked FCP/LCP/TBT). */
     type IdleWindow = Window & {

@@ -15,6 +15,19 @@ type Msg = {
   verify?: Verify;
 };
 
+/** Fixed positions/timing so the drift is stable across renders — echoes
+ *  the hero brandmark's node field on this section's dark background. */
+const PARTICLES = [
+  { x: "8%", y: "18%", s: 5, c: "#1F8A8A", o: 0.5, d: 7.5, delay: 0 },
+  { x: "22%", y: "62%", s: 3, c: "#E8A87C", o: 0.45, d: 8.5, delay: 1.2 },
+  { x: "38%", y: "12%", s: 4, c: "#7FB069", o: 0.4, d: 6.8, delay: 2.4 },
+  { x: "61%", y: "78%", s: 3, c: "#1F8A8A", o: 0.5, d: 9, delay: 0.6 },
+  { x: "74%", y: "30%", s: 5, c: "#E8A87C", o: 0.35, d: 7.8, delay: 3.1 },
+  { x: "85%", y: "60%", s: 3, c: "#7FB069", o: 0.45, d: 8.2, delay: 1.8 },
+  { x: "48%", y: "88%", s: 4, c: "#1F8A8A", o: 0.4, d: 7.2, delay: 4 },
+  { x: "92%", y: "15%", s: 3, c: "#E8A87C", o: 0.5, d: 8.8, delay: 2.9 },
+];
+
 const GUARDRAILS = [
   { icon: LockIcon, label: "De-identified inputs · PHIPA scope" },
   { icon: EyeIcon, label: "Retrieval you can audit, source by source" },
@@ -134,6 +147,14 @@ export default function Copilot() {
         <div className="absolute inset-0 bg-[radial-gradient(56rem_40rem_at_15%_0%,rgba(31,138,138,0.28),transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(48rem_36rem_at_90%_100%,rgba(232,168,124,0.16),transparent_60%)]" />
         <div className="absolute inset-0 opacity-[0.25] [background-image:linear-gradient(rgba(250,247,242,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(250,247,242,0.05)_1px,transparent_1px)] [background-size:64px_64px]" />
+        {/* particle drift — echoes the hero mark's node field on this dark section */}
+        {PARTICLES.map((p, i) => (
+          <span
+            key={i}
+            className="floaty absolute rounded-full"
+            style={{ left: p.x, top: p.y, width: p.s, height: p.s, background: p.c, opacity: p.o, animationDuration: `${p.d}s`, animationDelay: `${p.delay}s` }}
+          />
+        ))}
       </div>
 
       <div className="wrap relative">
@@ -297,7 +318,8 @@ export default function Copilot() {
                 {(latestAi?.citations ?? OPENING.citations ?? []).map((c, i) => (
                   <div
                     key={`${latestAi?.id ?? 0}-${c}`}
-                    className="group flex gap-3 rounded-xl border border-cream/10 bg-cream/[0.04] p-3.5 transition-colors hover:border-teal/40"
+                    className="citation-in group flex gap-3 rounded-xl border border-cream/10 bg-cream/[0.04] p-3.5 transition-colors hover:border-teal/40"
+                    style={{ animationDelay: `${i * 0.09}s` }}
                   >
                     <span className="font-mono text-[11px] font-semibold text-amber">
                       [{i + 1}]

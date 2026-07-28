@@ -1,6 +1,8 @@
 "use client";
 
-import { Reveal, SectionHeading } from "./motion";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { Reveal, SectionHeading, usePrefersReducedMotion } from "./motion";
 import { openAssessment } from "./modalEvents";
 import { ArrowIcon, BuildingIcon, CommunityIcon, FamilyIcon, PersonIcon } from "./icons";
 
@@ -45,6 +47,29 @@ const LENSES: Lens[] = [
 
 /** Four assessment lenses — sticky narrative column beside stacking cards. */
 export default function AssessSection() {
+  const stackRef = useRef<HTMLDivElement>(null);
+  const threadRef = useRef<HTMLDivElement>(null);
+  const reduced = usePrefersReducedMotion();
+
+  /* a thread draws down through the four lens cards as you scroll past
+     them — stitching individual assessment lenses into one evidence
+     engine, the same idea the copy above is making in words. */
+  useEffect(() => {
+    if (reduced) return;
+    const stack = stackRef.current;
+    const thread = threadRef.current;
+    if (!stack || !thread) return;
+    const tween = gsap.fromTo(
+      thread,
+      { scaleY: 0 },
+      { scaleY: 1, ease: "none", scrollTrigger: { trigger: stack, start: "top 70%", end: "bottom 75%", scrub: 0.6 } },
+    );
+    return () => {
+      tween.scrollTrigger?.kill();
+      tween.kill();
+    };
+  }, [reduced]);
+
   return (
     <section id="assess" className="relative overflow-hidden py-32">
       {/* soft backdrop */}
@@ -88,7 +113,12 @@ export default function AssessSection() {
         </div>
 
         {/* stacking lens cards */}
-        <div className="space-y-6">
+        <div ref={stackRef} className="relative space-y-6">
+          <div
+            ref={threadRef}
+            className="pointer-events-none absolute left-[26px] top-6 hidden h-[calc(100%-3rem)] w-[2px] origin-top rounded-full bg-gradient-to-b from-sage via-teal to-ocean sm:block"
+            aria-hidden="true"
+          />
           {LENSES.map((l, i) => (
             <Reveal key={l.title} delay={i * 0.06}>
               <article

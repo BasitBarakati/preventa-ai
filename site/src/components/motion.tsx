@@ -75,6 +75,51 @@ export function Reveal({
   );
 }
 
+/** Scroll-triggered 3D flip-up — card tilts in from rotateX(90deg) rather
+ *  than a plain fade. Same reduced-motion guarantee as Reveal: content is
+ *  visible by default, GSAP only animates *from* the hidden state. */
+export function FlipReveal({
+  children,
+  className,
+  delay = 0,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    el.style.transformOrigin = "50% 100%";
+    const tween = gsap.fromTo(
+      el,
+      { rotateX: 82, y: 26, opacity: 0 },
+      {
+        rotateX: 0,
+        y: 0,
+        opacity: 1,
+        duration: 0.85,
+        delay,
+        ease: "power3.out",
+        scrollTrigger: { trigger: el, start: "top 88%", once: true },
+      },
+    );
+    return () => {
+      tween.scrollTrigger?.kill();
+      tween.kill();
+    };
+  }, [delay]);
+  return (
+    <div className={className} style={{ perspective: 1200 }}>
+      <div ref={ref} className="h-full">
+        {children}
+      </div>
+    </div>
+  );
+}
+
 /** Animated integer count-up when scrolled into view. */
 export function CountUp({
   to,
@@ -109,9 +154,11 @@ export function CountUp({
     };
   }, [to, duration, reduced]);
   return (
-    <span ref={ref} className={className}>
+    <span ref={ref} className={`inline-flex overflow-hidden ${className ?? ""}`}>
       {prefix}
-      {reduced ? to : val}
+      <span key={reduced ? "final" : val} className="count-roll inline-block tabular-nums">
+        {reduced ? to : val}
+      </span>
       {suffix}
     </span>
   );

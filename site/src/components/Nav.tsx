@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { LogoLockup } from "./Logo";
-import { useMagnetic } from "./motion";
+import { useMagnetic, usePrefersReducedMotion } from "./motion";
 import { openAssessment } from "./modalEvents";
 import { FireIcon } from "./icons";
 
@@ -16,25 +16,79 @@ const LINKS = [
   { label: "Seven Fires", href: "/seven-fires", note: "indigenous-led path", flame: true },
 ];
 
+const SECTION_IDS = LINKS.filter((l) => l.href.startsWith("#")).map((l) => l.href.slice(1));
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [active, setActive] = useState<string | null>(null);
+  const [indicator, setIndicator] = useState({ left: 0, width: 0, opacity: 0 });
   const magneticRef = useMagnetic<HTMLButtonElement>(0.3);
+  const reduced = usePrefersReducedMotion();
+  const navRef = useRef<HTMLElement>(null);
+  const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
   const pathname = usePathname();
   const resolveHref = (href: string) =>
     href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
 
+  /* rAF-polled, not a scroll listener — Lenis doesn't reliably emit native
+     "scroll" events (see the smooth-scroll gotcha this project already hit
+     with a frozen counter), so every other scroll-linked effect here reads
+     position directly on the frame instead of waiting for an event. */
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 24);
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(max > 0 ? window.scrollY / max : 0);
+    let raf = 0;
+    let lastY = window.scrollY;
+    let lastCheck = 0;
+    const CHECK_INTERVAL = 100;
+    const poll = (t: number) => {
+      if (t - lastCheck >= CHECK_INTERVAL) {
+        lastCheck = t;
+        const y = window.scrollY;
+        setScrolled(y > 24);
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        setProgress(max > 0 ? y / max : 0);
+        setHidden(!reduced && y > lastY && y > 140);
+        lastY = y;
+      }
+      raf = requestAnimationFrame(poll);
     };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    raf = requestAnimationFrame(poll);
+    return () => cancelAnimationFrame(raf);
+  }, [reduced]);
+
+  /* active-section tracking — drives the sliding nav indicator */
+  useEffect(() => {
+    if (pathname !== "/") {
+      setActive(null);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) setActive(visible[0].target.id);
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] },
+    );
+    SECTION_IDS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  useEffect(() => {
+    const linkEl = active ? linkRefs.current[active] : null;
+    const navEl = navRef.current;
+    if (!linkEl || !navEl) {
+      setIndicator((s) => ({ ...s, opacity: 0 }));
+      return;
+    }
+    const linkRect = linkEl.getBoundingClientRect();
+    const navRect = navEl.getBoundingClientRect();
+    setIndicator({ left: linkRect.left - navRect.left, width: linkRect.width, opacity: 1 });
+  }, [active, scrolled]);
 
   /* lock scroll while the mobile overlay is open */
   useEffect(() => {
@@ -43,7 +97,11 @@ export default function Nav() {
   }, [open]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)]">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)] transition-transform duration-500 ease-out ${
+        hidden && !open ? "-translate-y-[130%]" : "translate-y-0"
+      }`}
+    >
       <div className={`transition-all duration-500 ${scrolled ? "py-2" : "py-4"}`}>
         <div
           className={`wrap flex items-center justify-between rounded-full px-5 transition-all duration-500 ${
@@ -56,10 +114,13 @@ export default function Nav() {
             </span>
           </a>
 
-          <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+          <nav ref={navRef} className="relative hidden items-center gap-7 lg:flex" aria-label="Primary">
             {LINKS.map((l) => (
               <a
                 key={l.href}
+                ref={(el) => {
+                  linkRefs.current[l.href.replace("#", "")] = el;
+                }}
                 href={resolveHref(l.href)}
                 className={`group relative flex items-center gap-1.5 text-[13.5px] font-medium tracking-wide transition-colors ${
                   l.flame ? "text-terra-ink hover:text-amber-ink" : "text-ink/75 hover:text-ocean"
@@ -74,6 +135,12 @@ export default function Nav() {
                 />
               </a>
             ))}
+            {/* sliding active-section indicator */}
+            <span
+              className={`pointer-events-none absolute -bottom-2.5 h-[2px] rounded-full bg-teal ease-out ${reduced ? "" : "transition-all duration-400"}`}
+              style={{ left: indicator.left, width: indicator.width, opacity: indicator.opacity }}
+              aria-hidden="true"
+            />
           </nav>
 
           <div className="flex items-center gap-3">

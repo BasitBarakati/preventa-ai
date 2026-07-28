@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { Reveal, SectionHeading, TiltCard } from "./motion";
+import { Aurora, Reveal, SectionHeading, TiltCard } from "./motion";
 import {
   AppleIcon,
   CheckIcon,
@@ -176,53 +176,56 @@ export default function Wellness() {
               className="group mb-5 break-inside-avoid"
             >
               <TiltCard
-                className={`rounded-3xl border p-7 ${
+                className={`sheen rounded-3xl border p-7 ${
                   d.featured
                     ? "border-terra/40 bg-terra text-cream shadow-[0_30px_60px_-28px_rgba(195,141,107,0.6)]"
                     : "border-ocean/10 bg-white/75"
                 }`}
                 glow={d.featured ? "" : "hover:shadow-[0_30px_60px_-30px_rgba(11,61,95,0.35)]"}
               >
-                <span
-                  className={`absolute right-6 top-6 font-mono text-[10px] tracking-[0.2em] ${
-                    d.featured ? "text-cream/50" : "text-ink/70"
-                  }`}
-                  aria-hidden="true"
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span
-                  className={`grid h-11 w-11 place-items-center rounded-2xl transition-transform duration-500 group-hover:-rotate-6 ${
-                    d.featured ? "bg-cream/15 text-cream" : "text-cream"
-                  }`}
-                  style={d.featured ? undefined : { backgroundColor: d.accent }}
-                >
-                  {d.icon}
-                </span>
-                <h3
-                  className={`mt-5 font-display text-[19px] font-semibold ${
-                    d.featured ? "text-cream" : "text-ocean"
-                  }`}
-                >
-                  {d.title}
-                </h3>
-                <p
-                  className={`mt-3 text-[13.5px] leading-relaxed ${
-                    d.featured ? "text-cream/85" : "text-ink/65"
-                  }`}
-                >
-                  {d.copy}
-                </p>
-                {d.extra}
-                <p
-                  className={`mt-5 inline-flex rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] ${
-                    d.featured
-                      ? "bg-cream/15 text-cream/85"
-                      : "bg-ocean/5 text-ink/70"
-                  }`}
-                >
-                  {d.meta}
-                </p>
+                {d.featured && <Aurora className="z-0 opacity-60" />}
+                <div className="relative z-10">
+                  <span
+                    className={`absolute right-6 top-6 font-mono text-[10px] tracking-[0.2em] ${
+                      d.featured ? "text-cream/50" : "text-ink/70"
+                    }`}
+                    aria-hidden="true"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span
+                    className={`grid h-11 w-11 place-items-center rounded-2xl transition-transform duration-500 group-hover:-rotate-6 ${
+                      d.featured ? "bg-cream/15 text-cream" : "text-cream"
+                    }`}
+                    style={d.featured ? undefined : { backgroundColor: d.accent }}
+                  >
+                    {d.icon}
+                  </span>
+                  <h3
+                    className={`mt-5 font-display text-[19px] font-semibold ${
+                      d.featured ? "text-cream" : "text-ocean"
+                    }`}
+                  >
+                    {d.title}
+                  </h3>
+                  <p
+                    className={`mt-3 text-[13.5px] leading-relaxed ${
+                      d.featured ? "text-cream/85" : "text-ink/65"
+                    }`}
+                  >
+                    {d.copy}
+                  </p>
+                  {d.extra}
+                  <p
+                    className={`mt-5 inline-flex rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] ${
+                      d.featured
+                        ? "bg-cream/15 text-cream/85"
+                        : "bg-ocean/5 text-ink/70"
+                    }`}
+                  >
+                    {d.meta}
+                  </p>
+                </div>
               </TiltCard>
             </Reveal>
           ))}
