@@ -1,0 +1,36 @@
+# PREVENTA AI
+
+> Preventa AI is an AI-enabled public-health transformation platform that connects responsible artificial intelligence, situation assessment, evidence, research tools, dashboards, and workforce learning. From public-health intelligence to practical action.
+
+Preventa AI serves four audiences — individuals and families, public-health professionals, community leaders (including Indigenous leadership), and health organizations and systems — through five connected pillars. Every workflow pairs a knowledge layer (what and why), a tool layer (interactive AI-assisted instruments), and an action layer (reports, plans, referrals, dashboards), so people leave with next steps, not just information. The current public site is a preview: interactive tools run locally in the browser where they can remain safe, and are clearly labelled where a secure backend service is not yet connected. Nothing on the platform provides a medical diagnosis or individualized clinical advice.
+
+## Platform pillars
+
+- [Platform overview](https://preventa.ai/platform): The five connected public-health capabilities and how they fit together.
+- [Situation Assessment](https://preventa.ai/platform/situation-assessment): Structured assessment for individuals, communities, and organizations.
+- [Health and AI Implementation](https://preventa.ai/platform/health-and-ai-implementation): Responsible AI applied to transformation, mental wellbeing, substance use, healthy environments, healthy sexuality, and immunization.
+- [Indigenous Health and Wellbeing](https://preventa.ai/indigenous-health): Community-governed, culturally safe approaches grounded in wholistic health, land, culture, and social determinants — designed with OCAP® principles and Two-Eyed Seeing, and does not speak on behalf of any Nation or community.
+- [AI in Research and Risk Prediction](https://preventa.ai/research): Evidence synthesis, responsible population-level modelling, validation, and bias/fairness review, with human verification at every consequential step.
+- [Courses and Workforce Learning](https://preventa.ai/courses): Structured, role-aware public-health AI courses, exercises, and certificates.
+
+## Assessment tools
+
+- [Individual & Family Wellbeing](https://preventa.ai/situation-assessment/individual-and-family): A private, HBM-structured self-reflection across six wellbeing domains (physical activity, healthy eating, smoking, alcohol and substance use, sleep, stress and coping). Not a medical diagnosis.
+- [Community Assessment](https://preventa.ai/situation-assessment/community): Risks, protective factors, priorities, assets, equity considerations, partners, services, and program-gap analysis.
+- [Organization Assessment](https://preventa.ai/situation-assessment/organization): Workforce culture, psychological safety, leadership trust, change readiness, and AI-implementation readiness.
+- [Dashboards & Data](https://preventa.ai/dashboards-and-data): Accessible dashboards that separate source data, interpretation, uncertainty, and recommended next steps.
+- [Public Health AI Assistant](https://preventa.ai/ai-assistant): A retrieval-grounded assistant concept with visible citations, stated limitations, and human escalation paths. Does not diagnose or provide emergency support.
+
+## Governance and trust
+
+- [Governance & Ethics](https://preventa.ai/governance-and-ethics): Human accountability, intended-use controls, evidence standards, risk classification, and Indigenous data governance.
+- [AI Transparency](https://preventa.ai/ai-transparency): How AI is disclosed, sourced, limited, reviewed, and escalated.
+- [Privacy](https://preventa.ai/privacy): Data minimization, anonymous assessment option, and design intended to support PHIPA- and PIPEDA-aligned implementation (formal compliance depends on deployment, contracts, and legal review).
+- [Accessibility](https://preventa.ai/accessibility): WCAG 2.1 AA target, keyboard access, reduced motion, plain language, and printable reports.
+
+## Optional
+
+- [About](https://preventa.ai/about): What Preventa AI is and who it is being built for.
+- [Partnerships](https://preventa.ai/partnerships): Co-design, research collaboration, and implementation pilots.
+- [Resources & Toolkits](https://preventa.ai/resources): Assessment guides, governance checklists, and plain-language explainers.
+- [Contact & Early Access](https://preventa.ai/contact): Request early access, a demonstration, or a partnership conversation. Never submit personal health information through this form.

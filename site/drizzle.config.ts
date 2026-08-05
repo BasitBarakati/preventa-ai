@@ -8,7 +8,7 @@ if (!process.env.DATABASE_URL) {
 export default defineConfig({
   dialect: "postgresql",
   schema: "./src/db/schema.ts",
-  schemaFilter: ["phronesis_ai"],
+  schemaFilter: ["preventa_ai"],
   dbCredentials: {
     url: process.env.DATABASE_URL,
   },

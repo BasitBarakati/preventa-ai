@@ -1,28 +1,24 @@
 import { pgSchema, serial, text, timestamp } from "drizzle-orm/pg-core";
 
 /**
- * Dedicated Postgres schema for Phronesis AI. This app shares a Supabase
- * instance with other projects on the same account, so all Phronesis
- * tables live under their own schema for clean logical separation —
- * no risk of name collisions with unrelated products' tables.
+ * Dedicated Postgres schema for PREVENTA AI. The public website stores only
+ * minimal contact-request data; product and health-data schemas are not part
+ * of this public implementation.
  */
-export const phronesis = pgSchema("phronesis_ai");
+export const preventa = pgSchema("preventa_ai");
 
 /**
- * Inquiries — every "Start Free Assessment" request and footer newsletter
- * subscription lands here. `kind` distinguishes the two flows so the
- * waitlist counter and CRM exports can split them cleanly.
+ * Human-reviewed access, demo, partnership, and governance requests.
+ * Do not add health or patient fields to this table.
  */
-export const inquiries = phronesis.table("inquiries", {
+export const inquiries = preventa.table("inquiries", {
   id: serial("id").primaryKey(),
-  kind: text("kind").notNull().default("assessment"), // "assessment" | "subscribe"
+  kind: text("kind").notNull().default("access"),
   name: text("name"),
   email: text("email").notNull(),
   org: text("org"),
-  assessmentType: text("assessment_type"), // individual | family | community | organizational
-  population: text("population"),
   message: text("message"),
-  ipAddress: text("ip_address"), // rate-limiting only; never displayed or exported
+  ipHash: text("ip_hash"),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 

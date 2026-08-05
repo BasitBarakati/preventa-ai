@@ -1,183 +1,107 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Sora } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "@/components/SmoothScroll";
-import Preloader from "@/components/Preloader";
-import Cursor from "@/components/Cursor";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import AssessmentModal from "@/components/AssessmentModal";
-import RouteTransition from "@/components/RouteTransition";
+import MotionSystem from "@/components/MotionSystem";
+import { Atmosphere, Preloader } from "@/components/Atmosphere";
+import FloatingChatHUD from "@/components/ui/FloatingChatHUD";
+import { brand } from "@/lib/site-content";
 
-/* Phronesis AI type system:
-   Fraunces (warm humanist display) · DM Sans (body) · JetBrains Mono (data) */
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-fraunces",
-  display: "swap",
-});
+const sora = Sora({ subsets: ["latin"], variable: "--font-sora", display: "swap" });
 
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-dm",
-  display: "swap",
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-jetbrains",
-  display: "swap",
-});
-
-const SITE_URL = "https://phronesis.ai";
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#0a0f28" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0f28" },
+  ],
+  colorScheme: "dark",
+};
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(brand.url),
   title: {
-    default: "Phronesis AI — AI Health Promotion Platform for Public Health Teams",
-    template: "%s · Phronesis AI",
+    default: "Preventa AI | Responsible AI for Public Health Transformation",
+    template: "%s | Preventa AI",
   },
-  description:
-    "Phronesis AI is the AI health promotion platform and public health brain trust: population health assessment, Ottawa Charter-aligned promotion, capacity building and evidence-based health judgments — human-led, AI-assisted, OCAP® compliant.",
-  keywords: [
-    "AI health promotion platform",
-    "public health AI",
-    "evidence-based health judgments",
-    "population health assessment",
-    "Ottawa Charter health promotion",
-    "OCAP principles compliance",
-    "community wellness AI",
-    "health intelligence platform",
-    "public health software Canada",
-    "health equity analytics",
-    "AI co-pilot for public health",
-    "wellness assessment platform",
-    "health promotion evaluation software",
-    "PHIPA compliant health platform",
-    "Indigenous data sovereignty health",
-    "Indigenous-led health promotion Canada",
-    "Path of the Seven Fires",
-    "Phronesis AI",
-  ],
-  authors: [{ name: "Phronesis AI" }],
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+  description: "Preventa AI combines responsible artificial intelligence, public-health assessments, evidence, dashboards, research tools, and workforce learning to help communities and organizations turn health intelligence into action.",
+  applicationName: brand.displayName,
+  authors: [{ name: brand.sentenceName }],
+  creator: brand.sentenceName,
+  publisher: brand.sentenceName,
+  keywords: ["responsible AI for public health", "public health transformation", "public health assessment", "health intelligence platform", "evidence synthesis", "public health courses", "AI governance in healthcare", "community health assessment", "Indigenous health data governance"],
   alternates: { canonical: "/" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
   openGraph: {
     type: "website",
-    siteName: "Phronesis AI",
     locale: "en_CA",
-    url: SITE_URL,
-    title: "Phronesis AI — Transforming Health and Wellness.",
-    description:
-      "The AI-powered brain trust bridging evidence-based judgments with public health action. Human-led, AI-assisted, equity by default.",
-    // images intentionally omitted — app/opengraph-image.tsx is auto-detected
-    // by Next.js's file-based metadata convention and wired in automatically.
+    url: brand.url,
+    siteName: brand.displayName,
+    title: "Preventa AI | Responsible AI for Public Health Transformation",
+    description: brand.tagline,
+    images: [{ url: "/brand/preventa-ai-social-preview.png", width: 1200, height: 630, alt: "PREVENTA AI — Responsible AI for public health" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Phronesis AI — AI Health Promotion Platform",
-    description:
-      "Population assessment, health promotion, resilience and evaluation — one evidence-based, human-led platform.",
+    title: "Preventa AI | Responsible AI for Public Health Transformation",
+    description: brand.tagline,
+    images: ["/brand/preventa-ai-social-preview.png"],
   },
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-    shortcut: ["/favicon.svg"],
-    apple: [{ url: "/favicon.svg" }],
+    icon: [{ url: "/brand/preventa-ai-icon-32.png", type: "image/png", sizes: "32x32" }],
+    apple: [{ url: "/brand/preventa-ai-icon-192.png", type: "image/png", sizes: "192x192" }],
   },
-  other: {
-    "theme-color": "#0B3D5F",
-  },
+  manifest: "/manifest.webmanifest",
+  category: "health",
 };
 
-/* AEO: SoftwareApplication + Organization + WebSite schemas so answer
-   engines (Perplexity, Gemini, ChatGPT) can describe us accurately. */
-const softwareLd = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Phronesis AI",
-  applicationCategory: "HealthApplication",
-  applicationSubCategory: "Public Health Intelligence",
-  operatingSystem: "Web",
-  description:
-    "AI health promotion platform for population health assessment, health promotion and disease prevention, resilience and emergency preparedness, operations and policy review, networked collaboration, evidence and AI, systems for health protection, and intelligence and analytics.",
-  url: SITE_URL,
-  featureList: [
-    "Population assessment and surveillance",
-    "Health promotion and disease prevention planning",
-    "Resilience and emergency preparedness modelling",
-    "Formative, process, outcome and summative evaluation",
-    "Nine community wellness modules",
-    "Human-led AI co-pilot with auditable evidence retrieval",
-    "OCAP, PHIPA, HIPAA and GDPR aligned data governance",
-    "Path of the Seven Fires — Indigenous-led health promotion and community-controlled AI training for First Nations, Inuit and Métis communities",
-  ],
-  audience: {
-    "@type": "Audience",
-    audienceType: "Public health teams, healthcare institutions, NGOs and governments",
-  },
-};
-
-const orgLd = {
+const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Phronesis AI",
-  url: SITE_URL,
-  logo: `${SITE_URL}/logo.svg`,
-  slogan: "Transforming Health and Wellness.",
-  description:
-    "Health intelligence platform bridging evidence-based judgments with public health action, aligned with the WHO, the Ottawa Charter and OCAP principles.",
-  foundingDate: "2026",
-  sameAs: [
-    "https://www.who.int",
-    "https://ocap.ca",
-  ],
+  name: brand.displayName,
+  url: brand.url,
+  logo: `${brand.url}/brand/preventa-ai-logo.png`,
+  slogan: brand.tagline,
+  description: "An AI-enabled public health transformation platform that connects assessment, evidence, responsible implementation, research tools, and workforce learning.",
 };
 
-const webLd = {
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: brand.displayName,
+  applicationCategory: "HealthApplication",
+  applicationSubCategory: "Public Health Transformation",
+  operatingSystem: "Web",
+  url: brand.url,
+  description: metadata.description,
+  featureList: ["Situation assessment", "Public-health implementation tools", "Indigenous health governance pathways", "Evidence synthesis and research workspaces", "Public-health AI learning hub", "Human-reviewed AI assistance"],
+};
+
+const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Phronesis AI",
-  url: SITE_URL,
+  name: brand.displayName,
+  url: brand.url,
   inLanguage: "en-CA",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${fraunces.variable} ${dmSans.variable} ${jetbrains.variable}`}
-    >
+    <html lang="en-CA" className={sora.variable}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webLd) }}
-        />
+        {[organizationSchema, softwareSchema, websiteSchema].map((schema) => <script key={schema["@type"]} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />)}
       </head>
       <body>
         <Preloader />
-        <RouteTransition />
-        <Cursor />
-        <SmoothScroll />
+        <Atmosphere />
+        <MotionSystem />
         <Nav />
         {children}
+        <FloatingChatHUD />
         <Footer />
-        <AssessmentModal />
-        {/* cinematic vignette + film grain — keeps the gradients honest */}
-        <div className="vignette" aria-hidden="true" />
-        <div className="grain" aria-hidden="true" />
       </body>
     </html>
   );
