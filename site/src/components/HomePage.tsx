@@ -72,7 +72,7 @@ export default function HomePage() {
       <div className="stack-frame">
         <section className="lux-section" id="principles">
           <div className="container">
-            <SectionIntro eyebrow="OUR PRINCIPLES" title="Seven principles that govern every AI initiative." text="Not aspirational language — the standard every workflow, partnership, and dataset is checked against." />
+            <SectionIntro eyebrow="PRINCIPLES & GOALS" title="What governs us, and what we're building toward." text="Seven principles every workflow is checked against, and four goals that guide every program and platform decision." />
             <div className="framework-grid" data-stagger>
               {principles.map(({ title, description }, index) => (
                 <GlassCard key={title} className="framework-card lit-edge" data-tilt>
@@ -83,14 +83,7 @@ export default function HomePage() {
                 </GlassCard>
               ))}
             </div>
-          </div>
-        </section>
-      </div>
-
-      <div className="stack-frame">
-        <section className="lux-section lux-section--paper" id="strategic-goals">
-          <div className="container">
-            <SectionIntro eyebrow="STRATEGIC GOALS" title="What we are building toward." text="Four goals that guide every program, partnership, and platform decision." />
+            <p className="lux-eyebrow lux-subheading"><span /> STRATEGIC GOALS</p>
             <div className="lux-capability-grid" data-stagger>
               {strategicGoals.map((goal, index) => (
                 <GlassCard key={goal} className="lit-edge" data-tilt data-cursor-label="View">
