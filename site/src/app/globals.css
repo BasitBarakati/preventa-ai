@@ -502,7 +502,7 @@ img, svg { display: block; max-width: 100%; }
 .glass-card { position: relative; border: 1px solid var(--lux-line); border-radius: 18px; background: linear-gradient(145deg, rgba(16,24,20,.96), rgba(8,12,10,.98)); box-shadow: inset 0 1px rgba(255,255,255,.035), var(--lux-shadow); }
 .glass-card--teal { box-shadow: inset 0 1px rgba(255,255,255,.04), 0 28px 80px rgba(0,0,0,.3), 0 0 70px rgba(45, 212, 176,.055); }
 .glass-card--violet { box-shadow: inset 0 1px rgba(255,255,255,.04), 0 28px 80px rgba(0,0,0,.3), 0 0 70px rgba(76, 175, 109,.08); }
-.lux-icon { display: grid; place-items: center; width: 48px; height: 48px; color: var(--teal-lux); border: 1px solid rgba(45, 212, 176,.25); border-radius: 14px; background: rgba(45, 212, 176,.07); }
+.lux-icon { display: grid; place-items: center; width: 54px; height: 54px; color: var(--teal-lux); border: 1px solid rgba(45, 212, 176,.25); border-radius: 15px; background: rgba(45, 212, 176,.07); }
 
 /* Hero */
 .lux-hero { min-height: min(1020px, 100svh); padding: calc(var(--header-height) + 5.25rem) 0 0; background: radial-gradient(circle at 72% 35%, rgba(23, 184, 196,.16), transparent 27%), radial-gradient(circle at 48% 85%, rgba(143, 209, 79,.1), transparent 35%), linear-gradient(150deg, #050f0c, #0a1f18 58%, #0d2f22); }
@@ -528,7 +528,7 @@ img, svg { display: block; max-width: 100%; }
 /* Pillars and audiences */
 .pillar-overview { background: linear-gradient(180deg, #0c1230, #0a1f18); }
 .lux-pillar-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: .85rem; }
-.lux-pillar-card { position: relative; display: flex; flex-direction: column; min-height: 390px; padding: 1.45rem; overflow: hidden; border: 1px solid var(--lux-line); border-radius: 18px; background: linear-gradient(155deg, rgba(18,26,40,.9), rgba(9,13,21,.82)); transition: transform .32s var(--ease), border-color .3s, box-shadow .3s; }
+.lux-pillar-card { position: relative; display: flex; flex-direction: column; min-height: 410px; padding: 1.8rem; overflow: hidden; border: 1px solid var(--lux-line); border-radius: 20px; background: linear-gradient(155deg, rgba(18,26,40,.9), rgba(9,13,21,.82)); transition: transform .32s var(--ease), border-color .3s, box-shadow .3s; }
 .lux-pillar-card::before { content: ""; position: absolute; inset: auto -35% -46% 20%; height: 70%; border-radius: 50%; background: radial-gradient(circle, rgba(45, 212, 176,.09), transparent 65%); opacity: 0; transition: opacity .3s; }
 .lux-pillar-card:hover { transform: translateY(-8px); border-color: rgba(45, 212, 176,.34); box-shadow: 0 28px 80px rgba(0,0,0,.38), 0 0 45px rgba(45, 212, 176,.055); }
 .lux-pillar-card:hover::before { opacity: 1; }
@@ -552,7 +552,7 @@ img, svg { display: block; max-width: 100%; }
 /* Assessment */
 .assessment-studio { background: radial-gradient(circle at 18% 40%, rgba(45, 212, 176,.07), transparent 28%), #090d15; }
 .assessment-module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-.assessment-module { display: flex; flex-direction: column; min-height: 355px; padding: 1.6rem; }
+.assessment-module { display: flex; flex-direction: column; min-height: 355px; padding: 1.9rem; }
 .assessment-module h3 { margin: 1.6rem 0 .75rem; font-size: 1.05rem; }
 .assessment-module > p { margin: 0; color: #94a9ba; font-size: .82rem; }
 .assessment-module ul { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.4rem 0; padding: 0; list-style: none; }
@@ -672,7 +672,7 @@ img, svg { display: block; max-width: 100%; }
   .value-tab { transition: none; }
 }
 .indigenous-framework { position: relative; display: grid; gap: .75rem; }
-.indigenous-framework .glass-card { display: grid; grid-template-columns: 46px 1fr; gap: 1rem; padding: 1.2rem; }
+.indigenous-framework .glass-card { display: grid; grid-template-columns: 50px 1fr; gap: 1.1rem; padding: 1.5rem; }
 .indigenous-framework .glass-card > svg { color: #c6a16d; }
 .indigenous-framework h3 { margin: 0 0 .35rem; font-size: 1.05rem; }
 .indigenous-framework p { margin: 0; color: #b2bdbb; font-size: .93rem; line-height: 1.55; }
@@ -687,7 +687,7 @@ img, svg { display: block; max-width: 100%; }
 .research-boundary { display: flex; align-items: center; gap: .5rem; margin: 1rem 0 0; color: #9bb0be; font-size: .88rem; }
 .learning-section { background: radial-gradient(circle at 20% 25%, rgba(76, 175, 109,.07), transparent 32%), #090c14; }
 .course-grid-v2 { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin-bottom: 1rem; }
-.course-card-v2 { display: flex; flex-direction: column; min-height: 320px; padding: 1.35rem; border: 1px solid var(--lux-line); border-radius: 17px; background: linear-gradient(145deg, rgba(19,28,44,.82), rgba(9,14,23,.8)); transition: transform .25s var(--ease), border-color .25s; }
+.course-card-v2 { display: flex; flex-direction: column; min-height: 320px; padding: 1.65rem; border: 1px solid var(--lux-line); border-radius: 19px; background: linear-gradient(145deg, rgba(19,28,44,.82), rgba(9,14,23,.8)); transition: transform .25s var(--ease), border-color .25s; }
 .course-card-v2:hover { transform: translateY(-6px); border-color: rgba(76, 175, 109,.38); }
 .course-card-v2 > span { color: var(--violet-lux); font-family: var(--font-data); font-size: .72rem; letter-spacing: .08em; }
 .course-card-v2 > svg { margin-top: 2rem; color: var(--teal-lux); }
@@ -741,7 +741,7 @@ img, svg { display: block; max-width: 100%; }
 .lux-notice p { margin: 0; color: #d3e2d8; font-size: .96rem; line-height: 1.6; }
 
 .lux-capability-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; }
-.lux-capability-grid .glass-card { display: flex; flex-direction: column; gap: .6rem; min-height: 128px; padding: 1.2rem; }
+.lux-capability-grid .glass-card { display: flex; flex-direction: column; gap: .7rem; min-height: 140px; padding: 1.5rem; }
 .lux-capability-grid .glass-card span { color: #8aa89c; font-family: var(--font-data); font-size: .86rem; }
 .lux-capability-grid .glass-card svg { color: var(--teal-lux); }
 .lux-capability-grid .glass-card p { margin: 0; color: var(--lux-muted); font-size: .98rem; line-height: 1.6; }
@@ -1249,7 +1249,7 @@ img, svg { display: block; max-width: 100%; }
 
 /* ── Blueprint content sections ── */
 .framework-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(268px, 1fr)); gap: .9rem; }
-.framework-card { position: relative; overflow: hidden; padding: 1.6rem; border-radius: 18px; }
+.framework-card { position: relative; overflow: hidden; padding: 1.9rem; border-radius: 20px; }
 .framework-card__tag { color: var(--gold); font-family: var(--font-data); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
 .framework-card h3 { margin: 1.45rem 0 .6rem; color: #fff; font-family: var(--font-heading); font-size: 1.15rem; letter-spacing: -.03em; line-height: 1.3; }
 .framework-card p { margin: 0; color: var(--lux-muted); font-size: .98rem; line-height: 1.6; }

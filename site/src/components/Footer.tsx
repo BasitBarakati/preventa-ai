@@ -5,7 +5,7 @@ import { brand } from "@/lib/site-content";
 
 const groups = [
   { title: "Site", links: [["Who we are", "/#top"], ["Our purpose", "/#about"], ["What we do", "/#programs"], ["Contact", "/contact"]] },
-  { title: "Programs", links: [["Situation Assessment", "/situation-assessment"], ["Health and Wellness", "/health-and-wellness"], ["Indigenous Health and Wellbeing", "/indigenous-health"], ["Research and Risk Prediction", "/research"], ["Courses and Workforce Learning", "/courses"]] },
+  { title: "Programs", links: [["Indigenous Health and Wellbeing", "/indigenous-health"], ["Situation Assessment", "/situation-assessment"], ["Health and Wellness", "/health-and-wellness"], ["Research and Risk Prediction", "/research"], ["Courses and Workforce Learning", "/courses"]] },
   { title: "Governance", links: [["AI transparency", "/ai-transparency"], ["Privacy", "/privacy"], ["Accessibility", "/accessibility"], ["Terms", "/terms"]] },
 ] as const;
 

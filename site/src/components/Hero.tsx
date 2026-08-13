@@ -1,4 +1,4 @@
-import { ArrowDown, CheckCircle2, LockKeyhole, Network, UsersRound } from "lucide-react";
+import { ArrowDown, CheckCircle2, ListChecks, LockKeyhole, Network } from "lucide-react";
 import GlowingButton from "./ui/GlowingButton";
 
 export default function Hero() {
@@ -18,7 +18,7 @@ export default function Hero() {
         </div>
         <div className="container hero-metrics" aria-label="Platform scope and governance">
           <div><Network /><strong>5</strong><span>programs offered</span></div>
-          <div><UsersRound /><strong>6</strong><span>audiences served</span></div>
+          <div><ListChecks /><strong>7</strong><span>guiding principles</span></div>
           <div><CheckCircle2 /><strong>OCAP®</strong><span>principles inform governance</span></div>
           <div><LockKeyhole /><strong>Private</strong><span>by-design public preview</span></div>
         </div>

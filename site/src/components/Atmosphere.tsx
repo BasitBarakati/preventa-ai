@@ -109,7 +109,7 @@ export function Preloader() {
             <i key={i} style={{ "--d": `${i * 28}ms` } as CSSProperties}>{ch === " " ? " " : ch}</i>
           ))}
         </span>
-        <span className="preloader__tagline">Predictive Wellness Intelligence</span>
+        <span className="preloader__tagline">Responsible AI for Public Health</span>
         <span className="preloader__pct">{pct}%</span>
       </div>
     </div>

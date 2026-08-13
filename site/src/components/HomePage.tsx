@@ -2,16 +2,17 @@ import type { ComponentType } from "react";
 import Link from "next/link";
 import {
   ArrowRight, CheckCircle2, ClipboardList, Compass, FlaskConical, GraduationCap, HandHeart,
-  HeartPulse, Sparkles, Target,
+  HeartPulse, Landmark, Leaf, Sparkles, Sprout, Target,
 } from "lucide-react";
 import Hero from "./Hero";
 import EcosystemScene from "./EcosystemSceneLoader";
 import ScrollStack from "./ScrollStack";
 import GlassCard from "./ui/GlassCard";
 import GlowingButton from "./ui/GlowingButton";
-import { brand, pillars, principles, strategicGoals } from "@/lib/site-content";
+import { brand, indigenousHealth, pillars, principles, strategicGoals } from "@/lib/site-content";
 
 const pillarIcons: ComponentType<{ size?: number }>[] = [ClipboardList, HeartPulse, HandHeart, FlaskConical, GraduationCap];
+const indigenousIcons: ComponentType<{ size?: number }>[] = [Sprout, Leaf, Landmark];
 
 const faqs = [
   { q: "What is Preventa AI?", a: "Preventa AI is a public-health initiative building responsible, human-overseen AI for equitable, accountable communities." },
@@ -93,6 +94,28 @@ export default function HomePage() {
                   <p>{goal}</p>
                 </GlassCard>
               ))}
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div className="stack-frame">
+        <section className="lux-section lux-section--paper indigenous-section" id="indigenous-health">
+          <div className="container indigenous-layout">
+            <div data-reveal>
+              <p className="lux-eyebrow"><span /> OUR FLAGSHIP COMMITMENT</p>
+              <h2 data-split>{indigenousHealth.title}</h2>
+              <p>{indigenousHealth.description}</p>
+              <div className="governance-tags">{indigenousHealth.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+              <GlowingButton href="/indigenous-health" variant="secondary" data-magnetic>Explore Indigenous Health and Wellbeing <ArrowRight size={17} /></GlowingButton>
+            </div>
+            <div className="indigenous-framework" data-stagger>
+              {indigenousHealth.areas.map(({ title, text }, index) => {
+                const Icon = indigenousIcons[index];
+                return (
+                  <GlassCard key={title}><Icon /><div><h3>{title}</h3><p>{text}</p></div></GlassCard>
+                );
+              })}
             </div>
           </div>
         </section>

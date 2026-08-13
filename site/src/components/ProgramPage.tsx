@@ -3,14 +3,14 @@ import type { ReactNode } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import GlowingButton from "./ui/GlowingButton";
 
-export default function ProgramPage({ eyebrow, title, description, children }: { eyebrow: string; title: string; description: string; children: ReactNode }) {
+export default function ProgramPage({ label, eyebrow, title, description, children }: { label: string; eyebrow: string; title: string; description: string; children: ReactNode }) {
   return (
     <main id="main-content" className="internal-page luxury-home">
       <section className="lux-page-hero">
         <div className="lux-hero__grid" aria-hidden="true" />
         <div className="lux-hero__aura" aria-hidden="true" />
         <div className="container lux-page-hero__inner">
-          <nav className="lux-breadcrumbs" aria-label="Breadcrumb"><Link href="/" prefetch={false}>Home</Link><span aria-hidden="true">/</span><Link href="/#programs" prefetch={false}>What we do</Link><span aria-hidden="true">/</span><span>{title}</span></nav>
+          <nav className="lux-breadcrumbs" aria-label="Breadcrumb"><Link href="/" prefetch={false}>Home</Link><span aria-hidden="true">/</span><Link href="/#programs" prefetch={false}>What we do</Link><span aria-hidden="true">/</span><span>{label}</span></nav>
           <p className="lux-eyebrow"><span /> {eyebrow}</p>
           <h1 data-split>{title}</h1>
           <p>{description}</p>

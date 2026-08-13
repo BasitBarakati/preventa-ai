@@ -16,7 +16,7 @@ const icons = [HeartPulse, UsersRound, Building2];
 
 export default function SituationAssessmentPage() {
   return (
-    <ProgramPage eyebrow={situationAssessment.eyebrow} title={situationAssessment.title} description={situationAssessment.description}>
+    <ProgramPage label="Situation Assessment" eyebrow={situationAssessment.eyebrow} title={situationAssessment.title} description={situationAssessment.description}>
       <section className="lux-section assessment-studio" id="modules">
         <div className="container">
           <div className="assessment-module-grid" data-stagger>

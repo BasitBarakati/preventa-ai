@@ -13,7 +13,7 @@ export default function GenericPage({ page }: { page: PageDefinition }) {
         <div className="lux-hero__grid" aria-hidden="true" />
         <div className="lux-hero__aura" aria-hidden="true" />
         <div className="container lux-page-hero__inner">
-          <nav className="lux-breadcrumbs" aria-label="Breadcrumb"><Link href="/" prefetch={false}>Home</Link><span aria-hidden="true">/</span><span>{page.title}</span></nav>
+          <nav className="lux-breadcrumbs" aria-label="Breadcrumb"><Link href="/" prefetch={false}>Home</Link><span aria-hidden="true">/</span><span>{page.label}</span></nav>
           <p className="lux-eyebrow"><span /> {page.eyebrow}</p>
           <h1 data-split>{page.title}</h1>
           <p>{page.description}</p>

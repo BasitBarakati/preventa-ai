@@ -17,13 +17,13 @@ const icons = [Sprout, Leaf, Landmark];
 
 export default function IndigenousHealthPage() {
   return (
-    <ProgramPage eyebrow={indigenousHealth.eyebrow} title={indigenousHealth.title} description={indigenousHealth.description}>
+    <ProgramPage label="Indigenous Health and Wellbeing" eyebrow={indigenousHealth.eyebrow} title={indigenousHealth.title} description={indigenousHealth.description}>
       <section className="lux-section indigenous-section" id="areas">
         <div className="container indigenous-layout">
           <div data-reveal>
             <p className="lux-eyebrow"><span /> COMMUNITY-GOVERNED</p>
             <h2 data-split>Guided by community, not built around it.</h2>
-            <p>Preventa AI does not speak for any Nation or community. Every workflow in this program is designed for relationship-based co-design and community control over data and decisions.</p>
+            <p>This program is held to the same standard as every Preventa AI initiative: respect for Indigenous knowledge, cultural safety, community priorities, and data sovereignty — with Indigenous-led approaches setting the direction, not following it.</p>
             <div className="governance-tags">{indigenousHealth.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
           </div>
           <div className="indigenous-framework" data-stagger>

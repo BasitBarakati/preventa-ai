@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function HealthAndWellnessPage() {
   return (
-    <ProgramPage eyebrow={healthAndWellness.eyebrow} title={healthAndWellness.title} description={healthAndWellness.description}>
+    <ProgramPage label="Health and Wellness" eyebrow={healthAndWellness.eyebrow} title={healthAndWellness.title} description={healthAndWellness.description}>
       <section className="lux-section implementation-section" id="topics">
         <div className="container">
           <div className="lux-capability-grid" data-stagger>

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function ResearchPage() {
   return (
-    <ProgramPage eyebrow={research.eyebrow} title={research.title} description={research.description}>
+    <ProgramPage label="Research and Risk Prediction" eyebrow={research.eyebrow} title={research.title} description={research.description}>
       <section className="lux-section research-section" id="areas">
         <div className="container">
           <div className="framework-grid" data-stagger>

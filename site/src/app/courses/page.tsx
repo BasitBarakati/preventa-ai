@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function CoursesPage() {
   return (
-    <ProgramPage eyebrow={courses.eyebrow} title={courses.title} description={courses.description}>
+    <ProgramPage label="Courses and Workforce Learning" eyebrow={courses.eyebrow} title={courses.title} description={courses.description}>
       <section className="lux-section learning-section" id="tracks">
         <div className="container">
           <div className="course-grid-v2" data-stagger>

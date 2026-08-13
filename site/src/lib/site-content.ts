@@ -2,6 +2,7 @@ export type PageKind = "policy" | "general";
 
 export type PageDefinition = {
   path: string;
+  label: string;
   title: string;
   eyebrow: string;
   description: string;
@@ -171,6 +172,7 @@ export const courses = {
 const pages: PageDefinition[] = [
   {
     path: "/contact",
+    label: "Contact",
     title: "Start a thoughtful conversation.",
     eyebrow: "CONTACT & EARLY ACCESS",
     description: "Tell us what you are trying to improve, who needs to be involved, and what governance or implementation questions matter most.",
@@ -179,6 +181,7 @@ const pages: PageDefinition[] = [
   },
   {
     path: "/privacy",
+    label: "Privacy",
     title: "Privacy by design, explained plainly.",
     eyebrow: "PRIVACY",
     description: "Preventa AI is designed around data minimization, meaningful consent, transparent purpose, controlled access, and user rights.",
@@ -189,6 +192,7 @@ const pages: PageDefinition[] = [
   },
   {
     path: "/terms",
+    label: "Terms of Use",
     title: "Clear expectations for a responsible platform.",
     eyebrow: "TERMS OF USE",
     description: "These public-facing terms summarize intended use, user responsibilities, limitations, intellectual property, and acceptable conduct for the preview experience.",
@@ -198,6 +202,7 @@ const pages: PageDefinition[] = [
   },
   {
     path: "/accessibility",
+    label: "Accessibility",
     title: "Access is part of product quality.",
     eyebrow: "ACCESSIBILITY",
     description: "Preventa AI targets WCAG 2.1 AA and is being built for keyboard access, assistive technology, readable language, reduced motion, and low-bandwidth use.",
@@ -206,6 +211,7 @@ const pages: PageDefinition[] = [
   },
   {
     path: "/ai-transparency",
+    label: "AI Transparency",
     title: "Know when AI is used—and where it can fail.",
     eyebrow: "AI TRANSPARENCY",
     description: "AI-supported outputs should identify sources, intended use, known limitations, review status, and the person accountable for the final decision.",
