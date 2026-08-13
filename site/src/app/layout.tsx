@@ -1,15 +1,25 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { Sora } from "next/font/google";
+import { Fraunces } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import MotionSystem from "@/components/MotionSystem";
+import RouteCurtain from "@/components/RouteCurtain";
 import { Atmosphere, Preloader } from "@/components/Atmosphere";
-import FloatingChatHUD from "@/components/ui/FloatingChatHUD";
 import { brand } from "@/lib/site-content";
 
-const sora = Sora({ subsets: ["latin"], variable: "--font-sora", display: "swap" });
+// A distinctive editorial serif for headings — every h1/h2/h3 sitewide reads
+// through the shared `--font-heading` CSS variable, so swapping the value
+// this font resolves to (see globals.css) elevates every heading at once
+// rather than needing a component-by-component pass.
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -27,12 +37,12 @@ export const metadata: Metadata = {
     default: "Preventa AI | Responsible AI for Public Health Transformation",
     template: "%s | Preventa AI",
   },
-  description: "Preventa AI combines responsible artificial intelligence, public-health assessments, evidence, dashboards, research tools, and workforce learning to help communities and organizations turn health intelligence into action.",
+  description: "Preventa AI is a public-health initiative building responsible, human-overseen AI for equitable, accountable communities — five connected programs spanning situation assessment, health and wellness, Indigenous health and wellbeing, research and risk prediction, and workforce learning.",
   applicationName: brand.displayName,
   authors: [{ name: brand.sentenceName }],
   creator: brand.sentenceName,
   publisher: brand.sentenceName,
-  keywords: ["responsible AI for public health", "public health transformation", "public health assessment", "health intelligence platform", "evidence synthesis", "public health courses", "AI governance in healthcare", "community health assessment", "Indigenous health data governance"],
+  keywords: ["responsible AI for public health", "public health transformation", "AI governance in healthcare", "Indigenous health data governance", "OCAP principles health data", "public health workforce learning", "AI risk prediction public health"],
   alternates: { canonical: "/" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
   openGraph: {
@@ -65,19 +75,8 @@ const organizationSchema = {
   url: brand.url,
   logo: `${brand.url}/brand/preventa-ai-logo.png`,
   slogan: brand.tagline,
-  description: "An AI-enabled public health transformation platform that connects assessment, evidence, responsible implementation, research tools, and workforce learning.",
-};
-
-const softwareSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: brand.displayName,
-  applicationCategory: "HealthApplication",
-  applicationSubCategory: "Public Health Transformation",
-  operatingSystem: "Web",
-  url: brand.url,
-  description: metadata.description,
-  featureList: ["Situation assessment", "Public-health implementation tools", "Indigenous health governance pathways", "Evidence synthesis and research workspaces", "Public-health AI learning hub", "Human-reviewed AI assistance"],
+  description: "A public-health initiative building responsible, human-overseen AI for equitable, accountable communities.",
+  knowsAbout: ["Situation Assessment", "Health and Wellness", "Indigenous Health and Wellbeing", "Research and Risk Prediction", "Courses and Workforce Learning"],
 };
 
 const websiteSchema = {
@@ -88,19 +87,33 @@ const websiteSchema = {
   inLanguage: "en-CA",
 };
 
+// Answer-engine-friendly: short, quotable Q&As that mirror the on-page
+// copy verbatim (the vision line matches the homepage blockquote exactly)
+// so structured data and visible content never diverge.
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "What is Preventa AI?", acceptedAnswer: { "@type": "Answer", text: "Preventa AI is a public-health initiative building responsible, human-overseen AI for equitable, accountable communities." } },
+    { "@type": "Question", name: "What is Preventa AI's vision?", acceptedAnswer: { "@type": "Answer", text: brand.tagline } },
+    { "@type": "Question", name: "What programs does Preventa AI offer?", acceptedAnswer: { "@type": "Answer", text: "Five connected programs: Situation Assessment, Health and Wellness, Indigenous Health and Wellbeing, Research and Risk Prediction, and Courses and Workforce Learning." } },
+    { "@type": "Question", name: "How does Preventa AI approach governance and data ethics?", acceptedAnswer: { "@type": "Answer", text: "Preventa AI is guided by OCAP® principles, Two-Eyed Seeing, and PHIPA- and PIPEDA-aligned privacy practices, with human review at every consequential step." } },
+  ],
+};
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en-CA" className={sora.variable}>
+    <html lang="en-CA" className={fraunces.variable}>
       <head>
-        {[organizationSchema, softwareSchema, websiteSchema].map((schema) => <script key={schema["@type"]} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />)}
+        {[organizationSchema, websiteSchema, faqSchema].map((schema) => <script key={schema["@type"]} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />)}
       </head>
       <body>
         <Preloader />
         <Atmosphere />
         <MotionSystem />
+        <RouteCurtain />
         <Nav />
         {children}
-        <FloatingChatHUD />
         <Footer />
       </body>
     </html>

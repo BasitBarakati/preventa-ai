@@ -33,16 +33,6 @@ export default async function ContentPage({ params }: Props) {
   const page = pageDefinitions[pathFromSlug(slug)];
   if (!page) notFound();
 
-  const courseSchema = page.kind === "course" && page.path !== "/courses" ? {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    name: page.title,
-    description: page.description,
-    provider: { "@type": "Organization", name: brand.displayName, url: brand.url },
-    educationalLevel: "Professional development",
-    inLanguage: "en-CA",
-  } : null;
-
   const faqSchema = page.faqs?.length ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -55,7 +45,6 @@ export default async function ContentPage({ params }: Props) {
 
   return (
     <>
-      {courseSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema).replace(/</g, "\\u003c") }} />}
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }} />}
       <GenericPage page={page} />
     </>

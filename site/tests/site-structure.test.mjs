@@ -18,27 +18,20 @@ test("official brand assets exist and are non-empty", async () => {
   }
 });
 
-test("required platform routes are represented in the content registry", async () => {
+test("required routes are represented in the content registry", async () => {
+  // The homepage is a deliberate 3-section single page (hero, about,
+  // programs); each program then links out to its own detail route, plus a
+  // short list of legal/utility routes.
   const content = await readFile(new URL("src/lib/site-content.ts", root), "utf8");
-  for (const route of [
-    "/platform/situation-assessment",
-    "/situation-assessment/individual-and-family",
-    "/situation-assessment/community",
-    "/situation-assessment/organization",
-    "/indigenous-health",
-    "/research/sandbox",
-    "/courses/ai-in-epidemiology",
-    "/dashboards-and-data",
-    "/ai-assistant",
-    "/governance-and-ethics",
-    "/privacy",
-    "/accessibility",
-    "/ai-transparency",
-  ]) {
-    const slug = route.split("/").at(-1);
-    const explicit = content.includes(`path: "${route}"`);
-    const generated = content.includes(`["${slug}"`);
-    assert.ok(explicit || generated, `${route} is missing`);
+  for (const route of ["/contact", "/privacy", "/terms", "/accessibility", "/ai-transparency"]) {
+    assert.ok(content.includes(`path: "${route}"`), `${route} is missing`);
+  }
+});
+
+test("every program has a real detail page", async () => {
+  for (const route of ["situation-assessment", "health-and-wellness", "indigenous-health", "research", "courses"]) {
+    const info = await stat(new URL(`src/app/${route}/page.tsx`, root));
+    assert.ok(info.isFile(), `src/app/${route}/page.tsx should exist`);
   }
 });
 

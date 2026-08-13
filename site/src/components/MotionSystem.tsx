@@ -35,7 +35,11 @@ export default function MotionSystem() {
     // ── Pointer-follow light (drives the radial spotlight + custom cursor) ──
     const cursor = document.querySelector<HTMLElement>(".lux-cursor");
     const cursorDot = document.querySelector<HTMLElement>(".lux-cursor__dot");
+    const cursorTrail1 = document.querySelector<HTMLElement>(".lux-cursor__trail--1");
+    const cursorTrail2 = document.querySelector<HTMLElement>(".lux-cursor__trail--2");
+    const cursorLabel = document.querySelector<HTMLElement>(".lux-cursor__label");
     let cx = -100, cy = -100, tx = -100, ty = -100;
+    let t1x = -100, t1y = -100, t2x = -100, t2y = -100;
 
     const onPointerMove = (event: PointerEvent) => {
       if (coarse) return;
@@ -59,6 +63,16 @@ export default function MotionSystem() {
         cy += (ty - cy) * 0.16;
         cursor.style.transform = `translate3d(${cx - 13}px, ${cy - 13}px, 0)`;
         cursorDot.style.transform = `translate3d(${tx - 2}px, ${ty - 2}px, 0)`;
+        // Trail dots ease slower than the ring/dot above, so they lag
+        // behind and read as a comet — two more lerps and two more
+        // transform writes in the loop already running, no new rAF.
+        t1x += (tx - t1x) * 0.1;
+        t1y += (ty - t1y) * 0.1;
+        t2x += (tx - t2x) * 0.065;
+        t2y += (ty - t2y) * 0.065;
+        if (cursorTrail1) cursorTrail1.style.transform = `translate3d(${t1x - 2.5}px, ${t1y - 2.5}px, 0)`;
+        if (cursorTrail2) cursorTrail2.style.transform = `translate3d(${t2x - 1.75}px, ${t2y - 1.75}px, 0)`;
+        if (cursorLabel) cursorLabel.style.transform = `translate3d(${tx + 20}px, ${ty - 8}px, 0)`;
         cursorLoop = requestAnimationFrame(easeCursor);
       };
       cursorLoop = requestAnimationFrame(easeCursor);
@@ -68,14 +82,52 @@ export default function MotionSystem() {
         if (el?.closest?.("a, button, [role='button'], input, textarea, select, [data-tilt]")) {
           cursor.setAttribute("data-active", "true");
         }
+        const labelSource = el?.closest?.("[data-cursor-label]") as HTMLElement | null;
+        if (labelSource && cursorLabel) {
+          cursorLabel.textContent = labelSource.dataset.cursorLabel ?? "";
+          cursorLabel.setAttribute("data-visible", "true");
+        }
       };
-      const out = () => cursor.removeAttribute("data-active");
+      const out = (event: Event) => {
+        cursor.removeAttribute("data-active");
+        const el = event.target as HTMLElement | null;
+        if (el?.closest?.("[data-cursor-label]")) cursorLabel?.removeAttribute("data-visible");
+      };
       document.addEventListener("pointerover", over, { passive: true });
       document.addEventListener("pointerout", out, { passive: true });
       cleanups.push(() => {
         document.removeEventListener("pointerover", over);
         document.removeEventListener("pointerout", out);
       });
+    }
+
+    // ── Program scroll-spy for the 3D backdrop ──
+    // Watches whichever .lux-pillar-card (there are 5, homepage-only —
+    // this simply finds none and does nothing on other routes) sits in a
+    // thin band around the vertical center of the viewport, and dispatches
+    // its index so EcosystemScene can light up the matching node. A
+    // CustomEvent rather than a shared module import: EcosystemScene.tsx
+    // pulls in the entire @react-three/fiber/three dependency graph, and a
+    // static import of anything from that file — even a plain object —
+    // would drag that whole bundle into this one, the exact duplicate-JS
+    // problem EcosystemSceneLoader.tsx was built to avoid. Same
+    // decoupling pattern the preloader already uses to signal
+    // EcosystemScene (see "preventa:preloader-done").
+    const pillarCards = Array.from(document.querySelectorAll<HTMLElement>(".lux-pillar-card"));
+    let programObserver: IntersectionObserver | null = null;
+    if (pillarCards.length) {
+      programObserver = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .map((entry) => pillarCards.indexOf(entry.target as HTMLElement));
+          const active = visible.length ? Math.min(...visible) : -1;
+          window.dispatchEvent(new CustomEvent("preventa:active-program", { detail: { index: active } }));
+        },
+        { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
+      );
+      pillarCards.forEach((card) => programObserver?.observe(card));
+      cleanups.push(() => programObserver?.disconnect());
     }
 
     // ── Scroll progress rail — cheap, no library needed ──
@@ -162,6 +214,27 @@ export default function MotionSystem() {
                   });
                 });
 
+                // ── Diagonal wipe reveal ──
+                // A one-shot ("once": true) reveal, deliberately not scrub-
+                // linked. ScrollStack's own scale/y/opacity tween on
+                // .lux-section is scrub-driven and reversible by design —
+                // layering a second, independent scrubbed transform onto
+                // that same delicate system is exactly how the rotate()
+                // experiment there went wrong (see ScrollStack.tsx). This
+                // targets separate elements (section intros) and only ever
+                // plays forward once, so there's no scroll-direction or
+                // mid-scrub state to get caught looking broken in.
+                gsap.utils.toArray<HTMLElement>("[data-wipe]").forEach((element) => {
+                  if (!belowFold(element)) return;
+                  gsap.fromTo(element,
+                    { clipPath: "polygon(0% 100%, 100% 88%, 100% 100%, 0% 100%)", opacity: 0 },
+                    {
+                      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", opacity: 1,
+                      duration: 1.1, ease: "power3.out",
+                      scrollTrigger: { trigger: element, start: "top 88%", once: true },
+                    });
+                });
+
                 // ── Staggered children ──
                 gsap.utils.toArray<HTMLElement>("[data-stagger]").forEach((group) => {
                   if (!belowFold(group)) return;
@@ -179,6 +252,19 @@ export default function MotionSystem() {
                     scrollTrigger: { trigger: layer, start: "top bottom", end: "bottom top", scrub: 0.6 },
                   });
                 });
+
+                // ── Ink reveal: vision-statement quote fills in as read ──
+                // Guarded by belowFold for the same reason as the reveals
+                // above: a deep link that lands past this quote must never
+                // leave it stuck faint. If it's already in view, the CSS
+                // default (100%, fully solid) simply stands.
+                const inkQuote = document.querySelector<HTMLElement>(".vision-statement p");
+                if (inkQuote && belowFold(inkQuote)) {
+                  gsap.fromTo(inkQuote, { "--ink-fill": "0%" }, {
+                    "--ink-fill": "100%", ease: "none",
+                    scrollTrigger: { trigger: inkQuote, start: "top 82%", end: "bottom 48%", scrub: 0.6 },
+                  });
+                }
 
                 // ── Animated counters ──
                 gsap.utils.toArray<HTMLElement>("[data-count]").forEach((node) => {
@@ -256,10 +342,10 @@ export default function MotionSystem() {
               // background tab that suspended rAF — force everything visible
               // rather than leave a reader staring at an empty section.
               const safety = window.setTimeout(() => {
-                document.querySelectorAll<HTMLElement>("[data-reveal], [data-stagger] > *, .split-word")
+                document.querySelectorAll<HTMLElement>("[data-reveal], [data-wipe], [data-stagger] > *, .split-word")
                   .forEach((element) => {
                     if (Number(getComputedStyle(element).opacity) < 0.99) {
-                      gsap.set(element, { opacity: 1, y: 0, yPercent: 0 });
+                      gsap.set(element, { opacity: 1, y: 0, yPercent: 0, clipPath: "none" });
                     }
                   });
               }, 4000);
