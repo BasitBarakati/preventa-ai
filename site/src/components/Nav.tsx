@@ -6,7 +6,6 @@ import { Mail, Menu, X } from "lucide-react";
 import Logo from "./Logo";
 
 const navLinks = [
-  ["Who We Are", "/#top"],
   ["Our Purpose", "/#about"],
   ["Indigenous Health", "/#indigenous-health"],
   ["What We Do", "/#programs"],

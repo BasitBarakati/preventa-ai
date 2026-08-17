@@ -3,20 +3,23 @@ import type { ReactNode } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import GlowingButton from "./ui/GlowingButton";
 
-export default function ProgramPage({ label, eyebrow, title, description, children }: { label: string; eyebrow: string; title: string; description: string; children: ReactNode }) {
+export default function ProgramPage({
+  label, eyebrow, title, description, children,
+  parentLabel = "What we do", parentHref = "/#programs", secondaryLabel = "All programs",
+}: { label: string; eyebrow: string; title: string; description: string; children: ReactNode; parentLabel?: string; parentHref?: string; secondaryLabel?: string }) {
   return (
     <main id="main-content" className="internal-page luxury-home">
       <section className="lux-page-hero">
         <div className="lux-hero__grid" aria-hidden="true" />
         <div className="lux-hero__aura" aria-hidden="true" />
         <div className="container lux-page-hero__inner">
-          <nav className="lux-breadcrumbs" aria-label="Breadcrumb"><Link href="/" prefetch={false}>Home</Link><span aria-hidden="true">/</span><Link href="/#programs" prefetch={false}>What we do</Link><span aria-hidden="true">/</span><span>{label}</span></nav>
+          <nav className="lux-breadcrumbs" aria-label="Breadcrumb"><Link href="/" prefetch={false}>Home</Link><span aria-hidden="true">/</span><Link href={parentHref} prefetch={false}>{parentLabel}</Link><span aria-hidden="true">/</span><span>{label}</span></nav>
           <p className="lux-eyebrow"><span /> {eyebrow}</p>
           <h1 data-split>{title}</h1>
           <p>{description}</p>
           <div className="lux-page-hero__actions">
             <GlowingButton href="/contact" data-magnetic>Get in touch<ArrowRight size={18} /></GlowingButton>
-            <GlowingButton href="/#programs" variant="secondary" data-magnetic>All programs</GlowingButton>
+            <GlowingButton href={parentHref} variant="secondary" data-magnetic>{secondaryLabel}</GlowingButton>
           </div>
         </div>
       </section>

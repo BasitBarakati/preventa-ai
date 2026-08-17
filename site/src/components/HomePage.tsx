@@ -1,7 +1,7 @@
 import type { ComponentType } from "react";
 import Link from "next/link";
 import {
-  ArrowRight, CheckCircle2, ClipboardList, Compass, FlaskConical, GraduationCap, HandHeart,
+  ArrowRight, ClipboardList, Compass, FlaskConical, GraduationCap, HandHeart,
   HeartPulse, Landmark, Leaf, Sparkles, Sprout, Target,
 } from "lucide-react";
 import Hero from "./Hero";
@@ -9,7 +9,7 @@ import EcosystemScene from "./EcosystemSceneLoader";
 import ScrollStack from "./ScrollStack";
 import GlassCard from "./ui/GlassCard";
 import GlowingButton from "./ui/GlowingButton";
-import { brand, indigenousHealth, pillars, principles, strategicGoals } from "@/lib/site-content";
+import { brand, indigenousHealth, pillars } from "@/lib/site-content";
 
 const pillarIcons: ComponentType<{ size?: number }>[] = [ClipboardList, HeartPulse, HandHeart, FlaskConical, GraduationCap];
 const indigenousIcons: ComponentType<{ size?: number }>[] = [Sprout, Leaf, Landmark];
@@ -66,35 +66,7 @@ export default function HomePage() {
               ))}
             </div>
             <div className="governance-tags" data-reveal><span>OCAP® principles</span><span>Two-Eyed Seeing</span><span>PHIPA &amp; PIPEDA aligned</span><span>Human oversight</span></div>
-          </div>
-        </section>
-      </div>
-
-      <div className="stack-frame">
-        <section className="lux-section" id="principles">
-          <div className="container">
-            <SectionIntro eyebrow="PRINCIPLES & GOALS" title="What governs us, and what we're building toward." text="Seven principles every workflow is checked against, and four goals that guide every program and platform decision." />
-            <div className="framework-grid" data-stagger>
-              {principles.map(({ title, description }, index) => (
-                <GlassCard key={title} className="framework-card lit-edge" data-tilt>
-                  <span className="tilt-sheen" aria-hidden="true" />
-                  <span className="framework-card__tag">Principle 0{index + 1}</span>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                </GlassCard>
-              ))}
-            </div>
-            <p className="lux-eyebrow lux-subheading"><span /> STRATEGIC GOALS</p>
-            <div className="lux-capability-grid" data-stagger>
-              {strategicGoals.map((goal, index) => (
-                <GlassCard key={goal} className="lit-edge" data-tilt data-cursor-label="View">
-                  <span className="tilt-sheen" aria-hidden="true" />
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <CheckCircle2 size={18} />
-                  <p>{goal}</p>
-                </GlassCard>
-              ))}
-            </div>
+            <p className="lux-inline-link" data-reveal><Link href="/about" prefetch={false}>Read our seven principles &amp; four strategic goals <ArrowRight size={15} /></Link></p>
           </div>
         </section>
       </div>

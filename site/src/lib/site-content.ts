@@ -230,4 +230,4 @@ export const navigation = [
 
 export const programPaths = pillars.map((pillar) => pillar.href);
 
-export const allPublicPaths = ["/", ...programPaths, ...Object.keys(pageDefinitions)];
+export const allPublicPaths = ["/", "/about", ...programPaths, ...Object.keys(pageDefinitions)];

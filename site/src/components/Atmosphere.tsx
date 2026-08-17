@@ -3,7 +3,10 @@
 import dynamic from "next/dynamic";
 import { useEffect, useState, type CSSProperties } from "react";
 
-const LuxuryEmblemScene = dynamic(() => import("./LuxuryEmblemScene"), { ssr: false });
+// Imported from the shared Scenes3D barrel (see EcosystemSceneLoader.tsx)
+// so this chunk and the ecosystem backdrop's chunk share one three.js/r3f
+// bundle instead of shipping it twice.
+const LuxuryEmblemScene = dynamic(() => import("./Scenes3D").then((m) => m.LuxuryEmblemScene), { ssr: false });
 
 /**
  * The ambient layer: drifting aurora light fields, film grain, the
