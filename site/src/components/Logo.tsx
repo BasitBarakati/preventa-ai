@@ -10,14 +10,14 @@ type LogoProps = {
 export default function Logo({ variant = "full", priority = false, className = "", dark = false }: LogoProps) {
   if (variant === "symbol") {
     return (
-      <span className={`brand-symbol ${dark ? "brand-symbol--dark" : ""} ${className}`}>
+      <span className={`inline-flex items-center justify-center overflow-hidden rounded-xl ${className}`}>
         <Image
-          src="/brand/preventa-ai-symbol.png"
-          alt=""
-          width={340}
-          height={370}
+          src="/brand/preventa-ai-uploaded-logo.jpg"
+          alt="Preventa AI Symbol"
+          width={90}
+          height={98}
           priority={priority}
-          sizes="56px"
+          className="w-full h-full object-contain rounded-lg"
         />
         <span className="sr-only">PREVENTA AI</span>
       </span>
@@ -25,14 +25,15 @@ export default function Logo({ variant = "full", priority = false, className = "
   }
 
   return (
-    <Image
-      src="/brand/preventa-ai-logo.png"
-      alt="PREVENTA AI"
-      width={690}
-      height={445}
-      priority={priority}
-      className={className}
-      sizes="(max-width: 768px) 240px, 330px"
-    />
+    <div className={`inline-flex items-center gap-2 ${className}`}>
+      <Image
+        src="/brand/preventa-ai-uploaded-logo.jpg"
+        alt="PREVENTA AI"
+        width={140}
+        height={154}
+        priority={priority}
+        className="h-10 w-auto object-contain rounded-lg"
+      />
+    </div>
   );
 }

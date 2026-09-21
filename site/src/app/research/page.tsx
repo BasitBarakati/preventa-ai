@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, FlaskConical, LineChart, CheckCircle2 } from "lucide-react";
 import ProgramPage from "@/components/ProgramPage";
-import GlassCard from "@/components/ui/GlassCard";
 import { brand, research } from "@/lib/site-content";
 
 export const metadata: Metadata = {
@@ -15,22 +14,43 @@ export const metadata: Metadata = {
 
 export default function ResearchPage() {
   return (
-    <ProgramPage label="Research and Risk Prediction" eyebrow={research.eyebrow} title={research.title} description={research.description}>
-      <section className="lux-section research-section" id="areas">
-        <div className="container">
-          <div className="framework-grid" data-stagger>
-            {research.areas.map(({ title, text }, index) => (
-              <GlassCard key={title} className="framework-card lit-edge" data-tilt>
-                <span className="tilt-sheen" aria-hidden="true" />
-                <span className="framework-card__tag">Capability 0{index + 1}</span>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </GlassCard>
-            ))}
-          </div>
-          <p className="research-boundary"><ShieldCheck size={16} /> Public-phase workspaces use synthetic, open, or explicitly approved data only. No live personal-health prediction is activated.</p>
+    <ProgramPage 
+      label="Research and Risk Prediction" 
+      eyebrow={research.eyebrow} 
+      title={research.title} 
+      description={research.description}
+    >
+      <div className="space-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {research.areas.map(({ title, text }, index) => (
+            <div key={title} className="card-clean p-8 bg-white border border-[#0B3D5F]/10 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#FAF7F2] text-[#0B3D5F] flex items-center justify-center">
+                    {index === 0 ? <FlaskConical size={24} /> : <LineChart size={24} />}
+                  </div>
+                  <span className="text-xs font-mono-data font-bold text-[#1F8A8A] bg-[#1F8A8A]/10 px-2.5 py-1 rounded-full">
+                    Research Stream 0{index + 1}
+                  </span>
+                </div>
+                <h3 className="font-display text-2xl font-bold text-[#0B3D5F] mb-3">
+                  {title}
+                </h3>
+                <p className="text-xs sm:text-sm text-[#5D7185] leading-relaxed">
+                  {text}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
-      </section>
+
+        <div className="p-5 rounded-2xl bg-[#EBF3E7] border border-[#7FB069]/40 flex items-start gap-3 text-xs text-[#3E692D]">
+          <ShieldCheck size={20} className="shrink-0 mt-0.5" />
+          <p className="font-medium leading-relaxed">
+            <strong>Controlled Research Guardrail:</strong> Public-phase sandboxes utilize approved synthetic benchmarks and open public data only. Live clinical prediction and individualized health scoring require reviewed institutional agreements.
+          </p>
+        </div>
+      </div>
     </ProgramPage>
   );
 }

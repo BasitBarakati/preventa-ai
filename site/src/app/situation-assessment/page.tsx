@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Building2, CheckCircle2, HeartPulse, UsersRound } from "lucide-react";
+import { Building2, CheckCircle2, HeartPulse, UsersRound, ArrowRight, ShieldCheck } from "lucide-react";
 import ProgramPage from "@/components/ProgramPage";
-import GlassCard from "@/components/ui/GlassCard";
 import { brand, situationAssessment } from "@/lib/site-content";
 
 export const metadata: Metadata = {
@@ -16,27 +15,53 @@ const icons = [HeartPulse, UsersRound, Building2];
 
 export default function SituationAssessmentPage() {
   return (
-    <ProgramPage label="Situation Assessment" eyebrow={situationAssessment.eyebrow} title={situationAssessment.title} description={situationAssessment.description}>
-      <section className="lux-section assessment-studio" id="modules">
-        <div className="container">
-          <div className="assessment-module-grid" data-stagger>
-            {situationAssessment.modules.map(({ title, factors, outputs }, index) => {
-              const Icon = icons[index];
-              return (
-                <GlassCard key={title} glow="teal" className="assessment-module lit-edge" data-tilt>
-                  <span className="tilt-sheen" aria-hidden="true" />
-                  <div className="lux-icon"><Icon /></div>
-                  <h3>{title}</h3>
-                  <ul className="factor-list">
-                    {factors.map((factor) => <li key={factor}><CheckCircle2 size={14} />{factor}</li>)}
+    <ProgramPage 
+      label="Situation Assessment" 
+      eyebrow={situationAssessment.eyebrow} 
+      title={situationAssessment.title} 
+      description={situationAssessment.description}
+    >
+      <div className="space-y-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {situationAssessment.modules.map(({ title, factors, outputs }, index) => {
+            const Icon = icons[index] || HeartPulse;
+            return (
+              <div key={title} className="card-clean p-8 bg-white flex flex-col justify-between border border-[#0B3D5F]/10">
+                <div>
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-[#FAF7F2] text-[#0B3D5F] flex items-center justify-center">
+                      <Icon size={24} />
+                    </div>
+                    <span className="text-[11px] font-mono-data font-bold text-[#5D7185] bg-black/[0.04] px-2.5 py-1 rounded-full">
+                      Module 0{index + 1}
+                    </span>
+                  </div>
+
+                  <h3 className="font-display text-xl font-bold text-[#0B3D5F] mb-4">
+                    {title}
+                  </h3>
+
+                  <ul className="space-y-2 text-xs text-[#33485C] mb-6">
+                    {factors.map((factor) => (
+                      <li key={factor} className="flex items-start gap-2">
+                        <CheckCircle2 size={14} className="text-[#1F8A8A] shrink-0 mt-0.5" />
+                        <span>{factor}</span>
+                      </li>
+                    ))}
                   </ul>
-                  {outputs && <p className="assessment-module__outputs"><strong>Outputs:</strong> {outputs}</p>}
-                </GlassCard>
-              );
-            })}
-          </div>
+                </div>
+
+                {outputs && (
+                  <div className="p-4 rounded-xl bg-[#FAF7F2] border border-[#0B3D5F]/8 text-xs">
+                    <span className="font-bold text-[#0B3D5F] block mb-1">Generated Output:</span>
+                    <span className="text-[#5D7185] leading-relaxed">{outputs}</span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
-      </section>
+      </div>
     </ProgramPage>
   );
 }

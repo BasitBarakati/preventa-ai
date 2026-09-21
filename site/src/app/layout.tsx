@@ -1,24 +1,26 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { Fraunces } from "next/font/google";
+import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import MotionSystem from "@/components/MotionSystem";
-import RouteCurtain from "@/components/RouteCurtain";
-import { Atmosphere, Preloader } from "@/components/Atmosphere";
 import { brand } from "@/lib/site-content";
 
-// A distinctive editorial serif for headings — every h1/h2/h3 sitewide reads
-// through the shared `--font-heading` CSS variable, so swapping the value
-// this font resolves to (see globals.css) elevates every heading at once
-// rather than needing a component-by-component pass.
+// Authoritative editorial serif for headings sitewide
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
   display: "swap",
   weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
+});
+
+// Swiss-grade technical UI typography for luxury readability
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const viewport: Viewport = {
@@ -103,17 +105,38 @@ const faqSchema = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en-CA" className={fraunces.variable}>
+    <html lang="en-CA" className={`${fraunces.variable} ${plusJakarta.variable}`}>
       <head>
         {[organizationSchema, websiteSchema, faqSchema].map((schema) => <script key={schema["@type"]} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />)}
       </head>
-      <body>
-        <Preloader />
-        <Atmosphere />
-        <MotionSystem />
-        <RouteCurtain />
+      <body className="antialiased selection:bg-teal-100 selection:text-teal-900 min-h-screen flex flex-col font-sans">
+        <a className="skip-link" href="#main-content">Skip to main content</a>
+        
+        {/* Top Canadian Public Health Authority Utility Ribbon */}
+        <aside aria-label="Jurisdiction and Compliance" className="bg-[#062235] text-white/90 text-[11px] font-medium py-1.5 px-4 border-b border-white/10 relative z-50">
+          <div className="site-container flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="text-red-500 font-bold" aria-hidden="true">🍁</span>
+              <span className="font-semibold text-white">Canada&apos;s Public Health AI Platform</span>
+              <span className="text-white/30 hidden sm:inline" aria-hidden="true">|</span>
+              <span className="text-white/80 hidden sm:inline">First Nations OCAP® &amp; PHIPA / PIPEDA Aligned</span>
+            </div>
+            <div className="flex items-center gap-4 text-white/70">
+              <span className="hidden md:inline hover:text-white transition-colors cursor-default text-[10.5px]">Ottawa Charter &bull; WHO Collaborating Protocols</span>
+              <span className="text-white/30 hidden md:inline" aria-hidden="true">|</span>
+              <div className="flex items-center gap-1.5 font-mono text-[11px]">
+                <span className="font-bold text-[#17B8C4]">EN</span>
+                <span className="text-white/30">/</span>
+                <span className="hover:text-white transition-colors cursor-pointer" title="Version française">FR</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
         <Nav />
-        {children}
+        <div className="flex-1">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

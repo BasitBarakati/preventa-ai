@@ -19,22 +19,29 @@ function motionIsAllowed() {
  * a one-shot "on enter" animation):
  *
  *  1. Entrance — as the section's frame reaches the pinned position, it
- *     settles in: slides up slightly, scales up to full size, fades in.
+ *     settles in: slides up slightly, tips down from a slight backward
+ *     lean, scales up to full size, fades in.
  *  2. Recede — once the *next* section starts arriving, this one eases to
- *     a very slightly smaller scale and a light dim (opacity never drops
- *     below .92) so it visibly cedes the foreground instead of just being
- *     instantly replaced. The floor is deliberately high — enough to read
- *     as "this page is now underneath," never so low it reads as hidden or
- *     illegible.
+ *     a very slightly smaller scale, a light dim (opacity never drops
+ *     below .92), and folds back a few degrees along its top edge — plus a
+ *     hinge shadow (`--recede`, read by the `::after` rule in globals.css)
+ *     — so it visibly cedes the foreground like a page lifting off the
+ *     stack, instead of just being instantly replaced. The floor is
+ *     deliberately high — enough to read as "this page is now underneath,"
+ *     never so low it reads as hidden or illegible.
  *
- * Both tweens are scale/y/opacity only — no filter: blur(), which forces an
- * expensive repaint on every scrubbed frame and is the single biggest thing
- * that can make a scroll-linked effect feel laggy rather than smooth. A
- * small rotate() was tried here once to sell "sliding underneath" harder —
- * reverted after a screenshot mid-scrub showed it read as a broken,
- * off-center, crooked card rather than an elegant page-turn. A scale/opacity
- * dip captured mid-transition still reads as "settling into place"; a
- * rotated one reads as "wrong," so don't reintroduce rotate here.
+ * Both tweens are scale/y/opacity/rotateX only — no filter: blur(), which
+ * forces an expensive repaint on every scrubbed frame and is the single
+ * biggest thing that can make a scroll-linked effect feel laggy rather than
+ * smooth. A small rotate() (z-axis) was tried here once to sell "sliding
+ * underneath" harder — reverted after a screenshot mid-scrub showed it read
+ * as a broken, off-center, crooked card rather than an elegant page-turn.
+ * rotateX is a different axis: combined with `perspective` on the parent
+ * `.stack-frame` (globals.css) and the top-anchored transformOrigin below,
+ * it tips the *whole rectangle* back along its top edge — the actual
+ * geometry of a page turning — rather than skewing it sideways like a flat
+ * rotate() does. Keep the angles small (single digits): this is a hinge,
+ * not a flip card.
  *
  * GSAP ScrollTrigger drives this directly rather than CSS
  * animation-timeline: view(), which isn't supported in every browser this
@@ -77,12 +84,17 @@ export default function ScrollStack() {
         frames.forEach((frame, index) => {
           const section = frame.querySelector<HTMLElement>(".lux-section");
           if (!section) return;
-          gsap.set(section, { transformOrigin: "50% 0%", willChange: "transform, opacity" });
+          gsap.set(section, {
+            transformOrigin: "50% 0%",
+            transformPerspective: 1800,
+            willChange: "transform, opacity",
+          });
+          section.style.setProperty("--recede", "0");
 
           const entrance = gsap.fromTo(
             section,
-            { scale: 0.93, y: 34, opacity: 0.82 },
-            { scale: 1, y: 0, opacity: 1, ease: "none" }
+            { scale: 0.93, y: 34, opacity: 0.82, rotateX: 5 },
+            { scale: 1, y: 0, opacity: 1, rotateX: 0, ease: "none" }
           );
           const entranceTrigger = ScrollTrigger.create({
             trigger: frame,
@@ -95,7 +107,13 @@ export default function ScrollStack() {
 
           const next = frames[index + 1];
           if (next) {
-            const recede = gsap.to(section, { scale: 0.97, opacity: 0.92, ease: "none" });
+            const recede = gsap.to(section, {
+              scale: 0.97,
+              opacity: 0.92,
+              rotateX: -4,
+              ease: "none",
+              onUpdate: () => section.style.setProperty("--recede", String(recede.progress())),
+            });
             const recedeTrigger = ScrollTrigger.create({
               trigger: next,
               start: "top bottom",
