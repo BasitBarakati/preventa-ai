@@ -1,26 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { 
-  ShieldCheck, 
-  Landmark, 
-  FileText, 
-  Activity, 
-  HelpCircle, 
-  ChevronDown 
-} from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Hero from "./Hero";
-import ExecutiveOverview from "./ExecutiveOverview";
+import InstitutionalMandate from "./InstitutionalMandate";
+import InteractiveAIStudio from "./InteractiveAIStudio";
 import PlatformPavilion from "./PlatformPavilion";
-import AICoPilotDemo from "./AICoPilotDemo";
 import GuidingPrinciples from "./GuidingPrinciples";
 import PricingTiers from "./PricingTiers";
 import InquirySection from "./InquirySection";
 
 const faqs = [
   {
-    q: "What makes Preventa AI different from standard commercial health software?",
-    a: "Preventa AI is purpose-engineered as Canada's sovereign public health intelligence infrastructure. Rather than calculating opaque proprietary risk scores, every single AI Co-Pilot synthesis cites verified Canadian and WHO peer-reviewed evidence, respects First Nations OCAP® principles, generates customizable Ottawa Charter logic models, and enforces mandatory human epidemiologist authorization before any consequential output is finalized.",
+    q: "What makes Preventa AI fundamentally different from commercial health tech?",
+    a: "Preventa AI is purpose-engineered as Canada's sovereign public health intelligence infrastructure. Rather than calculating opaque proprietary risk scores, every AI synthesis cites verified Canadian and WHO peer-reviewed evidence, respects First Nations OCAP® principles, generates customizable Ottawa Charter logic models, and enforces mandatory human epidemiologist authorization before any consequential output is finalized.",
   },
   {
     q: "How does Preventa AI respect First Nations, Inuit, and Métis data sovereignty?",
@@ -44,62 +37,27 @@ export default function HomePage() {
   return (
     <main id="main-content" className="min-h-screen bg-[#FCFBF9]">
       
-      {/* 1. Executive Hero & The Health Intelligence Continuum */}
+      {/* 1. Monumental Executive Hero (Spacious, Uncluttered, Pure Gravitas) */}
       <Hero />
 
-      {/* 2. National Framework Governance Strip */}
-      <section className="py-7 bg-[#062235] text-white border-b border-white/10" aria-label="National Standards">
-        <div className="site-container">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-            <div className="text-center lg:text-left shrink-0">
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#14B8A6] block mb-0.5">
-                National Governance Standards
-              </span>
-              <span className="text-xs font-semibold text-white/90">
-                Built strictly to Canadian Public Health &amp; Indigenous Sovereignty Frameworks
-              </span>
-            </div>
+      {/* 2. Institutional Mandate: Vision, Mission & Four Strategic Goals */}
+      <InstitutionalMandate />
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto text-xs">
-              <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-2">
-                <ShieldCheck size={15} className="text-[#14B8A6] shrink-0" />
-                <span className="font-semibold text-white/90">First Nations OCAP®</span>
-              </div>
-              <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-2">
-                <Landmark size={15} className="text-[#C5A059] shrink-0" />
-                <span className="font-semibold text-white/90">CPHA Principles</span>
-              </div>
-              <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-2">
-                <FileText size={15} className="text-[#7FB069] shrink-0" />
-                <span className="font-semibold text-white/90">Ottawa Charter SDOH</span>
-              </div>
-              <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-2">
-                <Activity size={15} className="text-[#14B8A6] shrink-0" />
-                <span className="font-semibold text-white/90">PHAC Competencies</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 3. Flagship Interactive AI Studio (The "Out of the Box" AI Intelligence Workbench) */}
+      <InteractiveAIStudio />
 
-      {/* 3. Executive Overview: 3 Crucial Stakeholder Pathways */}
-      <ExecutiveOverview />
-
-      {/* 4. The Platform Pavilion (Consolidates all 5 Programs cleanly) */}
+      {/* 4. The Five Connected Pillars (Spacious Editorial Flow) */}
       <PlatformPavilion />
 
-      {/* 5. Serene AI Co-Pilot Demonstration */}
-      <AICoPilotDemo />
-
-      {/* 6. Seven Guiding Principles & Strategic Goals */}
+      {/* 5. Seven Guiding Principles (Ethical Foundation) */}
       <GuidingPrinciples />
 
-      {/* 7. Equitable & Transparent Pricing Matrix */}
+      {/* 6. Equitable & Transparent Pricing Matrix */}
       <PricingTiers />
 
-      {/* 8. Frequently Asked Questions */}
-      <section className="py-24 md:py-32 bg-[#FAF8F5] border-b border-[#0B3D5F]/6">
-        <div className="site-container max-w-4xl">
+      {/* 7. Frequently Asked Questions (Clarity & Assurance) */}
+      <section className="py-24 md:py-36 bg-[#FAF8F5] border-b border-[#0B3D5F]/8" id="faq">
+        <div className="site-container max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-xs font-bold text-[#0D9488] uppercase tracking-widest block mb-2">
               Clarity &amp; Assurance
@@ -107,7 +65,7 @@ export default function HomePage() {
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#062235] tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="text-sm sm:text-base text-[#64748B] mt-2 max-w-xl mx-auto">
+            <p className="text-sm sm:text-base text-[#64748B] mt-3 max-w-xl mx-auto">
               Straightforward answers regarding our AI models, clinical boundaries, OCAP® data sovereignty, and Canadian privacy laws.
             </p>
           </div>
@@ -134,7 +92,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 9. Final Executive Consultation Intake */}
+      {/* 8. Final Executive Consultation Intake */}
       <InquirySection />
 
     </main>
