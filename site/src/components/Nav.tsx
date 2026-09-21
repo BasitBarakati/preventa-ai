@@ -2,14 +2,15 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, ShieldCheck } from "lucide-react";
 import Logo from "./Logo";
 
 const navLinks = [
+  { label: "Mandate", href: "/#mandate" },
+  { label: "AI Studio", href: "/#ai-studio" },
   { label: "The Platform", href: "/#platform" },
   { label: "Workforce Academy", href: "/courses" },
-  { label: "Indigenous Health & OCAP®", href: "/indigenous-health" },
-  { label: "About & Principles", href: "/about" },
+  { label: "Indigenous OCAP®", href: "/indigenous-health" },
   { label: "Pricing", href: "/#pricing" },
 ];
 
@@ -29,11 +30,12 @@ export default function Nav() {
     <header 
       className={`site-header transition-all duration-300 ${
         scrolled 
-          ? "shadow-xs bg-[#FCFBF9]/95 backdrop-blur-xl border-b border-[#0B3D5F]/10" 
-          : "bg-[#FCFBF9]/80 backdrop-blur-md"
+          ? "shadow-sm bg-[#FCFBF9]/95 backdrop-blur-2xl border-b border-[#0B3D5F]/10" 
+          : "bg-[#FCFBF9]/85 backdrop-blur-xl"
       }`}
     >
       <div className="site-container h-full flex items-center justify-between gap-6">
+        
         {/* Brand Identity Lockup */}
         <Link 
           href="/" 
@@ -71,13 +73,13 @@ export default function Nav() {
           ))}
         </nav>
 
-        {/* Single Clear Executive Action */}
+        {/* Executive Action */}
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="/contact"
             className="btn-primary !py-2.5 !px-5 !text-[0.85rem] !rounded-xl"
           >
-            <span>Book Consultation</span>
+            <span>Book Executive Briefing</span>
             <ArrowRight size={14} className="text-[#14B8A6]" />
           </Link>
         </div>
@@ -114,7 +116,7 @@ export default function Nav() {
                 onClick={() => setOpen(false)}
                 className="btn-primary !w-full justify-center !py-3"
               >
-                Book Executive Consultation
+                Book Executive Briefing
               </Link>
             </div>
           </nav>

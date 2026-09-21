@@ -7,22 +7,36 @@ import {
   Sparkles, 
   Activity, 
   Lock, 
-  Landmark
+  Landmark,
+  Radio,
+  Server,
+  Users,
+  GraduationCap
 } from "lucide-react";
 import { brand } from "@/lib/site-content";
 
 export default function Hero() {
   return (
-    <section className="relative pt-20 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-mesh-hero border-b border-[#0B3D5F]/6">
+    <section className="relative pt-20 pb-20 md:pt-32 md:pb-32 overflow-hidden bg-mesh-hero border-b border-[#0B3D5F]/8">
+      
+      {/* Subtle Ambient Radial Light Aura */}
+      <div 
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-[#0D9488]/10 via-[#14B8A6]/8 to-[#C5A059]/5 blur-[120px] pointer-events-none -z-10" 
+        aria-hidden="true"
+      />
+
       <div className="site-container max-w-6xl mx-auto">
         
         {/* Top Centered Executive Narrative */}
         <div className="text-center max-w-4xl mx-auto">
           
-          {/* Sovereign Canadian Authority Pill */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-[#0B3D5F]/10 shadow-2xs mb-8 transition-transform hover:scale-[1.01]">
-            <span className="text-red-500 text-sm" aria-hidden="true">🍁</span>
-            <span className="text-[11.5px] font-bold text-[#062235] uppercase tracking-wider">
+          {/* Sovereign Canadian Authority Pill with Pulse */}
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#0B3D5F]/12 shadow-2xs mb-8 transition-transform hover:scale-[1.01]">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10B981] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0D9488]"></span>
+            </span>
+            <span className="text-[11.5px] font-bold text-[#062235] tracking-wider uppercase">
               Canada&apos;s Sovereign Public Health AI Platform
             </span>
             <span className="text-[#94A3B8] text-xs" aria-hidden="true">&bull;</span>
@@ -31,8 +45,8 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* Monumental Editorial Headline */}
-          <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight text-[#062235] leading-[1.06] mb-8">
+          {/* Monumental Editorial Headline (Apple/SpaceX Precision) */}
+          <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight text-[#062235] leading-[1.05] mb-8">
             Empowering Health. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0A4D34] via-[#0D9488] to-[#14B8A6] font-serif-italic font-normal">
               Strengthening
@@ -52,7 +66,7 @@ export default function Hero() {
               className="btn-primary !py-4 !px-8 !text-[0.98rem] !rounded-xl group shadow-sm flex items-center gap-2"
             >
               <Sparkles size={18} className="text-[#14B8A6]" />
-              <span>Launch Interactive AI Studio</span>
+              <span>Launch Sovereign AI Studio</span>
               <ArrowRight size={16} className="text-[#14B8A6] transition-transform group-hover:translate-x-1" />
             </a>
             
@@ -60,51 +74,49 @@ export default function Hero() {
               href="/contact" 
               className="btn-secondary !py-4 !px-8 !text-[0.98rem] !rounded-xl"
             >
-              <span>Book Executive Consultation</span>
+              <span>Book Executive Briefing</span>
             </Link>
           </div>
 
-          {/* Uncluttered Hairline Trust Strip */}
-          <div className="pt-10 border-t border-[#0B3D5F]/8 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-left">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#062235]/5 flex items-center justify-center text-[#0D9488] shrink-0">
-                <ShieldCheck size={17} />
+          {/* Silicon Valley Grade Sovereign Telemetry HUD */}
+          <div className="pt-10 border-t border-[#0B3D5F]/8 grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+            
+            <div className="p-4 rounded-2xl bg-white/70 backdrop-blur-md border border-[#0B3D5F]/8 hover:border-[#0D9488]/30 transition-all shadow-2xs">
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-mono text-2xl font-extrabold text-[#062235]">100%</span>
+                <Server size={18} className="text-[#0D9488]" />
               </div>
-              <div>
-                <span className="block text-xs font-bold text-[#062235]">First Nations OCAP®</span>
-                <span className="block text-[11px] text-[#64748B]">Data Sovereignty Guaranteed</span>
-              </div>
+              <span className="block text-xs font-bold text-[#062235]">Sovereign Compute</span>
+              <span className="block text-[11px] text-[#64748B]">Canadian Soil Residency (PHIPA)</span>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#062235]/5 flex items-center justify-center text-[#C5A059] shrink-0">
-                <Landmark size={17} />
+            <div className="p-4 rounded-2xl bg-white/70 backdrop-blur-md border border-[#0B3D5F]/8 hover:border-[#0D9488]/30 transition-all shadow-2xs">
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-mono text-2xl font-extrabold text-[#062235]">32</span>
+                <Users size={18} className="text-[#0A4D34]" />
               </div>
-              <div>
-                <span className="block text-xs font-bold text-[#062235]">CPHA Aligned</span>
-                <span className="block text-[11px] text-[#64748B]">Ottawa Charter Frameworks</span>
-              </div>
+              <span className="block text-xs font-bold text-[#062235]">Jurisdictions Modeled</span>
+              <span className="block text-[11px] text-[#64748B]">First Nations OCAP® Enforced</span>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#062235]/5 flex items-center justify-center text-[#0A4D34] shrink-0">
-                <Activity size={17} />
+            <div className="p-4 rounded-2xl bg-white/70 backdrop-blur-md border border-[#0B3D5F]/8 hover:border-[#0D9488]/30 transition-all shadow-2xs">
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-mono text-2xl font-extrabold text-[#062235]">180h</span>
+                <GraduationCap size={18} className="text-[#C5A059]" />
               </div>
-              <div>
-                <span className="block text-xs font-bold text-[#062235]">PHAC Standards</span>
-                <span className="block text-[11px] text-[#64748B]">Core Epidemiological Logic</span>
-              </div>
+              <span className="block text-xs font-bold text-[#062235]">Workforce Academy</span>
+              <span className="block text-[11px] text-[#64748B]">CME &amp; Micro-Credentials</span>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#062235]/5 flex items-center justify-center text-[#0B3D5F] shrink-0">
-                <Lock size={17} />
+            <div className="p-4 rounded-2xl bg-white/70 backdrop-blur-md border border-[#0B3D5F]/8 hover:border-[#0D9488]/30 transition-all shadow-2xs">
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-mono text-2xl font-extrabold text-[#062235]">$0</span>
+                <ShieldCheck size={18} className="text-[#0D9488]" />
               </div>
-              <div>
-                <span className="block text-xs font-bold text-[#062235]">PHIPA &amp; PIPEDA</span>
-                <span className="block text-[11px] text-[#64748B]">100% Canadian Soil Cloud</span>
-              </div>
+              <span className="block text-xs font-bold text-[#062235]">Grassroots Subsidy</span>
+              <span className="block text-[11px] text-[#64748B]">Zero Community Exclusion</span>
             </div>
+
           </div>
 
         </div>

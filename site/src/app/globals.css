@@ -109,7 +109,8 @@ button, input, select, textarea {
 /* Typography Helpers */
 .font-display {
   font-family: var(--font-heading);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.035em;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
 .font-serif-italic {
@@ -119,6 +120,7 @@ button, input, select, textarea {
 
 .font-mono-data {
   font-family: var(--font-mono);
+  font-feature-settings: "tnum";
 }
 
 /* Layout Container */
@@ -131,6 +133,23 @@ button, input, select, textarea {
   .site-container {
     width: min(var(--container-max), calc(100% - 5rem));
   }
+}
+
+/* Silicon Valley Grade Glass & Laser-Etched Hairlines */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(11, 61, 95, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(6, 34, 53, 0.04);
+}
+
+.glass-panel-dark {
+  background: rgba(6, 34, 53, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.25);
 }
 
 /* Luxury Hairline Surfaces (Eliminates Boxy Clutter) */

@@ -6,6 +6,7 @@ import Hero from "./Hero";
 import InstitutionalMandate from "./InstitutionalMandate";
 import InteractiveAIStudio from "./InteractiveAIStudio";
 import PlatformPavilion from "./PlatformPavilion";
+import WorkforceAcademySection from "./WorkforceAcademySection";
 import GuidingPrinciples from "./GuidingPrinciples";
 import PricingTiers from "./PricingTiers";
 import InquirySection from "./InquirySection";
@@ -49,7 +50,10 @@ export default function HomePage() {
       {/* 4. The Five Connected Pillars (Spacious Editorial Flow) */}
       <PlatformPavilion />
 
-      {/* 5. Seven Guiding Principles (Ethical Foundation) */}
+      {/* 5. Workforce Academy: University In The Box (6 Accredited Tracks) */}
+      <WorkforceAcademySection />
+
+      {/* 6. Seven Guiding Principles (Ethical Foundation) */}
       <GuidingPrinciples />
 
       {/* 6. Equitable & Transparent Pricing Matrix */}
