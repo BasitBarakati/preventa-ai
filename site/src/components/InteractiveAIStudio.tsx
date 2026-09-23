@@ -314,7 +314,7 @@ export default function InteractiveAIStudio() {
   };
 
   return (
-    <section className="py-24 md:py-36 bg-[#FCFBF9] border-b border-[#0B3D5F]/8 relative" id="ai-studio">
+    <div className="pt-4 pb-14 md:pt-6 md:pb-16 bg-[#FCFBF9] relative w-full" id="ai-studio">
       <div className="site-container max-w-6xl mx-auto">
         
         {/* Section Header */}
@@ -834,6 +834,6 @@ export default function InteractiveAIStudio() {
         </div>
 
       </div>
-    </section>
+    </div>
   );
 }

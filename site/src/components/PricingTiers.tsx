@@ -8,7 +8,7 @@ export default function PricingTiers() {
   const [annual, setAnnual] = useState(true);
 
   return (
-    <section id="pricing" className="py-24 md:py-32 bg-white border-b border-[#0B3D5F]/6">
+    <div id="pricing" className="pt-4 pb-12 md:pt-6 md:pb-14 bg-white w-full">
       <div className="site-container">
         
         {/* Section Header */}
@@ -229,6 +229,6 @@ export default function PricingTiers() {
         </div>
 
       </div>
-    </section>
+    </div>
   );
 }

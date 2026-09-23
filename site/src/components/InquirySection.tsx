@@ -37,7 +37,7 @@ export default function InquirySection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-[#FAF7F2]">
+    <div id="contact" className="pt-4 pb-14 bg-transparent w-full">
       <div className="site-container">
         <div className="max-w-4xl mx-auto card-clean p-8 sm:p-12 border-2 border-[#0B3D5F]/10 shadow-xl">
           {!submitted ? (
@@ -197,6 +197,6 @@ export default function InquirySection() {
           )}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

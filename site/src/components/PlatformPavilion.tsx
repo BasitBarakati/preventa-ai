@@ -14,9 +14,10 @@ import {
   ArrowRight, 
   CheckCircle2, 
   Sparkles,
-  ChevronRight
+  ChevronRight,
+  BookOpen
 } from "lucide-react";
-import { assessmentStreams, wellnessDomains, indigenousHealth } from "@/lib/site-content";
+import { universityTracks } from "./UniversityInTheBox";
 
 type PillarKey = "assessment" | "wellness" | "indigenous" | "research" | "academy";
 
@@ -158,17 +159,17 @@ export default function PlatformPavilion() {
   const current = pillarDetails[activeTab];
 
   return (
-    <section id="platform" className="py-24 md:py-36 bg-[#FAF8F5] border-b border-[#0B3D5F]/8">
+    <div id="platform" className="pt-4 pb-14 md:pt-6 md:pb-16 bg-[#FAF8F5] w-full">
       <div className="site-container max-w-6xl mx-auto">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D9488]/10 text-[#0D9488] text-[11px] font-extrabold uppercase tracking-widest mb-4">
+        <div className="max-w-3xl mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D9488]/10 text-[#0D9488] text-[11px] font-extrabold uppercase tracking-widest mb-3">
             <Layers size={13} />
             <span>The Preventa Architecture</span>
           </div>
 
-          <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-[#062235] tracking-tight leading-[1.1] mb-6">
+          <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-[#062235] tracking-tight leading-[1.1] mb-4">
             Five Connected Programs. <br />
             <span className="font-serif-italic font-normal text-[#0D9488]">
               One Sovereign Continuum.
@@ -181,7 +182,7 @@ export default function PlatformPavilion() {
         </div>
 
         {/* 5-Pillar Minimalist Tab Strip */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-12 no-scrollbar" role="tablist">
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-10 no-scrollbar" role="tablist">
           {[
             { id: "assessment", label: "01 · Situation Assessment", icon: Activity },
             { id: "wellness", label: "02 · Health & Wellbeing", icon: Layers },
@@ -199,23 +200,23 @@ export default function PlatformPavilion() {
                 role="tab"
                 aria-selected={isSelected}
                 onClick={() => setActiveTab(tab.id as PillarKey)}
-                className={`px-5 py-3 rounded-2xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-2 cursor-pointer border ${
+                className={`px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-2 cursor-pointer border ${
                   isSelected
-                    ? "bg-[#062235] text-white border-[#062235] shadow-sm scale-[1.01]"
+                    ? "bg-[#062235] text-white border-[#062235] shadow-xs scale-[1.01]"
                     : "bg-white text-[#334155] hover:bg-[#FAF8F5] border-[#0B3D5F]/10 hover:border-[#0B3D5F]/20"
                 }`}
               >
-                <Icon size={15} className={isSelected ? "text-[#14B8A6]" : "text-[#0A4D34]"} />
+                <Icon size={14} className={isSelected ? "text-[#14B8A6]" : "text-[#0A4D34]"} />
                 <span>{tab.label}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Spacious Editorial Split (Zero Box-in-Box Clutter) */}
-        <div className="bg-white rounded-3xl border border-[#0B3D5F]/10 p-8 sm:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14 items-start">
+        {/* Selected Pillar Architectural Dossier */}
+        <div className="p-7 sm:p-10 rounded-3xl bg-white border border-[#0B3D5F]/10 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Left Column: Narrative & Action (5 Cols) */}
+          {/* Left Column: Conceptual Overview (5 Cols) */}
           <div className="lg:col-span-5 flex flex-col justify-between h-full">
             <div>
               <div className="flex items-center gap-3 mb-3">
@@ -227,53 +228,87 @@ export default function PlatformPavilion() {
                 </span>
               </div>
 
-              <h3 className="font-display text-2xl sm:text-4xl font-bold text-[#062235] leading-snug mb-5">
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-[#062235] leading-snug mb-4">
                 {current.title}
               </h3>
 
-              <p className="text-sm sm:text-base text-[#334155] leading-relaxed mb-6 font-normal">
+              <p className="text-xs sm:text-sm text-[#334155] leading-relaxed mb-6 font-normal">
                 {current.philosophy}
               </p>
 
-              <div className="p-3.5 rounded-xl bg-[#FAF8F5] border border-[#0B3D5F]/6 text-xs text-[#062235] font-semibold mb-8">
+              <div className="p-3.5 rounded-xl bg-[#FAF8F5] border border-[#0B3D5F]/6 text-xs text-[#062235] font-semibold mb-6">
                 {current.metrics}
               </div>
             </div>
 
             <Link
               href={current.href}
-              className="btn-primary !py-3 !px-6 text-xs font-bold inline-flex items-center gap-2 self-start"
+              className="btn-primary !py-2.5 !px-5 text-xs font-bold inline-flex items-center gap-2 self-start"
             >
-              <span>Explore Program Dossier</span>
-              <ArrowRight size={14} className="text-[#14B8A6]" />
+              <span>{activeTab === "academy" ? "Explore Academy Curriculum" : "Explore Program Dossier"}</span>
+              <ArrowRight size={13} className="text-[#14B8A6]" />
             </Link>
           </div>
 
-          {/* Right Column: Clean Editorial Highlights (7 Cols) */}
-          <div className="lg:col-span-7 space-y-4">
-            {current.highlights.map((h, idx) => (
-              <div
-                key={idx}
-                className="p-5 sm:p-6 rounded-2xl bg-[#FAF8F5] border border-[#0B3D5F]/6 hover:border-[#0D9488]/30 transition-all"
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <h4 className="font-display text-base sm:text-lg font-bold text-[#062235]">
-                    {h.title}
-                  </h4>
-                  <span className="font-mono text-[10.5px] font-bold text-[#0D9488] bg-white px-2 py-0.5 rounded-md border border-[#0B3D5F]/6">
-                    {h.badge}
+          {/* Right Column: Editorial Highlights or Academy Tracks (7 Cols) */}
+          <div className="lg:col-span-7">
+            {activeTab === "academy" ? (
+              <div>
+                <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#0B3D5F]/8">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#062235]">
+                    6 Accredited Career Tracks (180+ Hours)
+                  </span>
+                  <span className="text-[11px] text-[#0D9488] font-mono">
+                    CME / CE Micro-Credentials
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
-                  {h.subtitle}
-                </p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[380px] overflow-y-auto pr-1">
+                  {universityTracks.map((track) => (
+                    <div 
+                      key={track.id}
+                      className="p-3.5 rounded-xl bg-[#FAF8F5] border border-[#0B3D5F]/8 hover:border-[#0D9488]/30 transition-all text-left"
+                    >
+                      <span className="text-[9.5px] font-mono font-bold text-[#0D9488] block mb-1">
+                        {track.badge}
+                      </span>
+                      <h4 className="font-display text-xs font-bold text-[#062235] leading-snug mb-1">
+                        {track.title}
+                      </h4>
+                      <p className="text-[11px] text-[#64748B] leading-tight line-clamp-2">
+                        {track.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
+            ) : (
+              <div className="space-y-3.5">
+                {current.highlights.map((h, idx) => (
+                  <div
+                    key={idx}
+                    className="p-4 sm:p-5 rounded-2xl bg-[#FAF8F5] border border-[#0B3D5F]/6 hover:border-[#0D9488]/30 transition-all"
+                  >
+                    <div className="flex items-center justify-between mb-1.5">
+                      <h4 className="font-display text-sm sm:text-base font-bold text-[#062235]">
+                        {h.title}
+                      </h4>
+                      <span className="font-mono text-[10px] font-bold text-[#0D9488] bg-white px-2 py-0.5 rounded-md border border-[#0B3D5F]/6">
+                        {h.badge}
+                      </span>
+                    </div>
+                    <p className="text-xs text-[#475569] leading-relaxed">
+                      {h.subtitle}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
         </div>
 
       </div>
-    </section>
+    </div>
   );
 }

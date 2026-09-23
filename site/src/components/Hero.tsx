@@ -73,7 +73,7 @@ export default function Hero() {
   const ActiveIcon = activeStream.icon;
 
   return (
-    <section className="relative pt-20 pb-20 md:pt-32 md:pb-36 overflow-hidden bg-mesh-hero border-b border-[#0B3D5F]/8 w-full max-w-[100vw]">
+    <section className="relative pt-6 pb-12 md:pt-10 md:pb-16 overflow-hidden bg-mesh-hero w-full max-w-[100vw]">
       
       {/* Subtle Ambient Radial Light Aura */}
       <div 
