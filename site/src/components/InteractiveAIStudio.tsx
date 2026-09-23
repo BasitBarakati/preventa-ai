@@ -452,11 +452,11 @@ export default function InteractiveAIStudio() {
             </div>
 
             {/* View Mode Tabs */}
-            <div className="flex items-center gap-2 mb-6 border-b border-[#0B3D5F]/8 pb-3">
+            <div className="flex items-center gap-2 mb-6 border-b border-[#0B3D5F]/8 pb-3 overflow-x-auto no-scrollbar">
               <button
                 type="button"
                 onClick={() => setActiveTab("synthesis")}
-                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                   activeTab === "synthesis"
                     ? "bg-[#062235] text-white"
                     : "text-[#64748B] hover:text-[#062235] hover:bg-black/[0.03]"
@@ -467,7 +467,7 @@ export default function InteractiveAIStudio() {
               <button
                 type="button"
                 onClick={() => setActiveTab("logic-model")}
-                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                   activeTab === "logic-model"
                     ? "bg-[#062235] text-white"
                     : "text-[#64748B] hover:text-[#062235] hover:bg-black/[0.03]"
@@ -478,7 +478,7 @@ export default function InteractiveAIStudio() {
               <button
                 type="button"
                 onClick={() => setActiveTab("metrics")}
-                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                   activeTab === "metrics"
                     ? "bg-[#062235] text-white"
                     : "text-[#64748B] hover:text-[#062235] hover:bg-black/[0.03]"

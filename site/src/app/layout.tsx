@@ -4,6 +4,7 @@ import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import MotionSystem from "@/components/MotionSystem";
 import { brand } from "@/lib/site-content";
 
 // Authoritative editorial serif for headings sitewide
@@ -112,6 +113,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="antialiased selection:bg-teal-100 selection:text-teal-900 min-h-screen flex flex-col font-sans">
         <a className="skip-link" href="#main-content">Skip to main content</a>
         
+        {/* Subtle Atmospheric Light & Scroll Progress Rail */}
+        <div className="cursor-spotlight" aria-hidden="true" />
+        <div className="scroll-rail" aria-hidden="true"><div className="scroll-rail__fill" /></div>
+        <MotionSystem />
+
         {/* Top Canadian Public Health Authority Utility Ribbon */}
         <aside aria-label="Jurisdiction and Compliance" className="bg-[#062235] text-white/90 text-[11px] font-medium py-1.5 px-4 border-b border-white/10 relative z-50">
           <div className="site-container flex items-center justify-between">

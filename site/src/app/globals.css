@@ -355,3 +355,64 @@ button, input, select, textarea {
     color: #000000 !important;
   }
 }
+
+/* Lenis Smooth Scroll Recommended Styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Atmospheric Layer */
+.cursor-spotlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background: radial-gradient(
+    700px circle at var(--pointer-x, -500px) var(--pointer-y, -500px),
+    rgba(13, 148, 136, 0.045),
+    transparent 80%
+  );
+  transition: opacity 0.3s ease;
+}
+
+.scroll-rail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: transparent;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.scroll-rail__fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #0A4D34, #0D9488, #14B8A6, #C5A059);
+  transform-origin: left center;
+  transform: scaleX(var(--scroll-progress, 0));
+  transition: transform 0.05s linear;
+}
+
+.split-word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
