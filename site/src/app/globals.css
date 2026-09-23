@@ -135,6 +135,15 @@ button, input, select, textarea {
   }
 }
 
+/* Hide scrollbar across all browsers while allowing scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Silicon Valley Grade Glass & Laser-Etched Hairlines */
 .glass-panel {
   background: rgba(255, 255, 255, 0.82);

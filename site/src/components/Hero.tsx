@@ -14,7 +14,7 @@ import { brand } from "@/lib/site-content";
 
 export default function Hero() {
   return (
-    <section className="relative pt-6 pb-12 md:pt-10 md:pb-16 overflow-hidden bg-mesh-hero w-full max-w-[100vw]">
+    <section className="relative pt-3 pb-10 md:pt-5 md:pb-12 overflow-hidden bg-mesh-hero w-full max-w-[100vw]">
       
       {/* Subtle Ambient Radial Light Aura */}
       <div 
@@ -25,10 +25,10 @@ export default function Hero() {
       <div className="site-container max-w-6xl mx-auto">
         
         {/* Top Centered Executive Narrative */}
-        <div className="text-center max-w-4xl mx-auto mb-12">
+        <div className="text-center max-w-4xl mx-auto mb-10">
           
           {/* Sovereign Canadian Authority Pill with Pulse */}
-          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#0B3D5F]/12 shadow-2xs mb-6 sm:mb-8 transition-transform hover:scale-[1.01] max-w-[calc(100vw-3rem)] text-center">
+          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#0B3D5F]/12 shadow-2xs mb-5 sm:mb-6 transition-transform hover:scale-[1.01] max-w-[calc(100vw-3rem)] text-center">
             <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10B981] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0D9488]"></span>
@@ -43,7 +43,7 @@ export default function Hero() {
           </div>
 
           {/* Monumental Editorial Headline (Apple/SpaceX Precision) */}
-          <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight text-[#062235] leading-[1.14] sm:leading-[1.06] mb-6 sm:mb-8">
+          <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7.5xl font-extrabold tracking-tight text-[#062235] leading-[1.12] sm:leading-[1.04] mb-5 sm:mb-6">
             Empowering Health. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0A4D34] via-[#0D9488] to-[#14B8A6] font-serif-italic font-normal">
               Strengthening
@@ -53,30 +53,30 @@ export default function Hero() {
           </h1>
 
           {/* Crystal Clear Executive Mandate: What We Do */}
-          <p className="text-base sm:text-xl md:text-2xl text-[#334155] leading-relaxed max-w-3xl mx-auto font-normal mb-8 sm:mb-10 px-2">
+          <p className="text-sm sm:text-lg md:text-xl text-[#334155] leading-relaxed max-w-3xl mx-auto font-normal mb-6 sm:mb-8 px-2">
             Canada&apos;s sovereign artificial intelligence infrastructure purpose-built for public health. We connect community data, clinical evidence, and frontline healthcare workers to stop chronic illnesses and infectious threats before they start.
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-14">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-10">
             <a 
               href="#mandate" 
-              className="btn-primary !py-3.5 sm:!py-4 !px-6 sm:!px-8 !text-[0.92rem] sm:!text-[0.98rem] !rounded-xl group shadow-sm flex items-center gap-2"
+              className="btn-primary !py-3 sm:!py-3.5 !px-6 sm:!px-7 !text-[0.9rem] sm:!text-[0.95rem] !rounded-xl group shadow-sm flex items-center gap-2"
             >
               <span>Explore What We Do</span>
-              <ChevronDown size={16} className="text-[#14B8A6] transition-transform group-hover:translate-y-0.5" />
+              <ChevronDown size={15} className="text-[#14B8A6] transition-transform group-hover:translate-y-0.5" />
             </a>
             
             <Link 
               href="/contact" 
-              className="btn-secondary !py-3.5 sm:!py-4 !px-6 sm:!px-8 !text-[0.92rem] sm:!text-[0.98rem] !rounded-xl"
+              className="btn-secondary !py-3 sm:!py-3.5 !px-6 sm:!px-7 !text-[0.9rem] sm:!text-[0.95rem] !rounded-xl"
             >
               <span>Book Executive Briefing</span>
             </Link>
           </div>
 
           {/* Minimalist 3-Pillar Architectural Triad: WHAT WE DO */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-left max-w-5xl mx-auto mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-left max-w-5xl mx-auto mb-8">
             
             {/* Pillar 1 */}
             <div className="p-6 sm:p-7 rounded-2xl bg-white/85 backdrop-blur-md border border-[#0B3D5F]/10 shadow-2xs hover:border-[#0D9488]/30 transition-all flex flex-col justify-between">
