@@ -217,6 +217,13 @@ export default function AssessmentWizard() {
                   </a>
                 </div>
               </div>
+
+              {/* Non-Diagnostic Disclaimer */}
+              <div className="pt-2 text-center">
+                <p className="text-[11px] text-[#5D7185] leading-relaxed">
+                  <strong>Notice:</strong> Educational self-reflection tool only. Does not replace clinical evaluation or diagnostic care. For urgent distress, please contact your local health care provider or the 988 Suicide Crisis Helpline.
+                </p>
+              </div>
             </div>
           )}
         </div>

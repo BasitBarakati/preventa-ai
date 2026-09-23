@@ -256,10 +256,10 @@ export default function PlatformPavilion() {
               <div>
                 <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#0B3D5F]/8">
                   <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#062235]">
-                    6 Accredited Career Tracks (180+ Hours)
+                    6 Applied Learning Tracks (180+ Hours)
                   </span>
                   <span className="text-[11px] text-[#0D9488] font-mono">
-                    CME / CE Micro-Credentials
+                    Professional Development Micro-Credentials
                   </span>
                 </div>
                 

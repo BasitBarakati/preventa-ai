@@ -34,7 +34,7 @@ export const universityTracks = [
       "Health Equity Stratification & Vulnerability Indices",
       "Intersectoral Action & Policy Formulation in Canada"
     ],
-    outcome: "Certified Foundation in Modern Population Health Strategy"
+    outcome: "Foundational Certificate in Population Health Strategy"
   },
   {
     id: "research",
@@ -82,7 +82,7 @@ export const universityTracks = [
       "Comprehensive School Health Planning & Metrics",
       "Community Asset Mapping & Strengths-Based Interventions"
     ],
-    outcome: "Accredited Health Promotion Specialist"
+    outcome: "Health Promotion Intervention Planning Credential"
   },
   {
     id: "emergency",
@@ -98,7 +98,7 @@ export const universityTracks = [
       "Environmental & Climate Crisis Health Adaptation",
       "Trauma-Informed Crisis Communication & Public Trust"
     ],
-    outcome: "Public Health Emergency Response Certification"
+    outcome: "Public Health Emergency Response Competency Credential"
   },
   {
     id: "ai-training",
@@ -115,7 +115,7 @@ export const universityTracks = [
       "Automated Monitoring Dashboards & Heatmap Engines",
       "Next-Generation Web & Public Health Intelligence Portals"
     ],
-    outcome: "Preventa AI Certified Health Systems Engineer"
+    outcome: "Applied Health AI Systems Specialist Credential"
   }
 ];
 
@@ -272,7 +272,7 @@ export default function UniversityInTheBox() {
                 </p>
 
                 <div className="pt-3 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-xs font-mono-data text-slate-400">Accredited CE / CME Credits</span>
+                  <span className="text-xs font-mono-data text-slate-400">Professional Development Micro-Credentials</span>
                   <Link
                     href="/contact?topic=courses"
                     className="text-xs font-bold text-[#17B8C4] hover:underline flex items-center gap-1"

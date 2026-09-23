@@ -38,7 +38,8 @@ export default function WellnessDomains() {
     if (filter === "all") return true;
     if (filter === "mental") return ["mental-wellbeing", "substance-use"].includes(d.id);
     if (filter === "environment") return ["environmental-health", "school-health"].includes(d.id);
-    if (filter === "clinical") return ["immunization", "chronic-disease", "maternal-infant", "healthy-sexuality"].includes(d.id);
+    if (filter === "prevention") return ["immunization", "healthy-sexuality"].includes(d.id);
+    if (filter === "indigenous") return ["wholistic-health", "land-based-healing"].includes(d.id);
     return true;
   });
 
@@ -66,7 +67,8 @@ export default function WellnessDomains() {
               { label: "All 8 Domains", key: "all" },
               { label: "Mental & Substance", key: "mental" },
               { label: "Environment & Schools", key: "environment" },
-              { label: "Prevention & Clinical", key: "clinical" },
+              { label: "Sexuality & Immunization", key: "prevention" },
+              { label: "Indigenous Wholistic", key: "indigenous" },
             ].map((tab) => (
               <button
                 key={tab.key}

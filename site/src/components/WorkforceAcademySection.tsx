@@ -36,7 +36,7 @@ export default function WorkforceAcademySection() {
             </h2>
 
             <p className="text-base sm:text-xl text-[#334155] font-normal leading-relaxed">
-              Transforming local health units and frontline health practitioners into frontier AI practitioners. 180+ hours of accredited, CME-aligned curriculum with interactive sandbox simulation.
+              Transforming local health units and frontline health practitioners into frontier AI practitioners. 180+ hours of applied curriculum with interactive sandbox simulation.
             </p>
           </div>
 
@@ -78,7 +78,7 @@ export default function WorkforceAcademySection() {
               <div className="pt-4 border-t border-[#0B3D5F]/6 flex items-center justify-between text-[11px] text-[#64748B]">
                 <span className="font-semibold text-[#0A4D34] flex items-center gap-1">
                   <CheckCircle2 size={13} className="text-[#14B8A6]" />
-                  <span>CME / CE Micro-Credential</span>
+                  <span>Professional Development Credential</span>
                 </span>
                 <span className="font-mono text-[#94A3B8]">4 Modules</span>
               </div>
@@ -86,7 +86,7 @@ export default function WorkforceAcademySection() {
           ))}
         </div>
 
-        {/* Institutional Accreditation Guarantee Strip */}
+        {/* Institutional Learning Delivery Strip */}
         <div className="p-6 sm:p-8 rounded-3xl bg-[#062235] text-white flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-[#14B8A6] shrink-0">

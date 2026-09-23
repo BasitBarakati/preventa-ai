@@ -177,9 +177,9 @@ export default function PricingTiers() {
                   "Unlimited multi-department seats & SSO integration",
                   "Dedicated Canadian sovereign cloud region",
                   "Custom on-premise or sovereign LLM deployment",
-                  "Full EHR/HIS API data integration",
+                  "Secure public health registry & surveillance data pipeline integration",
                   "Continuous algorithmic bias auditing",
-                  "Dedicated epidemiologist & SLA guarantee (99.9%)",
+                  "Dedicated public health technical lead & SLA support",
                 ].map((feat, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <Check size={15} className="text-[#0D9488] shrink-0 mt-0.5" />

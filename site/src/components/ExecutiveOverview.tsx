@@ -51,7 +51,7 @@ export default function ExecutiveOverview() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488]" />
-                  <span>SOC2 &amp; PHIPA sovereign cloud compliance</span>
+                  <span>Designed for PHIPA &amp; PIPEDA sovereign cloud alignment</span>
                 </li>
               </ul>
             </div>
@@ -129,7 +129,7 @@ export default function ExecutiveOverview() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
-                  <span>Accredited CE / CME Canadian micro-credentials</span>
+                  <span>Public health professional development &amp; micro-credentials</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />

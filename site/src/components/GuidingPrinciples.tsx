@@ -69,7 +69,7 @@ export default function GuidingPrinciples() {
                 Sovereign Governance Dossier
               </h3>
               <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-6">
-                Download or review our complete 48-page ethical framework including OCAP® compliance protocols, bias mitigation audits, and clinical scope limitations.
+                Review our complete ethical governance framework, including OCAP® principles alignment, algorithmic bias auditing protocols, and non-diagnostic public health boundaries.
               </p>
             </div>
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Landmark, Sprout, Leaf, ShieldCheck } from "lucide-react";
+import { Landmark, Sprout, Leaf, HeartHandshake } from "lucide-react";
 import ProgramPage from "@/components/ProgramPage";
 import { brand, indigenousHealth } from "@/lib/site-content";
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: `Indigenous Health and Wellbeing | ${brand.displayName}`, description: indigenousHealth.description, images: ["/brand/preventa-ai-social-preview.png"] },
 };
 
-const icons = [Sprout, Leaf, Landmark];
+const icons = [Sprout, Leaf, Landmark, HeartHandshake];
 
 export default function IndigenousHealthPage() {
   return (
@@ -44,8 +44,8 @@ export default function IndigenousHealthPage() {
           </div>
         </div>
 
-        {/* 3 Core Action Areas */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* 4 Core Action Areas */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {indigenousHealth.areas.map(({ title, text }, index) => {
             const Icon = icons[index] || Sprout;
             return (
