@@ -108,7 +108,7 @@ export const universityTracks = [
     highlight: true,
     hours: "60 Hours &bull; 12 Modules",
     level: "Executive & Technical",
-    description: "Applied generative AI, autonomous public health agents, automated reporting, interactive dashboards, and modern public health portals.",
+    description: "Applied generative AI, public health AI agents with governance safeguards, automated reporting, interactive dashboards, and modern public health portals.",
     modules: [
       "Generative AI & LLMs for Accessible Health Literacy",
       "Public Health AI Agent Architecture & Safeguards",

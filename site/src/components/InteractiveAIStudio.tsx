@@ -44,12 +44,6 @@ type Scenario = {
     outputs: string[];
     outcomes: string[];
   };
-  metrics: {
-    baselineRisk: string;
-    projectedReduction: string;
-    costAvoidance: string;
-    confidenceInterval: string;
-  };
 };
 
 const scenarios: Scenario[] = [
@@ -105,21 +99,15 @@ const scenarios: Scenario[] = [
         "Community wellbeing indicator pulse surveys"
       ],
       outputs: [
-        "120 youth engaged across 4 remote settlements",
-        "18 certified youth peer leaders trained",
+        "120 youth engaged across 4 remote communities",
+        "18 youth peer leaders trained in mental health first aid",
         "Zero data transferred off sovereign community servers"
       ],
       outcomes: [
-        "38% reduction in acute emergency tele-triage calls",
-        "Sustained 62% increase in reported self-worth & belonging",
-        "Long-term community ownership of mental health data"
+        "Measurable increase in youth participation and cultural pride",
+        "Reduced reliance on emergency crisis interventions",
+        "Community-directed data governance under OCAP® protocols"
       ]
-    },
-    metrics: {
-      baselineRisk: "Elevated (SDOH Decile 8)",
-      projectedReduction: "34% in 18 Months",
-      costAvoidance: "$1.4M CAD/yr",
-      confidenceInterval: "95% CI [28% - 41%]"
     }
   },
   {
@@ -129,7 +117,7 @@ const scenarios: Scenario[] = [
     category: "Epidemiological Surveillance",
     prompt: "Design an early surveillance alert system for pediatric asthma flare-ups correlating PM2.5 industrial particulate with neighborhood socioeconomic vulnerability.",
     synthesis: {
-      lead: "Mapping real-time air quality sensors against provincial emergency pediatric visits. Preventa AI detects hyper-local microclimate risk spikes 48 hours prior to acute hospital admissions.",
+      lead: "Synthesizing regional Air Quality Health Index (AQHI) trends and community vulnerability indices to support school and health unit preparedness before anticipated high-particulate air inversions.",
       citations: [
         {
           id: "cit-4",
@@ -138,7 +126,7 @@ const scenarios: Scenario[] = [
           source: "Health Canada Environmental Health Directorate",
           year: "2023",
           rating: "Rigorous Cohort Surveillance",
-          excerpt: "Sustained PM2.5 levels exceeding 25 ug/m3 correlate with a 22% surge in pediatric emergency inhaler usage within 72 hours in high-density census tracts."
+          excerpt: "Sustained PM2.5 levels exceeding 25 ug/m3 correlate with a surge in pediatric emergency inhaler usage in high-density census tracts."
         },
         {
           id: "cit-5",
@@ -147,37 +135,31 @@ const scenarios: Scenario[] = [
           source: "Canadian Thoracic Society",
           year: "2024",
           rating: "Clinical Practice Guideline Level 1",
-          excerpt: "Proactive school-based medication adjustments triggered 48 hours before predicted atmospheric inversions reduce severe exacerbations by 29%."
+          excerpt: "Proactive school-based protocol adjustments before predicted atmospheric inversions reduce severe respiratory exacerbations."
         }
       ]
     },
     logicModel: {
       inputs: [
-        "Municipal environmental PM2.5 sensor network",
-        "Aggregated anonymized PHIPA-compliant school attendance",
-        "Provincial weather atmospheric inversion forecasts"
+        "Public Air Quality Health Index (AQHI) surveillance feeds",
+        "Aggregated de-identified district health profile data",
+        "School board health and physical education coordinators"
       ],
       activities: [
-        "Autonomous predictive risk mapping across 32 postal codes",
-        "Automated alerts to school nurses & pediatric clinics",
-        "Proactive HEPA filtration deployment in public spaces"
+        "Population health risk stratification across district postal codes",
+        "Evidence-grounded action alerts drafted for school nurses & community health clinics",
+        "Targeted indoor air quality protocols and clean air shelter plans"
       ],
       outputs: [
-        "48-hour advance warning before inversion events",
-        "42 schools equipped with targeted protocol guides",
-        "Zero individual biometric or identifiable telemetry stored"
+        "Advance advisory bulletins for vulnerable student populations",
+        "School districts equipped with practical air-inversion protocol guides",
+        "Zero individual student biometric or personal identifiable data collected"
       ],
       outcomes: [
-        "27% reduction in emergency room asthma admissions",
-        "4,100 school days saved from chronic absenteeism",
-        "$2.1M avoided in acute pediatric intensive care costs"
+        "Measurable decrease in acute school-day respiratory exacerbations",
+        "Increased student participation through proactive indoor recess management",
+        "Strengthened intersectoral coordination between public health and school boards"
       ]
-    },
-    metrics: {
-      baselineRisk: "Moderate-High (Industrial Corridor)",
-      projectedReduction: "27% in 12 Months",
-      costAvoidance: "$2.1M CAD/yr",
-      confidenceInterval: "95% CI [23% - 32%]"
     }
   },
   {
@@ -196,7 +178,7 @@ const scenarios: Scenario[] = [
           source: "Diabetes Canada & National Indigenous Diabetes Association",
           year: "2023",
           rating: "National Clinical Consensus",
-          excerpt: "Re-introducing traditional wild game, fish, and berries into weekly diet reduces HbA1c by 1.1% on average while strengthening cultural protective factors."
+          excerpt: "Re-introducing traditional wild game, fish, and berries into weekly diet reduces glycemic risk while strengthening cultural protective factors."
         },
         {
           id: "cit-7",
@@ -213,30 +195,24 @@ const scenarios: Scenario[] = [
       inputs: [
         "Community Hunters & Harvesters Guild",
         "Local greenhouse & community cold-storage facility",
-        "Band council diabetes education program",
-        "Point-of-care HbA1c testing equipment"
+        "Band council health promotion team",
+        "Point-of-care health literacy materials"
       ],
       activities: [
         "Seasonal harvest redistribution to Elders and vulnerable families",
         "Two-Eyed Seeing cooking & nutrition workshops",
-        "Encrypted community registry for glycemic monitoring"
+        "Community-governed health records for glycemic monitoring"
       ],
       outputs: [
-        "650 community members receiving bi-weekly traditional harvest",
+        "Community members receiving regular traditional harvest provisions",
         "100% adherence to OCAP® data governance protocols",
-        "Customized traditional food index and recipe repository"
+        "Community-curated traditional food and wellness repository"
       ],
       outcomes: [
-        "Average 0.9% HbA1c reduction across participating cohort",
-        "83% improvement in community-reported food security",
-        "Zero commercial food supplier dependency for emergency relief"
+        "Measurable improvement in community food security and traditional food access",
+        "Strengthened cultural health practices and community sovereignty",
+        "Long-term integration of Two-Eyed Seeing into diabetes prevention"
       ]
-    },
-    metrics: {
-      baselineRisk: "High Prevalence (3.2x Canadian Average)",
-      projectedReduction: "41% in 36 Months",
-      costAvoidance: "$3.6M CAD/yr",
-      confidenceInterval: "95% CI [35% - 47%]"
     }
   },
   {
@@ -246,7 +222,7 @@ const scenarios: Scenario[] = [
     category: "Substance Use Prevention",
     prompt: "Formulate a rapid-response public health strategy to counter unexpected toxic adulteration in municipal drug supply with street-level peer engagement.",
     synthesis: {
-      lead: "Aggregating chemical spectrometer readings with paramedic dispatch heatmaps. Preventa AI predicts lethal adulterant hotspots and formulates immediate peer-led naloxone distribution pathways.",
+      lead: "Synthesizing public drug-checking surveillance bulletins with community outreach capacity to formulate proactive peer-led harm reduction pathways.",
       citations: [
         {
           id: "cit-8",
@@ -255,7 +231,7 @@ const scenarios: Scenario[] = [
           source: "Public Health Agency of Canada (PHAC)",
           year: "2024",
           rating: "Federal Public Health Standard",
-          excerpt: "Equipping street-level peer workers with real-time toxic alert notifications prevents fatal overdoses by up to 64% in affected census tracts."
+          excerpt: "Equipping street-level peer workers with real-time toxic alert notifications supports rapid intervention in affected census tracts."
         },
         {
           id: "cit-9",
@@ -264,37 +240,31 @@ const scenarios: Scenario[] = [
           source: "BC Centre on Substance Use",
           year: "2023",
           rating: "Epidemiological Longitudinal Cohort",
-          excerpt: "Confidential, non-stigmatizing point-of-consumption chemical checking increases harm reduction uptake by 78% among unhoused populations."
+          excerpt: "Confidential, non-stigmatizing point-of-consumption chemical checking increases harm reduction uptake among vulnerable populations."
         }
       ]
     },
     logicModel: {
       inputs: [
-        "Municipal mass-spectrometry drug-checking data",
-        "First responder dispatch density logs",
-        "Frontline peer outreach network"
+        "Validated community drug-checking aggregate reports",
+        "Public health unit harm reduction coordination team",
+        "Frontline peer outreach network & community health workers"
       ],
       activities: [
-        "Real-time SMS & radio broadcast alerts to peer workers",
-        "Mobile rapid naloxone and fentanyl strip replenishment",
-        "Low-barrier safe consumption site staffing adjustments"
+        "Evidence-informed toxic alert drafts for peer outreach coordinators",
+        "Rapid replenishment protocols for naloxone and test supplies",
+        "Harm reduction resource mapping for community health centres"
       ],
       outputs: [
-        "Under 12-minute alert broadcast from lab confirmation",
-        "3,500 test strips distributed per month",
-        "Zero law-enforcement surveillance data sharing"
+        "Rapid public health advisory dissemination to frontline teams",
+        "Harm reduction supplies distributed through verified community partners",
+        "Zero law-enforcement or punitive surveillance data sharing"
       ],
       outcomes: [
-        "56% drop in fatal toxic drug events in target zone",
-        "3.8x increase in voluntary referral to withdrawal management",
-        "Measurable trust restoration between city and marginalized people"
+        "Increased peer worker engagement and timely crisis notification",
+        "Higher uptake of point-of-care harm reduction services",
+        "Restored trust and continuous collaboration with marginalized populations"
       ]
-    },
-    metrics: {
-      baselineRisk: "Critical Toxic Supply Wave",
-      projectedReduction: "56% in Fatal Events",
-      costAvoidance: "$4.8M CAD/yr",
-      confidenceInterval: "95% CI [49% - 62%]"
     }
   }
 ];
@@ -493,7 +463,7 @@ export default function InteractiveAIStudio() {
               <div className="space-y-6">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-[#64748B] block mb-2">
-                    Autonomous Synthesis (With Traceable Medical &amp; Policy Citations)
+                    Evidence Synthesis (With Traceable Public Health &amp; Policy Citations)
                   </span>
                   <p className="text-sm sm:text-base text-[#062235] leading-relaxed">
                     {scenario.synthesis.lead}
