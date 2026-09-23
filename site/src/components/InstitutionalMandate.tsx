@@ -65,9 +65,29 @@ export default function InstitutionalMandate() {
             </span>
           </h2>
           
-          <p className="text-base sm:text-xl text-[#334155] font-normal leading-relaxed">
+          <p className="text-base sm:text-xl text-[#334155] font-normal leading-relaxed mb-6">
             Preventa AI was founded on an uncompromising principle: modern artificial intelligence must serve population wellbeing, uphold Indigenous data sovereignty, and bridge peer-reviewed medical science into frontline community action.
           </p>
+
+          {/* Canadian & International Governance Accreditations */}
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-1">
+            <span className="px-3 py-1 rounded-lg bg-white border border-[#0B3D5F]/10 text-[10.5px] font-mono text-[#062235] font-semibold flex items-center gap-1.5 shadow-2xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488]" />
+              Ottawa Charter for Health Promotion (WHO/CPHA)
+            </span>
+            <span className="px-3 py-1 rounded-lg bg-white border border-[#0B3D5F]/10 text-[10.5px] font-mono text-[#062235] font-semibold flex items-center gap-1.5 shadow-2xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0A4D34]" />
+              First Nations OCAP® Principles
+            </span>
+            <span className="px-3 py-1 rounded-lg bg-white border border-[#0B3D5F]/10 text-[10.5px] font-mono text-[#062235] font-semibold flex items-center gap-1.5 shadow-2xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#14B8A6]" />
+              PHIPA &amp; PIPEDA Canadian Cloud Residency
+            </span>
+            <span className="px-3 py-1 rounded-lg bg-white border border-[#0B3D5F]/10 text-[10.5px] font-mono text-[#062235] font-semibold flex items-center gap-1.5 shadow-2xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
+              Two-Eyed Seeing (Etuaptmumk)
+            </span>
+          </div>
         </div>
 
         {/* Dual Pillar: Vision & Mission (Monumental Editorial Split) */}
