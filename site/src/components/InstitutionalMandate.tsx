@@ -91,23 +91,26 @@ export default function InstitutionalMandate() {
         </div>
 
         {/* Dual Pillar: Vision & Mission (Monumental Editorial Split) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           
           {/* Vision Card */}
           <div className="p-7 sm:p-9 rounded-3xl bg-white border border-[#0B3D5F]/8 shadow-2xs flex flex-col justify-between relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-28 h-28 bg-[#0D9488]/5 rounded-bl-full pointer-events-none" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#0D9488]/5 rounded-bl-full pointer-events-none" />
             <div>
-              <span className="text-xs font-mono font-bold text-[#0D9488] uppercase tracking-wider block mb-2.5">
-                Our Sovereign Vision
-              </span>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-mono font-bold text-[#0D9488] uppercase tracking-wider">
+                  Our Sovereign Vision
+                </span>
+                <span className="text-[10px] font-mono text-[#94A3B8]">The North Star</span>
+              </div>
               <h3 className="font-display text-xl sm:text-2xl font-bold text-[#062235] leading-snug mb-3">
                 &ldquo;{brand.vision}&rdquo;
               </h3>
-              <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
                 We envision a future where public health authorities and remote communities alike possess equal access to frontier intelligence, preventing chronic illnesses and infectious threats before they escalate.
               </p>
             </div>
-            <div className="pt-6 mt-5 border-t border-[#0B3D5F]/6 flex items-center gap-2 text-xs font-semibold text-[#0A4D34]">
+            <div className="pt-5 mt-5 border-t border-[#0B3D5F]/6 flex items-center gap-2 text-xs font-semibold text-[#0A4D34]">
               <CheckCircle2 size={14} className="text-[#14B8A6]" />
               <span>Grounded in Canadian Equity &amp; Universal Access</span>
             </div>
@@ -115,19 +118,22 @@ export default function InstitutionalMandate() {
 
           {/* Mission Card */}
           <div className="p-7 sm:p-9 rounded-3xl bg-[#062235] text-white border border-[#062235] shadow-sm flex flex-col justify-between relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-28 h-28 bg-[#14B8A6]/10 rounded-bl-full pointer-events-none" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#14B8A6]/10 rounded-bl-full pointer-events-none" />
             <div>
-              <span className="text-xs font-mono font-bold text-[#14B8A6] uppercase tracking-wider block mb-2.5">
-                Our Action Mission
-              </span>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-mono font-bold text-[#14B8A6] uppercase tracking-wider">
+                  Our Action Mission
+                </span>
+                <span className="text-[10px] font-mono text-white/50">Core Purpose</span>
+              </div>
               <h3 className="font-display text-xl sm:text-2xl font-bold text-white leading-snug mb-3">
                 &ldquo;{brand.mission}&rdquo;
               </h3>
-              <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
+              <p className="text-xs sm:text-sm text-white/75 leading-relaxed">
                 We equip healthcare ministers, community elders, and public health scholars with verifiable, non-extractive computational infrastructure that respects community ownership.
               </p>
             </div>
-            <div className="pt-6 mt-5 border-t border-white/10 flex items-center gap-2 text-xs font-semibold text-[#14B8A6]">
+            <div className="pt-5 mt-5 border-t border-white/10 flex items-center gap-2 text-xs font-semibold text-[#14B8A6]">
               <CheckCircle2 size={14} />
               <span>Human Oversight at Every Consequential Step</span>
             </div>
@@ -135,38 +141,43 @@ export default function InstitutionalMandate() {
 
         </div>
 
-        {/* Tab Switcher: 4 Strategic Goals OR 7 Ethical Principles */}
+        {/* Section: The Four Core Strategic Goals & Seven Principles */}
         <div className="pt-4 border-t border-[#0B3D5F]/10">
           
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-            <div className="inline-flex p-1 rounded-2xl bg-white border border-[#0B3D5F]/10 shadow-2xs">
+            <div>
+              <span className="text-xs font-mono font-bold text-[#0D9488] uppercase tracking-widest block mb-1">
+                National Governance Charter
+              </span>
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-[#062235]">
+                {activeTab === "goals" ? "Four Strategic Goals (2026–2030)" : "Seven Ethical Guiding Principles"}
+              </h3>
+            </div>
+
+            <div className="inline-flex p-1 rounded-2xl bg-white border border-[#0B3D5F]/10 shadow-2xs self-start sm:self-auto">
               <button
                 type="button"
                 onClick={() => setActiveTab("goals")}
-                className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                   activeTab === "goals"
                     ? "bg-[#062235] text-white shadow-xs"
                     : "text-[#64748B] hover:text-[#062235]"
                 }`}
               >
-                Four Strategic Goals (2026&ndash;2030)
+                4 Strategic Goals
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab("principles")}
-                className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                   activeTab === "principles"
                     ? "bg-[#062235] text-white shadow-xs"
                     : "text-[#64748B] hover:text-[#062235]"
                 }`}
               >
-                Seven Ethical Guiding Principles
+                7 Ethical Principles
               </button>
             </div>
-
-            <span className="text-[11px] font-mono text-[#64748B]">
-              {activeTab === "goals" ? "Verbatim from National Governance Charter" : "Audited Policy Standard · OCAP® Enforced"}
-            </span>
           </div>
 
           {/* TAB 1: Four Strategic Goals */}
@@ -175,30 +186,30 @@ export default function InstitutionalMandate() {
               {goalsWithDetail.map((goal) => (
                 <div 
                   key={goal.number}
-                  className="group flex flex-col justify-between p-6 rounded-2xl bg-white border border-[#0B3D5F]/8 hover:border-[#0D9488]/30 transition-all hover:shadow-2xs"
+                  className="group flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-white border border-[#0B3D5F]/8 hover:border-[#0D9488]/40 transition-all hover:shadow-sm"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-4">
                       <span className="font-mono text-xs font-extrabold text-[#0D9488] bg-[#0D9488]/8 px-2.5 py-1 rounded-lg">
                         Goal {goal.number}
                       </span>
-                      <span className="text-[10px] text-[#94A3B8] font-mono">2026-2030</span>
+                      <span className="text-[10px] text-[#94A3B8] font-mono">2026&ndash;2030</span>
                     </div>
 
-                    <h4 className="font-display text-base font-bold text-[#062235] leading-snug mb-2 group-hover:text-[#0D9488] transition-colors">
+                    <h4 className="font-display text-base sm:text-lg font-bold text-[#062235] leading-snug mb-3 group-hover:text-[#0D9488] transition-colors">
                       {goal.title}
                     </h4>
 
-                    <p className="text-xs text-[#334155] leading-relaxed mb-4">
+                    <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed mb-6">
                       {goal.focus}
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-[#0B3D5F]/6 flex flex-wrap gap-1">
+                  <div className="pt-4 border-t border-[#0B3D5F]/6 flex flex-wrap gap-1.5">
                     {goal.tags.map((tag, idx) => (
                       <span 
                         key={idx}
-                        className="px-2 py-0.5 rounded-md bg-[#FAF8F5] text-[9.5px] font-medium text-[#64748B] border border-[#0B3D5F]/6"
+                        className="px-2 py-0.5 rounded-md bg-[#FAF8F5] text-[10px] font-medium text-[#64748B] border border-[#0B3D5F]/6"
                       >
                         {tag}
                       </span>
@@ -218,11 +229,11 @@ export default function InstitutionalMandate() {
                   className="p-5 sm:p-6 rounded-2xl bg-white border border-[#0B3D5F]/8 hover:border-[#0D9488]/30 transition-all flex flex-col justify-between group shadow-2xs"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-2.5">
-                      <span className="font-mono text-xs font-bold text-[#0D9488]">
-                        0{idx + 1}
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="font-mono text-xs font-bold text-[#0D9488] bg-[#0D9488]/8 px-2 py-0.5 rounded">
+                        Principle 0{idx + 1}
                       </span>
-                      <span className="text-[9.5px] font-mono text-[#94A3B8] uppercase">Principle</span>
+                      <span className="text-[10px] font-mono text-[#94A3B8] uppercase">Policy Standard</span>
                     </div>
 
                     <h4 className="font-display text-base font-bold text-[#062235] mb-2 group-hover:text-[#0D9488] transition-colors">
@@ -234,9 +245,9 @@ export default function InstitutionalMandate() {
                     </p>
                   </div>
 
-                  <div className="pt-3 mt-3 border-t border-[#0B3D5F]/6 flex items-center gap-1.5 text-[10.5px] text-[#0A4D34] font-medium">
-                    <CheckCircle2 size={12} className="text-[#14B8A6]" />
-                    <span>Audited Policy Standard</span>
+                  <div className="pt-3 mt-4 border-t border-[#0B3D5F]/6 flex items-center gap-1.5 text-[11px] text-[#0A4D34] font-medium">
+                    <CheckCircle2 size={13} className="text-[#14B8A6]" />
+                    <span>Audited Governance Mandate</span>
                   </div>
                 </div>
               ))}

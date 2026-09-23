@@ -143,9 +143,17 @@ export default function BookFolioContainer({ folios }: BookFolioContainerProps) 
         );
       })}
 
-      {/* Mobile-Friendly Floating Folio Pill (Bottom-Right) */}
-      <div className="lg:hidden fixed bottom-4 right-4 z-40 pointer-events-none">
-        <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#062235]/95 backdrop-blur-md text-white border border-[#14B8A6]/30 shadow-lg text-[10.5px] font-mono pointer-events-auto">
+      {/* Mobile-Friendly Floating Folio Pill (Bottom-Right, Tap to Turn Page) */}
+      <div className="lg:hidden fixed bottom-4 right-4 z-40">
+        <button
+          type="button"
+          onClick={() => {
+            const nextIdx = (activeFolioIndex + 1) % folios.length;
+            scrollToFolio(folios[nextIdx].id);
+          }}
+          aria-label="Turn to next folio chapter"
+          className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#062235]/95 backdrop-blur-md text-white border border-[#14B8A6]/40 shadow-xl text-[10.5px] font-mono cursor-pointer active:scale-95 transition-transform"
+        >
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10B981] opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0D9488]"></span>
@@ -153,7 +161,8 @@ export default function BookFolioContainer({ folios }: BookFolioContainerProps) 
           <span className="font-bold text-[#14B8A6]">FOLIO {folios[activeFolioIndex]?.num}</span>
           <span className="text-white/40">|</span>
           <span className="text-white/90">PAGE {folios[activeFolioIndex]?.pageNum}/0{folios.length}</span>
-        </div>
+          <span className="text-[#14B8A6] font-bold text-xs pl-0.5">&rarr;</span>
+        </button>
       </div>
 
     </div>
