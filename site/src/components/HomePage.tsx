@@ -13,19 +13,19 @@ import InquirySection from "./InquirySection";
 const faqs = [
   {
     q: "What makes Preventa AI fundamentally different from commercial health tech?",
-    a: "Preventa AI is purpose-engineered as Canada's sovereign public health intelligence infrastructure. Rather than calculating opaque proprietary risk scores, every AI synthesis cites verified Canadian and WHO peer-reviewed evidence, respects First Nations OCAP® principles, generates customizable Ottawa Charter logic models, and enforces mandatory human epidemiologist authorization before any consequential output is finalized.",
+    a: "Preventa AI is an AI-enabled public health transformation platform focused on moving from intelligence to practical action. Rather than calculating opaque proprietary risk scores or offering clinical diagnoses, our platform synthesizes verified public health evidence, respects First Nations OCAP® principles, generates customizable Ottawa Charter logic models, and enforces mandatory human review before any consequential public health action is taken.",
   },
   {
     q: "How does Preventa AI respect First Nations, Inuit, and Métis data sovereignty?",
-    a: "We strictly enforce OCAP® principles (Ownership, Control, Access, and Possession) and the Two-Eyed Seeing (Etuaptmumk) conceptual framework. First Nations and Indigenous communities retain 100% legal ownership and sovereign possession of their data. We do not aggregate, monetize, or train commercial large language models on community-held health information.",
+    a: "Implementation is relationship-based and community-governed. We respect First Nations OCAP® principles (Ownership, Control, Access, and Possession) and Two-Eyed Seeing (Etuaptmumk). Preventa AI does not speak on behalf of any Nation or community. Indigenous communities retain complete ownership, authority, and possession of their health knowledge, and community data is never extracted or monetized for commercial AI model training.",
   },
   {
-    q: "Is Preventa AI compliant with Canadian federal and provincial privacy legislation?",
-    a: "Yes. Preventa AI's security architecture complies with Ontario's Personal Health Information Protection Act (PHIPA), the federal Personal Information Protection and Electronic Documents Act (PIPEDA), and provincial public sector privacy regulations. All data storage, computation, and encryption ledgers reside exclusively on Canadian soil in SOC 2 Type II certified sovereign cloud regions.",
+    q: "How is Preventa AI designed to support PHIPA and PIPEDA privacy requirements?",
+    a: "Preventa AI is engineered from the ground up to support compliance with Ontario's Personal Health Information Protection Act (PHIPA) and the federal Personal Information Protection and Electronic Documents Act (PIPEDA). Our platform applies privacy-by-design, data minimization, role-based access control, comprehensive audit logging, and Canadian data residency. We do not use community or personal health information to train commercial large language models.",
   },
   {
-    q: "How does the Sponsored Community Tier operate for grassroots organizations?",
-    a: "Through our institutional equity cross-subsidy pool, non-profit community health organizations, grassroots public health initiatives, and First Nations health authorities can access Organization-tier features with zero subscription fees, funded through our enterprise and government partnerships.",
+    q: "How does the Community Tier operate for grassroots organizations?",
+    a: "Through our institutional equity cross-subsidy pool, non-profit community health organizations, grassroots public health initiatives, and remote First Nations health authorities can access platform features with zero subscription fees, supported through our enterprise and academic partnerships.",
   },
 ];
 

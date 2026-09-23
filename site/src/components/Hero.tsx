@@ -34,11 +34,11 @@ export default function Hero() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0D9488]"></span>
             </span>
             <span className="text-[9.5px] sm:text-[11.5px] font-bold text-[#062235] tracking-wider uppercase">
-              Canada&apos;s Sovereign Public Health AI Platform
+              AI-Enabled Public Health Platform
             </span>
             <span className="text-[#94A3B8] text-xs hidden sm:inline" aria-hidden="true">&bull;</span>
             <span className="text-[9.5px] sm:text-[11.5px] font-semibold text-[#0D9488]">
-              OCAP® &amp; PHIPA Certified
+              PHIPA &amp; PIPEDA Aligned &bull; OCAP® Governed
             </span>
           </div>
 
@@ -52,9 +52,9 @@ export default function Hero() {
             Communities.
           </h1>
 
-          {/* Crystal Clear Executive Mandate: What We Do */}
+          {/* Crystal Clear Practical Mandate: From File 2 & CONCEPT.md */}
           <p className="text-sm sm:text-lg md:text-xl text-[#334155] leading-relaxed max-w-3xl mx-auto font-normal mb-6 sm:mb-8 px-2">
-            Canada&apos;s sovereign artificial intelligence infrastructure purpose-built for public health. We connect community data, clinical evidence, and frontline healthcare workers to stop chronic illnesses and infectious threats before they start.
+            From public health intelligence to practical action. Assess needs, understand risks, apply evidence, and build healthier communities through the responsible, ethical use of artificial intelligence.
           </p>
 
           {/* Action Buttons */}
@@ -75,7 +75,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          {/* Minimalist 3-Pillar Architectural Triad: WHAT WE DO */}
+          {/* Practical 3-Pillar Triad Grounded in File 2 */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-left max-w-5xl mx-auto mb-8">
             
             {/* Pillar 1 */}
@@ -85,13 +85,13 @@ export default function Hero() {
                   <Activity size={20} />
                 </div>
                 <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-[#0D9488] block mb-1">
-                  01 &bull; Surveillance &amp; Prevention
+                  01 &bull; Situation Assessment
                 </span>
                 <h3 className="font-display text-lg font-bold text-[#062235] mb-2 leading-snug">
-                  Predict &amp; Prevent Outbreaks
+                  Assess Needs &amp; Readiness
                 </h3>
                 <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed">
-                  Automated wastewater surveillance, microclimate telemetry, and Canadian peer-reviewed literature synthesis detecting disease clusters up to 48 hours earlier.
+                  Multi-level evaluation across individual &amp; family wellbeing indicators, community priorities and assets, and organizational AI readiness.
                 </p>
               </div>
             </div>
@@ -103,13 +103,13 @@ export default function Hero() {
                   <ShieldCheck size={20} />
                 </div>
                 <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-[#0A4D34] block mb-1">
-                  02 &bull; Indigenous Sovereignty
+                  02 &bull; Evidence &amp; Indigenous Sovereignty
                 </span>
                 <h3 className="font-display text-lg font-bold text-[#062235] mb-2 leading-snug">
-                  Protect Community Data (OCAP®)
+                  Evidence-Informed &amp; OCAP® Governed
                 </h3>
                 <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed">
-                  First Nations OCAP®-enforced architecture and Two-Eyed Seeing. Communities retain 100% ownership, control, and possession with zero commercial AI training.
+                  Responsible evidence generation and risk modeling honoring Two-Eyed Seeing and First Nations OCAP® principles. Communities retain sovereign data control.
                 </p>
               </div>
             </div>
@@ -121,34 +121,34 @@ export default function Hero() {
                   <GraduationCap size={20} />
                 </div>
                 <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-[#9E7B34] block mb-1">
-                  03 &bull; Capacity Building
+                  03 &bull; University In The Box
                 </span>
                 <h3 className="font-display text-lg font-bold text-[#062235] mb-2 leading-snug">
-                  Train the Healthcare Workforce
+                  Public Health Workforce Learning
                 </h3>
                 <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed">
-                  Turnkey &ldquo;University In The Box&rdquo; delivering 180+ hours of accredited CME/CE micro-credentials to health units, municipal nurses, and researchers.
+                  Turnkey workforce education in epidemiology, health promotion, emergency preparedness, and practical AI tools for frontline practitioners.
                 </p>
               </div>
             </div>
 
           </div>
 
-          {/* Clean Sovereign Assurance Banner */}
+          {/* Practical Governance Commitments Banner */}
           <div className="pt-6 border-t border-[#0B3D5F]/8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-[#64748B] font-mono">
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488]" />
-              100% Canadian Soil Cloud Residency
+              Evidence-Grounded with Visible Citations
             </span>
             <span className="hidden sm:inline text-slate-300">&bull;</span>
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#0A4D34]" />
-              32 Public Health Jurisdictions Modeled
+              Human Review Before Consequential Use
             </span>
             <span className="hidden sm:inline text-slate-300">&bull;</span>
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
-              100% Grassroots Community Subsidy ($0)
+              Privacy by Design &bull; Zero Individual Diagnosis
             </span>
           </div>
 

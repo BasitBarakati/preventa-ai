@@ -24,131 +24,131 @@ type PillarKey = "assessment" | "wellness" | "indigenous" | "research" | "academ
 const pillarDetails = {
   assessment: {
     number: "01",
-    tag: "Multilevel Diagnostics",
+    tag: "Assessment Streams",
     title: "Multi-Level Situation Assessment",
     href: "/situation-assessment",
-    philosophy: "Public health failures often begin with fragmented data. Preventa AI connects individual lifestyle markers, neighborhood equity scans, and institutional readiness into one continuous diagnostic continuum.",
-    metrics: "3 Assessment Levels • Validated Canadian Indicators • Automated Risk Scores",
+    philosophy: "Public health action begins with structured assessments. Preventa AI connects individual lifestyle markers, community priorities and assets, and organization readiness into one coherent diagnostic framework.",
+    metrics: "3 Assessment Levels • Validated Indicators • Actionable Outputs",
     highlights: [
       {
-        title: "Individual & Family Wellbeing",
-        subtitle: "Lifestyle, biometrics, protective factors, and coping mechanisms",
-        badge: "Personal Health Index"
+        title: "Individual & Family Wellbeing Assessment",
+        subtitle: "Physical activity, healthy eating, smoking cessation, low-risk drinking, sleep hygiene, and stress management.",
+        badge: "Personal & Family"
       },
       {
         title: "Community Assessment",
-        subtitle: "Demographic equity scans, social assets, and neighborhood SDOH risks",
+        subtitle: "Risk and protective factors, community assets and priorities, high-risk groups, disease incidence, and program effectiveness.",
         badge: "Priority-Setting Matrix"
       },
       {
-        title: "Organization Readiness",
-        subtitle: "Workforce burnout, safety culture, and digital AI adoption capacity",
-        badge: "Institutional Heatmap"
+        title: "Organization Assessment",
+        subtitle: "Employee satisfaction (workload, psychological safety, burnout) and organizational culture (values alignment, learning, trust).",
+        badge: "Organization Report"
       }
     ]
   },
   wellness: {
     number: "02",
-    tag: "Prevention Domains",
-    title: "Health & Wellbeing Across Eight Domains",
+    tag: "Health & Wellbeing",
+    title: "Health & Wellbeing Across Key Domains",
     href: "/health-and-wellness",
-    philosophy: "Moving from episodic sick-care into continuous population health promotion. Every intervention pathway is grounded in the Ottawa Charter, COM-B behavior change models, and peer-reviewed Canadian evidence.",
-    metrics: "8 Prevention Domains • WHO Collaborating Standards • Health Literacy Tools",
+    philosophy: "Moving from reactive treatment into proactive, continuous population health promotion. Grounded in peer-reviewed evidence, Ottawa Charter frameworks, and validated public health guidelines.",
+    metrics: "6 Core Health Domains • Ottawa Charter Logic Models • Plain-Language Evidence",
     highlights: [
       {
-        title: "Mental Wellbeing & Coping",
-        subtitle: "Early distress screening, peer resilience, and stress reduction",
+        title: "Mental Wellbeing",
+        subtitle: "Promoting psychological safety, active coping strategies, and community resilience.",
         badge: "Domain 01"
       },
       {
-        title: "Substance Use & Harm Reduction",
-        subtitle: "Non-stigmatizing low-barrier support, overdose alert feeds",
+        title: "Substance Use & Addiction",
+        subtitle: "Evidence-informed harm reduction, non-stigmatizing support, and low-barrier resources.",
         badge: "Domain 02"
       },
       {
-        title: "Environmental & Climate Health",
-        subtitle: "Air quality index (AQHI), extreme heat alerts, clean water access",
+        title: "Environmental Health",
+        subtitle: "Air quality, extreme climate conditions, and environmental determinants of health.",
         badge: "Domain 03"
       },
       {
-        title: "Chronic Disease & Nutrition",
-        subtitle: "Type 2 diabetes, cardiovascular health, and physical activity support",
+        title: "Immunization, Sexuality & School Health",
+        subtitle: "Vaccine confidence, sexual health education, and school-based child & youth wellness.",
         badge: "Domain 04"
       }
     ]
   },
   indigenous: {
     number: "03",
-    tag: "Data Sovereignty & OCAP®",
+    tag: "Indigenous Health & Wellbeing",
     title: "Indigenous Health & Community Sovereignty",
     href: "/indigenous-health",
-    philosophy: "Rooted in Two-Eyed Seeing (Etuaptmumk) and the First Nations OCAP® principles. Indigenous communities retain 100% ownership, control, access, and possession of their health knowledge, free from extractive AI practices.",
-    metrics: "100% OCAP® Compliant • Two-Eyed Seeing • 100% Subsidized Community Access",
+    philosophy: "Rooted in Two-Eyed Seeing (Etuaptmumk) and First Nations OCAP® principles. Indigenous communities retain 100% ownership, control, access, and possession of their health knowledge and data.",
+    metrics: "OCAP® Principles Respected • Two-Eyed Seeing • Community-Governed",
     highlights: [
       {
-        title: "Sovereign Community Enclave",
-        subtitle: "Zero data leaves sovereign servers; no commercial LLM training",
-        badge: "OCAP® Enforced"
+        title: "Wholistic Health",
+        subtitle: "Honoring the balance of physical, mental, emotional, and spiritual dimensions of wellbeing.",
+        badge: "Wholistic Health"
       },
       {
-        title: "Two-Eyed Seeing (Etuaptmumk)",
-        subtitle: "Braiding Indigenous healing traditions with modern computational tools",
+        title: "Connection to Land and Culture",
+        subtitle: "Land-based healing and learning programs paired with traditional food sovereignty resources.",
+        badge: "Healing Practice"
+      },
+      {
+        title: "Culture as Prevention and Healing",
+        subtitle: "Integrating cultural identity, Elder knowledge, and community self-determination.",
         badge: "Cultural Safety"
-      },
-      {
-        title: "Land-Based Healing & Food Sovereignty",
-        subtitle: "Supporting traditional harvest systems and community wellness",
-        badge: "Community Co-Design"
       }
     ]
   },
   research: {
     number: "04",
-    tag: "Computational Epidemiology",
+    tag: "Research & Modeling",
     title: "AI in Research & Risk Prediction",
     href: "/research",
-    philosophy: "Automating the synthesis of epidemiological literature while detecting nascent community health risks before emergency rooms are overwhelmed. Always verifiable, auditable, and human-in-the-loop.",
-    metrics: "Automated Evidence Synthesis • Predictive Risk Modeling • PHIPA/PIPEDA Certified",
+    philosophy: "Applying ethical AI to support literature synthesis, disease surveillance, and population risk modeling. Always auditable, evidence-grounded, and guided by human oversight.",
+    metrics: "Evidence Generation • Risk Prediction & Modeling • PHIPA/PIPEDA Aligned",
     highlights: [
       {
-        title: "Predictive Outbreak Surveillance",
-        subtitle: "Autonomous microclimate and wastewater telemetry pattern detection",
-        badge: "48h Early Alert"
+        title: "AI & Evidence Generation",
+        subtitle: "Accelerating systematic evidence synthesis across verified Canadian and international clinical literature.",
+        badge: "Evidence Synthesis"
       },
       {
-        title: "Automated Evidence Generation",
-        subtitle: "Rapid systematic synthesis of Canadian and WHO clinical publications",
-        badge: "Citations Linked"
+        title: "Surveillance, Risk Prediction & Modeling",
+        subtitle: "Ethical use of AI in planning and conducting public health research and population risk modeling.",
+        badge: "Risk Modeling"
       },
       {
-        title: "Causal Inference & Policy Modeling",
-        subtitle: "Simulating SDOH intervention outcomes before committing public budgets",
-        badge: "Ottawa Charter"
+        title: "Ethical Research Governance",
+        subtitle: "Ensuring research methods respect privacy by design, transparency, and human-in-the-loop oversight.",
+        badge: "Human Oversight"
       }
     ]
   },
   academy: {
     number: "05",
-    tag: "Workforce Learning",
+    tag: "Workforce Training",
     title: "Workforce Academy: University In The Box",
     href: "/courses",
-    philosophy: "Deploying institutional-grade public health and AI education directly into local health units, community organizations, and academic programs across Canada.",
-    metrics: "6 Specialized Tracks • 180+ Hours • CME/CE Micro-Credentials",
+    philosophy: "Deploying institutional-grade public health and practical AI education directly to local health units, community organizations, and academic programs across Canada.",
+    metrics: "5 Practical Tracks • Applied Sandboxes • Micro-Credentials",
     highlights: [
       {
-        title: "6 Specialized Career Tracks",
-        subtitle: "From public health AI literacy to advanced predictive epidemiology",
-        badge: "Accredited Micro-Credentials"
+        title: "Epidemiology & Health Promotion",
+        subtitle: "Foundational and advanced methods in disease tracking, SDOH analysis, and intervention design.",
+        badge: "Core Public Health"
       },
       {
-        title: "Applied Sandbox Computing",
-        subtitle: "Hands-on policy modeling, synthetic population data, and logic models",
-        badge: "Interactive Labs"
+        title: "Emergency Preparedness & Response",
+        subtitle: "Crisis coordination, outbreak response workflows, and community recovery planning.",
+        badge: "Emergency Track"
       },
       {
-        title: "Turnkey Health Unit Deployment",
-        subtitle: "Self-paced cohorts or university-partnered structured programs",
-        badge: "Institutional Ready"
+        title: "Practical AI & Automation",
+        subtitle: "Generative AI, public health agents, automated reporting, and interactive dashboards.",
+        badge: "AI Systems Track"
       }
     ]
   }

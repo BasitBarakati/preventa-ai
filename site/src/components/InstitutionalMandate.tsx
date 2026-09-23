@@ -16,31 +16,31 @@ import { brand, strategicGoals, principles } from "@/lib/site-content";
 const goalsWithDetail = [
   {
     number: "01",
-    title: "Pioneer Applied AI for Public Health",
+    title: "Transform Healthcare Systems & Improve Outcomes",
     verbatim: strategicGoals[0],
-    focus: "Transforming reactive healthcare into proactive community prevention through predictive epidemiology and automated evidence synthesis.",
-    tags: ["Early Cluster Detection", "Population Modeling", "Predictive Surveillance"]
+    focus: "Build and harness AI capacity to transform healthcare systems and improve health outcomes for all.",
+    tags: ["Capacity Building", "System Transformation", "Population Health"]
   },
   {
     number: "02",
-    title: "Advance Prevention & Policy Translation",
+    title: "Advance Health Promotion & Disease Prevention",
     verbatim: strategicGoals[1],
-    focus: "Closing the 17-year gap between peer-reviewed medical research and frontline community interventions using Ottawa Charter logic models.",
-    tags: ["Ottawa Charter SDOH", "Evidence Synthesis", "Policy Logic Models"]
+    focus: "Advance health promotion, disease prevention, policy, and research through the responsible use of AI.",
+    tags: ["Health Promotion", "Disease Prevention", "Evidence-Informed Policy"]
   },
   {
     number: "03",
-    title: "Champion Equity & Indigenous Sovereignty",
+    title: "Promote Health Equity & Indigenous-Led Approaches",
     verbatim: strategicGoals[2],
-    focus: "Enforcing First Nations OCAP® principles and Two-Eyed Seeing (Etuaptmumk), guaranteeing communities own and govern their data without extractive exploitation.",
-    tags: ["OCAP® Principles", "Two-Eyed Seeing", "Cultural Safety"]
+    focus: "Promote health equity, cultural safety, and Indigenous-led approaches to AI-enabled health transformation.",
+    tags: ["Health Equity", "Cultural Safety", "OCAP® Principles"]
   },
   {
     number: "04",
-    title: "Strengthen Ethical Governance & Oversight",
+    title: "Strengthen Ethical AI Governance & Oversight",
     verbatim: strategicGoals[3],
-    focus: "Ensuring every AI synthesis is human-overridden, auditable, and stored strictly on Canadian sovereign cloud infrastructure compliant with PHIPA and PIPEDA.",
-    tags: ["Human-in-the-Loop", "PHIPA Compliance", "Canadian Data Residency"]
+    focus: "Strengthen ethical AI governance through privacy, transparency, accountability, and human oversight.",
+    tags: ["Human-in-the-Loop", "Privacy by Design", "Transparent Accountability"]
   }
 ];
 
@@ -253,6 +253,21 @@ export default function InstitutionalMandate() {
               ))}
             </div>
           )}
+
+          {/* Explicit Regulatory & Intended-Use Boundary Notice */}
+          <div className="mt-10 p-5 sm:p-6 rounded-2xl bg-white border border-[#0B3D5F]/10 shadow-2xs flex flex-col sm:flex-row items-start gap-4 text-xs text-[#475569]">
+            <div className="w-8 h-8 rounded-xl bg-[#0D9488]/10 text-[#0D9488] flex items-center justify-center shrink-0">
+              <ShieldCheck size={18} />
+            </div>
+            <div>
+              <span className="font-display font-bold text-[#062235] text-sm block mb-1">
+                Intended-Use &amp; Regulatory Boundary
+              </span>
+              <p className="leading-relaxed text-[#475569]">
+                PREVENTA AI is designed as a public health decision-support, evidence synthesis, and workforce capacity platform. In accordance with Canadian public health standards and healthcare privacy legislation, it does not provide medical diagnoses or replace licensed clinical judgment. All automated summaries and logic models require human epidemiologist authorization before frontline implementation. Architecture is designed to support PHIPA and PIPEDA privacy principles and First Nations OCAP® data sovereignty.
+              </p>
+            </div>
+          </div>
 
         </div>
 

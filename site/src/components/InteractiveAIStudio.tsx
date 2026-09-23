@@ -484,7 +484,7 @@ export default function InteractiveAIStudio() {
                     : "text-[#64748B] hover:text-[#062235] hover:bg-black/[0.03]"
                 }`}
               >
-                3. Projected Population Impact
+                3. Assessment Outputs &amp; Human Sign-Off
               </button>
             </div>
 
@@ -648,124 +648,109 @@ export default function InteractiveAIStudio() {
               </div>
             )}
 
-            {/* TAB 3: Metrics */}
+            {/* TAB 3: Practical Assessment Outputs & Human Sign-Off */}
             {activeTab === "metrics" && (
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#64748B] block">
-                    Dynamic Population Impact Model &bull; Scaled to {populationScale.toLocaleString()} Citizens
-                  </span>
-                  <span className="text-[11px] font-mono text-[#0D9488]">
-                    Real-time Macroeconomic Simulation
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#062235] block">
+                      Practical Assessment Outputs &bull; File 2 Aligned
+                    </span>
+                    <span className="text-[11px] text-[#64748B]">
+                      Auto-generated draft report and priority-setting matrix for municipal and community health teams
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-mono font-bold text-[#0D9488] bg-[#0D9488]/10 px-2.5 py-1 rounded-md">
+                    Human Review Required
                   </span>
                 </div>
 
-                {/* 4 Dynamic Metric Tiles */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {/* Practical 3-Part Output Dossier */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {/* Card 1: Community Needs & Priorities */}
                   <div className="p-5 rounded-2xl bg-[#FAF8F5] border border-[#0B3D5F]/8">
-                    <span className="text-[10.5px] font-semibold text-[#64748B] block mb-1">
-                      Baseline Population Risk
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#0D9488] block mb-2">
+                      01 &bull; Community Priorities &amp; Needs
                     </span>
-                    <span className="font-display text-xl font-bold text-[#062235]">
-                      {scenario.metrics.baselineRisk}
-                    </span>
+                    <ul className="space-y-2 text-xs text-[#334155]">
+                      <li className="flex items-start gap-1.5 leading-snug">
+                        <span className="text-[#0D9488] font-bold">&bull;</span>
+                        <span>Identified high-priority groups: remote youth, elders, and families facing socioeconomic barriers.</span>
+                      </li>
+                      <li className="flex items-start gap-1.5 leading-snug">
+                        <span className="text-[#0D9488] font-bold">&bull;</span>
+                        <span>Community-identified assets: Elder guidance circles, traditional food systems, local wellness workers.</span>
+                      </li>
+                    </ul>
                   </div>
 
+                  {/* Card 2: Priority-Setting Matrix */}
                   <div className="p-5 rounded-2xl bg-[#FAF8F5] border border-[#0B3D5F]/8">
-                    <span className="text-[10.5px] font-semibold text-[#64748B] block mb-1">
-                      Projected Disease Drop
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#0A4D34] block mb-2">
+                      02 &bull; Priority-Setting Matrix
                     </span>
-                    <span className="font-display text-xl font-bold text-[#0D9488]">
-                      {scenario.metrics.projectedReduction}
-                    </span>
+                    <ul className="space-y-2 text-xs text-[#334155]">
+                      <li className="flex items-start gap-1.5 leading-snug">
+                        <span className="text-[#0A4D34] font-bold">&bull;</span>
+                        <span><strong>Tier 1 (Immediate):</strong> Land-based wellness workshops &amp; local peer navigation.</span>
+                      </li>
+                      <li className="flex items-start gap-1.5 leading-snug">
+                        <span className="text-[#0A4D34] font-bold">&bull;</span>
+                        <span><strong>Tier 2 (6-Month):</strong> Asynchronous secure tele-support and community indicator tracking.</span>
+                      </li>
+                    </ul>
                   </div>
 
+                  {/* Card 3: Governance & OCAP Compliance */}
                   <div className="p-5 rounded-2xl bg-[#FAF8F5] border border-[#0B3D5F]/8">
-                    <span className="text-[10.5px] font-semibold text-[#64748B] block mb-1">
-                      Estimated Cost Avoidance
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#C5A059] block mb-2">
+                      03 &bull; Data Governance &amp; OCAP®
                     </span>
-                    <span className="font-display text-xl font-bold text-[#0A4D34]">
-                      ${(Math.max(0.3, (populationScale / 50000) * 1.8)).toFixed(1)}M CAD/yr
-                    </span>
-                  </div>
-
-                  <div className="p-5 rounded-2xl bg-[#FAF8F5] border border-[#0B3D5F]/8">
-                    <span className="text-[10.5px] font-semibold text-[#64748B] block mb-1">
-                      Admissions Prevented
-                    </span>
-                    <span className="font-display text-xl font-bold text-[#062235]">
-                      ~{Math.round(populationScale * 0.0064).toLocaleString()} Patients
-                    </span>
+                    <ul className="space-y-2 text-xs text-[#334155]">
+                      <li className="flex items-start gap-1.5 leading-snug">
+                        <span className="text-[#C5A059] font-bold">&bull;</span>
+                        <span>100% community data ownership; zero third-party commercial AI training.</span>
+                      </li>
+                      <li className="flex items-start gap-1.5 leading-snug">
+                        <span className="text-[#C5A059] font-bold">&bull;</span>
+                        <span>Local band council / health authority authorization required before any data integration.</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
 
-                {/* Silicon Valley Grade Risk Trajectory SVG Simulation */}
-                <div className="p-6 rounded-2xl bg-[#FAF8F5] border border-[#0B3D5F]/8">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                    <div>
-                      <h4 className="font-display text-sm font-bold text-[#062235]">
-                        24-Month Risk Mitigation Trajectory (Monte Carlo Simulation)
-                      </h4>
-                      <p className="text-[11px] text-[#64748B]">
-                        Comparison between standard reactive care (dashed) vs. Preventa AI Sovereign Intervention (solid teal).
-                      </p>
+                {/* Human-in-the-Loop Clinician Sign-Off Drawer */}
+                <div className="p-6 rounded-2xl bg-[#062235] text-white border border-[#062235] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <ShieldCheck size={16} className="text-[#14B8A6]" />
+                      <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#14B8A6]">
+                        Mandatory Human Oversight Checkpoint
+                      </span>
                     </div>
-                    <span className="text-[10.5px] font-mono text-[#0D9488] bg-white px-2.5 py-1 rounded-md border border-[#0B3D5F]/6 self-start sm:self-auto">
-                      Confidence Interval: {scenario.metrics.confidenceInterval}
-                    </span>
+                    <p className="text-xs text-slate-300 max-w-xl leading-relaxed">
+                      In compliance with Canadian healthcare privacy and public health governance standards, AI-generated synthesis requires verification by a designated public health officer or community health lead prior to deployment.
+                    </p>
                   </div>
 
-                  {/* SVG Chart */}
-                  <div className="w-full h-40 pt-2">
-                    <svg viewBox="0 0 800 160" className="w-full h-full overflow-visible">
-                      <defs>
-                        <linearGradient id="preventaGlow" x1="0%" y1="0%" x2="0%" y2="100%">
-                          <stop offset="0%" stopColor="#0D9488" stopOpacity="0.25" />
-                          <stop offset="100%" stopColor="#0D9488" stopOpacity="0.0" />
-                        </linearGradient>
-                      </defs>
+                  <button
+                    type="button"
+                    onClick={handleSignOff}
+                    disabled={isSignedOff}
+                    className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer shrink-0 flex items-center gap-2 ${
+                      isSignedOff
+                        ? "bg-[#14B8A6] text-[#062235]"
+                        : "bg-white/10 hover:bg-white/20 text-white border border-white/20"
+                    }`}
+                  >
+                    <CheckCircle2 size={14} className={isSignedOff ? "text-[#062235]" : "text-[#14B8A6]"} />
+                    <span>{isSignedOff ? "Authorized by Reviewer" : "Simulate Human Sign-Off"}</span>
+                  </button>
+                </div>
 
-                      {/* Grid Lines */}
-                      <line x1="0" y1="40" x2="800" y2="40" stroke="#0B3D5F" strokeOpacity="0.06" strokeDasharray="4 4" />
-                      <line x1="0" y1="80" x2="800" y2="80" stroke="#0B3D5F" strokeOpacity="0.06" strokeDasharray="4 4" />
-                      <line x1="0" y1="120" x2="800" y2="120" stroke="#0B3D5F" strokeOpacity="0.06" strokeDasharray="4 4" />
-
-                      {/* Status Quo (Dashed Red Line) */}
-                      <path
-                        d="M 0 45 Q 200 42, 400 40 T 800 36"
-                        fill="none"
-                        stroke="#EF4444"
-                        strokeWidth="2"
-                        strokeDasharray="6 6"
-                        strokeOpacity="0.6"
-                      />
-
-                      {/* Preventa AI Shaded Area */}
-                      <path
-                        d="M 0 45 C 200 55, 300 95, 500 115 C 650 130, 750 135, 800 138 L 800 160 L 0 160 Z"
-                        fill="url(#preventaGlow)"
-                      />
-
-                      {/* Preventa AI Solid Curve */}
-                      <path
-                        d="M 0 45 C 200 55, 300 95, 500 115 C 650 130, 750 135, 800 138"
-                        fill="none"
-                        stroke="#0D9488"
-                        strokeWidth="3.5"
-                        strokeLinecap="round"
-                      />
-
-                      {/* Key Marker Dots */}
-                      <circle cx="0" cy="45" r="4" fill="#062235" />
-                      <circle cx="400" cy="100" r="5" fill="#14B8A6" stroke="#FFFFFF" strokeWidth="2" />
-                      <circle cx="800" cy="138" r="5" fill="#0A4D34" stroke="#FFFFFF" strokeWidth="2" />
-
-                      {/* Chart Labels */}
-                      <text x="10" y="32" fill="#64748B" fontSize="10" fontFamily="monospace">Month 0: Baseline</text>
-                      <text x="360" y="90" fill="#0D9488" fontSize="10" fontWeight="bold" fontFamily="monospace">-24% at Month 12</text>
-                      <text x="680" y="130" fill="#0A4D34" fontSize="10" fontWeight="bold" fontFamily="monospace">{scenario.metrics.projectedReduction} Target</text>
-                    </svg>
-                  </div>
+                {/* Practical Intended-Use Boundary Notice */}
+                <div className="p-4 rounded-xl bg-[#FAF8F5] border border-[#0B3D5F]/6 text-[11px] text-[#64748B] leading-relaxed">
+                  <strong>Notice of Intended Use:</strong> This interactive studio is an educational and workflow preview. Preventa AI does not provide individualized clinical advice or medical diagnosis. All population health syntheses are intended solely to support qualified health authorities, community elders, and researchers.
                 </div>
               </div>
             )}
