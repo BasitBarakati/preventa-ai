@@ -175,8 +175,8 @@ export default function PricingTiers() {
               <ul className="space-y-3 text-xs text-[#334155] mb-8">
                 {[
                   "Unlimited multi-department seats & SSO integration",
-                  "Dedicated Canadian sovereign cloud region",
-                  "Custom on-premise or sovereign LLM deployment",
+                  "Dedicated Canadian data residency cloud region",
+                  "Custom on-premise or private Canadian model deployment",
                   "Secure public health registry & surveillance data pipeline integration",
                   "Continuous algorithmic bias auditing",
                   "Dedicated public health technical lead & SLA support",

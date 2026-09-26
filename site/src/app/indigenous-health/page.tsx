@@ -30,7 +30,7 @@ export default function IndigenousHealthPage() {
             <span className="badge-pill badge-amber">Two-Eyed Seeing</span>
           </div>
           <h2 className="font-display text-2xl sm:text-3xl font-bold text-[#0B3D5F] mb-3">
-            Guided by Community Sovereignty, Not Imposed Upon It.
+            Guided by Community Self-Determination, Not Imposed Upon It.
           </h2>
           <p className="text-xs sm:text-sm text-[#33485C] leading-relaxed max-w-3xl">
             This program is held to the highest standard of ethical accountability: respect for Indigenous knowledge systems, cultural safety, community self-determination, and data sovereignty. Indigenous leadership sets the research and transformation agenda; algorithms never speak for Nations.

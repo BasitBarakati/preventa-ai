@@ -35,8 +35,8 @@ export default function HomePage() {
       id: "folio-1",
       num: "I",
       pageNum: "01",
-      title: "Frontispiece & Platform Biome",
-      subtitle: "Canada's Sovereign Public Health Intelligence Platform",
+      title: "Executive Overview & Platform Introduction",
+      subtitle: "Responsible AI for Public Health & Healthcare Transformation",
       content: <Hero />,
     },
     {
@@ -51,24 +51,24 @@ export default function HomePage() {
       id: "folio-3",
       num: "III",
       pageNum: "03",
-      title: "Sovereign AI Decision Studio",
-      subtitle: "Transparent Canadian Evidence Kernel v4.2",
+      title: "Interactive Decision Support Studio",
+      subtitle: "Evidence Synthesis & Program Planning Demonstration",
       content: <InteractiveAIStudio />,
     },
     {
       id: "folio-4",
       num: "IV",
       pageNum: "04",
-      title: "National Programs & Academy",
-      subtitle: "Five Sovereign Programs & University In The Box",
+      title: "Platform Pillars & Workforce Learning",
+      subtitle: "Five Focus Areas & University In The Box",
       content: <PlatformPavilion />,
     },
     {
       id: "folio-5",
       num: "V",
       pageNum: "05",
-      title: "Equity Access & Executive Intake",
-      subtitle: "Transparent Matrix, Governance FAQs & Briefing Booking",
+      title: "Access Pathways, Governance & Inquiries",
+      subtitle: "Institutional Pricing, Frequently Asked Questions & Consultation",
       content: (
         <div className="space-y-12">
           {/* Transparent Access Matrix */}

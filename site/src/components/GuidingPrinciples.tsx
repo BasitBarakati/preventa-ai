@@ -66,7 +66,7 @@ export default function GuidingPrinciples() {
                 Full Charter
               </span>
               <h3 className="font-display text-xl font-bold text-white mb-2">
-                Sovereign Governance Dossier
+                Governance &amp; Ethics Framework
               </h3>
               <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-6">
                 Review our complete ethical governance framework, including OCAP® principles alignment, algorithmic bias auditing protocols, and non-diagnostic public health boundaries.
@@ -77,7 +77,7 @@ export default function GuidingPrinciples() {
               href="/about" 
               className="btn-primary !bg-[#14B8A6] !text-[#062235] hover:!bg-[#17B8C4] !py-2.5 !px-5 text-xs font-bold self-start inline-flex items-center gap-2"
             >
-              <span>Read Full Governance Dossier</span>
+              <span>Read Principles &amp; Strategic Goals</span>
               <ArrowRight size={13} />
             </Link>
           </div>

@@ -25,18 +25,18 @@ export default function WorkforceAcademySection() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D9488]/10 text-[#0D9488] text-[11px] font-extrabold uppercase tracking-widest mb-4">
               <GraduationCap size={13} />
-              <span>National Workforce Infrastructure</span>
+              <span>Public Health Workforce Learning</span>
             </div>
 
             <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-[#062235] tracking-tight leading-[1.1] mb-6">
               University In The Box. <br />
               <span className="font-serif-italic font-normal text-[#0D9488]">
-                Workforce Capability at Scale.
+                Workforce Capability for Modern Public Health.
               </span>
             </h2>
 
             <p className="text-base sm:text-xl text-[#334155] font-normal leading-relaxed">
-              Transforming local health units and frontline health practitioners into frontier AI practitioners. 180+ hours of applied curriculum with interactive sandbox simulation.
+              Equipping local public health units and community health practitioners with practical public health AI literacy. 180+ hours of applied curriculum with interactive scenario exercises.
             </p>
           </div>
 

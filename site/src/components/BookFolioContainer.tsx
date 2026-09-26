@@ -121,7 +121,7 @@ export default function BookFolioContainer({ folios }: BookFolioContainerProps) 
               <div className="book-running-header">
                 <span className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488]" />
-                  <span>PREVENTA AI &bull; SOVEREIGN HEALTH DOSSIER</span>
+                  <span>PREVENTA AI &bull; PUBLIC HEALTH DOSSIER</span>
                 </span>
                 
                 <span className="hidden sm:inline font-bold text-[#062235]">

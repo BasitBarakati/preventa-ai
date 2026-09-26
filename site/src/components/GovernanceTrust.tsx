@@ -72,7 +72,7 @@ export default function GovernanceTrust() {
                 <span className="badge-pill badge-teal text-[10px]">PIPEDA (Federal)</span>
               </div>
               <h3 className="font-display text-xl font-bold text-[#0B3D5F] mb-3">
-                Canadian Sovereign Privacy
+                Canadian Privacy &amp; Data Residency
               </h3>
               <p className="text-xs sm:text-sm text-[#5D7185] leading-relaxed mb-4">
                 Architecture designed for localized Canadian cloud regions. Data minimization, granular consent registries, de-identification buffers, and AES-256 encryption.

@@ -22,7 +22,7 @@ export default function Footer() {
                   PREVENTA <span className="text-[#17B8C4] text-xs px-2 py-0.5 rounded bg-[#17B8C4]/20 border border-[#17B8C4]/30">AI</span>
                 </span>
                 <span className="text-[10px] text-slate-400 font-bold tracking-wider mt-1 uppercase">
-                  Canada&apos;s Public Health AI Infrastructure
+                  Public Health AI Decision-Support Platform
                 </span>
               </div>
             </Link>
@@ -36,7 +36,7 @@ export default function Footer() {
                 <ShieldCheck size={14} className="text-[#17B8C4]" /> First Nations OCAP® Aligned
               </span>
               <span className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-200 flex items-center gap-1.5 font-medium">
-                <Lock size={14} className="text-[#17B8C4]" /> Canadian Sovereign Cloud (PHIPA/PIPEDA)
+                <Lock size={14} className="text-[#17B8C4]" /> Canadian Cloud Data Residency (PHIPA/PIPEDA)
               </span>
             </div>
           </div>
@@ -141,7 +141,7 @@ export default function Footer() {
         {/* Bottom Legal & Copyright Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            &copy; {new Date().getFullYear()} {brand.displayName} &bull; All Rights Reserved. Sovereign Canadian Public Health Technology.
+            &copy; {new Date().getFullYear()} {brand.displayName} &bull; All Rights Reserved. Responsible AI for Public Health in Canada.
           </div>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>

@@ -133,13 +133,13 @@ export default function UniversityInTheBox() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF8F5] border border-[#C5A059]/30 text-[#8C6D27] text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
               <GraduationCap size={15} className="text-[#C5A059]" />
-              <span>Proprietary Workforce Academy</span>
+              <span>Public Health Workforce Learning</span>
             </div>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#062235] tracking-tight">
               University In The Box
             </h2>
             <p className="text-base sm:text-lg text-[#2C3E50] mt-3 leading-relaxed">
-              Empowering public health teams, regional health authorities, and scholars to build real, operational AI capability. Six complete career and system tracks with verifiable Canadian micro-credentials.
+              Empowering public health teams, regional health authorities, and scholars to build real, operational capability. Six applied public health learning tracks structured for professional development and team training.
             </p>
           </div>
 

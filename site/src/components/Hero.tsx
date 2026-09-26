@@ -103,13 +103,13 @@ export default function Hero() {
                   <ShieldCheck size={20} />
                 </div>
                 <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-[#0A4D34] block mb-1">
-                  02 &bull; Evidence &amp; Indigenous Sovereignty
+                  02 &bull; Evidence &amp; Indigenous Data Sovereignty
                 </span>
                 <h3 className="font-display text-lg font-bold text-[#062235] mb-2 leading-snug">
                   Evidence-Informed &amp; OCAP® Governed
                 </h3>
                 <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed">
-                  Responsible evidence generation and risk modeling honoring Two-Eyed Seeing and First Nations OCAP® principles. Communities retain sovereign data control.
+                  Responsible evidence generation and risk modeling honoring Two-Eyed Seeing and First Nations OCAP® principles. Communities retain full data ownership and control.
                 </p>
               </div>
             </div>

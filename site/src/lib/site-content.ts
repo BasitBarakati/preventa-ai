@@ -483,7 +483,7 @@ export const subscriptionTiers = [
     target: "Provincial ministries, regional health authorities, and hospitals",
     features: [
       "Unlimited seats across multi-department health networks",
-      "Dedicated sovereign Canadian-region or on-premise cloud hosting",
+      "Dedicated Canadian data residency or on-premise cloud hosting",
       "Custom AI fine-tuning on regional epidemiological data",
       "Full EHR/HIS API integration & single sign-on (SSO/SAML)",
       "Continuous algorithmic bias auditing & governance logging",
@@ -646,7 +646,7 @@ const pages: PageDefinition[] = [
     label: "Privacy",
     title: "Privacy by design, explained plainly.",
     eyebrow: "DATA PRIVACY & SOVEREIGNTY",
-    description: "Preventa AI is architected around data minimization, meaningful consent, zero-third-party sale, and sovereign Canadian hosting.",
+    description: "Preventa AI is architected around data minimization, meaningful consent, zero-third-party sale, and Canadian cloud data residency.",
     kind: "policy",
     highlights: ["Anonymous assessment execution", "Zero health data storage in public previews", "Encrypted in transit & at rest (AES-256)", "PHIPA and PIPEDA aligned", "Full data export and deletion guarantees"],
     notice: "Designed to support PHIPA- and PIPEDA-aligned implementation. Formal compliance depends on deployment, configuration, contracts, and legal review.",

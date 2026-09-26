@@ -99,7 +99,7 @@ export default function InstitutionalMandate() {
             <div>
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-mono font-bold text-[#0D9488] uppercase tracking-wider">
-                  Our Sovereign Vision
+                  Our Vision
                 </span>
                 <span className="text-[10px] font-mono text-[#94A3B8]">The North Star</span>
               </div>
@@ -107,7 +107,7 @@ export default function InstitutionalMandate() {
                 &ldquo;{brand.vision}&rdquo;
               </h3>
               <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
-                We envision a future where public health authorities and remote communities alike possess equal access to frontier intelligence, preventing chronic illnesses and infectious threats before they escalate.
+                We envision a future where public health authorities and remote communities alike possess equal access to actionable prevention intelligence, preventing chronic illnesses and infectious threats before they escalate.
               </p>
             </div>
             <div className="pt-5 mt-5 border-t border-[#0B3D5F]/6 flex items-center gap-2 text-xs font-semibold text-[#0A4D34]">
@@ -122,7 +122,7 @@ export default function InstitutionalMandate() {
             <div>
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-mono font-bold text-[#14B8A6] uppercase tracking-wider">
-                  Our Action Mission
+                  Our Mission
                 </span>
                 <span className="text-[10px] font-mono text-white/50">Core Purpose</span>
               </div>
@@ -130,7 +130,7 @@ export default function InstitutionalMandate() {
                 &ldquo;{brand.mission}&rdquo;
               </h3>
               <p className="text-xs sm:text-sm text-white/75 leading-relaxed">
-                We equip healthcare ministers, community elders, and public health scholars with verifiable, non-extractive computational infrastructure that respects community ownership.
+                We equip public health leaders, community health teams, and researchers with verifiable, non-extractive decision-support tools that respect community ownership.
               </p>
             </div>
             <div className="pt-5 mt-5 border-t border-white/10 flex items-center gap-2 text-xs font-semibold text-[#14B8A6]">
@@ -264,7 +264,7 @@ export default function InstitutionalMandate() {
                 Intended-Use &amp; Regulatory Boundary
               </span>
               <p className="leading-relaxed text-[#475569]">
-                PREVENTA AI is designed as a public health decision-support, evidence synthesis, and workforce capacity platform. In accordance with Canadian public health standards and healthcare privacy legislation, it does not provide medical diagnoses or replace licensed clinical judgment. All automated summaries and logic models require human epidemiologist authorization before frontline implementation. Architecture is designed to support PHIPA and PIPEDA privacy principles and First Nations OCAP® data sovereignty.
+                PREVENTA AI is designed as a public health decision-support, evidence synthesis, and workforce capacity platform. In accordance with Canadian public health standards and healthcare privacy legislation, it does not provide medical diagnoses or replace licensed clinical judgment. All automated summaries and logic models require human public health practitioner or clinical lead review and authorization before frontline implementation. Architecture is designed to support PHIPA and PIPEDA privacy principles and First Nations OCAP® data sovereignty.
               </p>
             </div>
           </div>

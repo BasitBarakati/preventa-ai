@@ -89,19 +89,19 @@ const scenarios: Scenario[] = [
       inputs: [
         "Community Elder & Youth Advisory Council",
         "Local band council health infrastructure",
-        "Encrypted local satellite uplink",
+        "Secure community health network infrastructure",
         "CIHR northern mental health evidence corpus"
       ],
       activities: [
         "Bi-weekly Elder-guided land-based workshops",
         "Youth digital peer-advocacy training track",
-        "Low-bandwidth secure asynchronous counseling",
+        "Low-bandwidth tele-support and peer mentorship circle",
         "Community wellbeing indicator pulse surveys"
       ],
       outputs: [
         "120 youth engaged across 4 remote communities",
         "18 youth peer leaders trained in mental health first aid",
-        "Zero data transferred off sovereign community servers"
+        "All community data retained strictly under community governance"
       ],
       outcomes: [
         "Measurable increase in youth participation and cultural pride",
@@ -210,7 +210,7 @@ const scenarios: Scenario[] = [
       ],
       outcomes: [
         "Measurable improvement in community food security and traditional food access",
-        "Strengthened cultural health practices and community sovereignty",
+        "Strengthened cultural health practices and community self-determination",
         "Long-term integration of Two-Eyed Seeing into diabetes prevention"
       ]
     }
@@ -320,7 +320,7 @@ export default function InteractiveAIStudio() {
                   Public Health Decision Workbench
                 </span>
                 <span className="text-sm font-bold text-white">
-                  Sovereign Canadian Evidence Kernel v4.2
+                  Canadian Public Health Evidence Base
                 </span>
               </div>
             </div>
@@ -335,19 +335,19 @@ export default function InteractiveAIStudio() {
                     ? "bg-[#14B8A6]/20 border-[#14B8A6] text-[#14B8A6]"
                     : "bg-white/5 border-white/20 text-white/60"
                 }`}
-                title="Toggle OCAP Data Sovereignty Gate"
+                title="Toggle OCAP Data Governance Gate"
               >
                 <Lock size={13} />
-                <span className="font-bold">OCAP® Sovereign Gate:</span>
+                <span className="font-bold">OCAP® Data Governance:</span>
                 <span className="uppercase font-mono text-[10px]">
-                  {ocapGateActive ? "Enforced (On-Soil)" : "Standard Mode"}
+                  {ocapGateActive ? "Active (Community Governed)" : "Standard Mode"}
                 </span>
               </button>
 
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white/80">
                 <Users size={13} className="text-[#C5A059]" />
                 <span className="font-semibold">Jurisdiction Scale:</span>
-                <span className="font-mono text-white font-bold">{populationScale.toLocaleString()} Citizens</span>
+                <span className="font-mono text-white font-bold">{populationScale.toLocaleString()} Population</span>
                 <div className="hidden sm:flex items-center gap-1 ml-2 border-l border-white/10 pl-2">
                   {[
                     { label: "5K", val: 5000 },

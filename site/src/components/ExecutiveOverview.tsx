@@ -51,7 +51,7 @@ export default function ExecutiveOverview() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488]" />
-                  <span>Designed for PHIPA &amp; PIPEDA sovereign cloud alignment</span>
+                  <span>Designed for PHIPA &amp; PIPEDA Canadian cloud alignment</span>
                 </li>
               </ul>
             </div>
@@ -101,7 +101,7 @@ export default function ExecutiveOverview() {
               href="/indigenous-health"
               className="text-xs font-bold text-[#0A4D34] hover:text-[#062235] flex items-center gap-1.5 group pt-4 border-t border-[#0B3D5F]/8"
             >
-              <span>Explore Indigenous Sovereignty</span>
+              <span>Explore Indigenous Health &amp; Wellbeing</span>
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

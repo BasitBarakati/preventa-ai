@@ -80,7 +80,7 @@ const pillarDetails = {
   indigenous: {
     number: "03",
     tag: "Indigenous Health & Wellbeing",
-    title: "Indigenous Health & Community Sovereignty",
+    title: "Indigenous Health & Wellbeing",
     href: "/indigenous-health",
     philosophy: "Rooted in Two-Eyed Seeing (Etuaptmumk) and First Nations OCAP® principles. Indigenous communities retain 100% ownership, control, access, and possession of their health knowledge and data.",
     metrics: "OCAP® Principles Respected • Two-Eyed Seeing • Community-Governed",
@@ -99,6 +99,11 @@ const pillarDetails = {
         title: "Culture as Prevention and Healing",
         subtitle: "Integrating cultural identity, Elder knowledge, and community self-determination.",
         badge: "Cultural Safety"
+      },
+      {
+        title: "Social Determinants of Health",
+        subtitle: "Addressing structural, environmental, housing, and social factors that shape community health.",
+        badge: "Structural Determinants"
       }
     ]
   },
@@ -172,7 +177,7 @@ export default function PlatformPavilion() {
           <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-[#062235] tracking-tight leading-[1.1] mb-4">
             Five Connected Programs. <br />
             <span className="font-serif-italic font-normal text-[#0D9488]">
-              One Sovereign Continuum.
+              One Cohesive Public Health Framework.
             </span>
           </h2>
 
@@ -186,7 +191,7 @@ export default function PlatformPavilion() {
           {[
             { id: "assessment", label: "01 · Situation Assessment", icon: Activity },
             { id: "wellness", label: "02 · Health & Wellbeing", icon: Layers },
-            { id: "indigenous", label: "03 · Indigenous Health (OCAP®)", icon: ShieldCheck },
+            { id: "indigenous", label: "03 · Indigenous Health & Wellbeing", icon: ShieldCheck },
             { id: "research", label: "04 · AI in Research & Risk", icon: Cpu },
             { id: "academy", label: "05 · University In The Box", icon: GraduationCap },
           ].map((tab) => {
