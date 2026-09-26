@@ -133,7 +133,7 @@ export default function AssessmentGrid() {
               <div className="p-5 rounded-2xl bg-gradient-to-br from-[#FAF7F2] to-[#EBF3E7] border border-[#7FB069]/30 space-y-3">
                 <div className="flex items-center gap-2 text-[#3E692D] font-bold text-xs uppercase tracking-wider">
                   <Cpu size={15} />
-                  <span>AI Co-Pilot Integration</span>
+                  <span>AI Decision Support Integration</span>
                 </div>
                 <p className="text-xs text-[#33485C] leading-relaxed">
                   {selectedStream.aiFeature}

@@ -202,7 +202,7 @@ export const wellnessDomains: readonly WellnessDomain[] = [
     title: "Healthy Sexuality",
     icon: "Activity",
     description: "Culturally safe, inclusive sexual health literacy, STI prevention, reproductive autonomy, and destigmatized clinic pathways.",
-    aiCapability: "Private multilingual education agent and preventative care access navigator.",
+    aiCapability: "Private multilingual health literacy support and preventative care access navigation.",
     framework: "PHAC Sexual Health Promotion Guidelines",
     tag: "Lifespan Care",
   },
@@ -428,7 +428,7 @@ export const subscriptionTiers = [
     features: [
       "Personal Individual & Family Wellbeing Assessment",
       "Access to foundational wellness modules",
-      "Limited AI Co-Pilot queries (5 / day)",
+      "Limited AI Decision Support queries (5 / day)",
       "Read-only access to Public Evidence Library",
       "Standard PDF self-assessment summary",
     ],
@@ -687,7 +687,7 @@ export const pageDefinitions = Object.fromEntries(pages.map((page) => [page.path
 export const navigation = [
   { label: "Assessments", href: "/#assessments" },
   { label: "Health & Wellbeing", href: "/#wellness-domains" },
-  { label: "AI Co-Pilot", href: "/#ai-copilot" },
+  { label: "AI Decision Studio", href: "/#ai-studio" },
   { label: "Evaluation", href: "/#evaluation" },
   { label: "University in a Box", href: "/#university-in-the-box" },
   { label: "Indigenous Health", href: "/#indigenous-health" },

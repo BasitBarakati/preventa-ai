@@ -49,14 +49,14 @@ export default function AICoPilotDemo() {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF8F5] border border-[#C5A059]/30 text-[#8C6D27] text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
             <Sparkles size={14} className="text-[#C5A059]" />
-            <span>Interactive AI Co-Pilot Experience</span>
+            <span>Interactive Decision Support Experience</span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#062235] tracking-tight mb-4">
             Evidence-Grounded. Citations Visible. <br />
             <span className="text-[#1F8A8A] font-normal italic">Always Human Overridable.</span>
           </h2>
           <p className="text-base sm:text-lg text-[#2C3E50] leading-relaxed">
-            Preventa AI never operates as an unverified black box. Test how our AI Co-Pilot assists public health practitioners with program logic models, equity scans, and readiness evaluations.
+            Preventa AI never operates as an unverified black box. Test how our AI Decision Support assists public health practitioners with program logic models, equity scans, and readiness evaluations.
           </p>
         </div>
 

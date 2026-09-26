@@ -128,7 +128,7 @@ export default function WellnessDomains() {
                 <div className="space-y-3 pt-3 border-t border-[#0B3D5F]/8">
                   <div className="p-3 rounded-xl bg-[#FAF8F5] border border-[#0B3D5F]/6 text-[11.5px] text-[#2C3E50]">
                     <span className="font-bold text-[#1F8A8A] block mb-0.5">
-                      AI Co-Pilot Capability:
+                      AI Decision Support Capability:
                     </span>
                     <span className="leading-snug">{domain.aiCapability}</span>
                   </div>

@@ -29,14 +29,14 @@ export default function CoursesPage() {
                   Track 0{index + 1}
                 </span>
                 <span className="flex items-center gap-1 text-[11px] font-bold text-[#3E692D]">
-                  <Award size={14} /> Micro-Credential
+                  <Award size={14} /> Applied Curriculum
                 </span>
               </div>
               <h3 className="font-display text-xl font-bold text-[#0B3D5F] mb-3">
                 {title}
               </h3>
               <p className="text-xs sm:text-sm text-[#5D7185] leading-relaxed">
-                {text || "Comprehensive applied curriculum designed with public health faculties and continuing education credits."}
+                {text || "Comprehensive applied curriculum designed for public health professional development and institutional capacity building."}
               </p>
             </div>
             <div className="pt-4 mt-6 border-t border-[#0B3D5F]/8 flex items-center justify-between">

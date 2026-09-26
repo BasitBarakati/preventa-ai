@@ -131,10 +131,10 @@ export default function PricingTiers() {
                 {[
                   "Everything in Community + up to 10 team seats",
                   "Full Organization & Community Assessment modules",
-                  "AI Co-Pilot Logic Model & Policy Generator",
+                  "AI Decision Support Logic Model & Policy Generator",
                   "Continuous 4-stage evaluation indicator bank",
                   "Custom population health dashboard export",
-                  "University In The Box micro-credential access",
+                  "University In The Box workforce curricula access",
                 ].map((feat, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <Check size={15} className="text-[#14B8A6] shrink-0 mt-0.5" />

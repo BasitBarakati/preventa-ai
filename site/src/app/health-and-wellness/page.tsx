@@ -39,7 +39,7 @@ export default function HealthAndWellnessPage() {
               </p>
             </div>
             <div className="pt-3 border-t border-[#0B3D5F]/8 text-xs text-[#33485C]">
-              <span className="font-bold text-[#0B3D5F] block mb-0.5">AI Co-Pilot:</span>
+              <span className="font-bold text-[#0B3D5F] block mb-0.5">AI Decision Support:</span>
               <span className="text-[#5D7185]">{domain.aiCapability}</span>
             </div>
           </div>
